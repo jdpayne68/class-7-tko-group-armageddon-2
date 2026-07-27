@@ -62,6 +62,7 @@ findings_table = dynamodb.Table(CORRELATION_FINDINGS_TABLE)
 # DynamoDB helpers
 # ============================================================
 
+# Used when READING data from DynamoDB
 def decimal_to_native(value: Any) -> Any:
     """Convert DynamoDB Decimal values into Python numbers."""
 
@@ -82,6 +83,26 @@ def decimal_to_native(value: Any) -> Any:
 
     return value
 
+# Used when WRITING data to DynamoDB
+def native_to_decimal(value: Any) -> Any:
+    """Convert Python numbers into DynamoDB Decimal values."""
+    
+    if isinstance(value, list):
+        return [native_to_decimal(item) for item in value]
+    
+    if isinstance(value, dict):
+        return {
+            key: native_to_decimal(item)
+            for key, item in value.items()
+        }
+    
+    if isinstance(value, float):
+        return Decimal(str(value))
+    
+    if isinstance(value, int):
+        return Decimal(str(value))
+    
+    return value
 
 def get_recent_events(
     window_minutes: int,
@@ -718,6 +739,9 @@ def save_finding(
         "bedrock_report": bedrock_report,
         "evidence": evidence_package,
     }
+
+    # Convert all numeric values to Decimal for DynamoDB
+    item = native_to_decimal(item)
 
     findings_table.put_item(Item=item)
 

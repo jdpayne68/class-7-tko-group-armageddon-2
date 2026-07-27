@@ -53,12 +53,61 @@ data "aws_iam_policy_document" "scheduler_invoke_detector" {
   }
 }
 
+
+
 # -------------------------------------------------------------------------------
-# WAF Log Analyzer Lambda Permissions
+# Application Signals Policy (Copy of AWS Managed Policy)
+# -------------------------------------------------------------------------------
+# BUG: Attaching the managed policy to Lambda results in the error: "Does not exist or is not attachable"
+# Managed Policy: arn:aws:iam::aws:policy/CloudWatchLambdaApplicationSignalsExecutionRolePolicy
+# Custom policy used as a workaround
+# FIXME: Managed policy can be attached to role in console. Need to debug further to find permanent solution.
+
+resource "aws_iam_policy" "lambda_application_signals_execution_role" {
+  name        = "${local.name_prefix}-appsignals-policy"
+  description = "Allows Lambda to write X-Ray trace segments and create CloudWatch log streams for Application Signals telemetry data"
+  policy      = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid = "CloudWatchApplicationSignalsXrayWritePermissions"
+        Effect = "Allow"
+        Action = [
+          "xray:PutTraceSegments"
+        ]
+        Resource = ["*"]
+        Condition = {
+          StringEquals = {
+            "aws:ResourceAccount" = local.account_id
+          }
+        }
+      },
+      {
+        Sid = "CloudWatchApplicationSignalsLogGroupWritePermissions"
+        Effect = "Allow"
+        Action = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ]
+        Resource = "arn:${local.partition}:logs:${local.region}:${local.account_id}:log-group:/aws/application-signals/data:*"
+        Condition = {
+          StringEquals = {
+            "aws:ResourceAccount" = local.account_id
+          }
+        }
+      }
+    ]
+  })
+}
+
+
+# -------------------------------------------------------------------------------
+# WAF Bedrock Analyzer Lambda Permissions
 # -------------------------------------------------------------------------------
 resource "aws_iam_policy" "waf_bedrock_analyzer" {
   name        = "${local.name_prefix}-waf-bedrock-analyzer-policy"
-  description = "IAM policy for WAF log analyzer lambda function"
+  description = "Allows WAF log analyzer Lambda to filter CloudWatch logs, invoke Bedrock models, and store WAF events in DynamoDB"
   policy      = data.aws_iam_policy_document.waf_bedrock_analyzer.json
 }
 
@@ -102,7 +151,7 @@ data "aws_iam_policy_document" "waf_bedrock_analyzer" {
 # -------------------------------------------------------------------------------
 resource "aws_iam_policy" "waf_threat_correlation_agent" {
   name        = "${local.name_prefix}-waf-threat-correlation-agent-policy"
-  description = "IAM policy for WAF threat correlation agent lambda function"
+  description = "Allows WAF threat correlation agent Lambda to read CloudWatch logs, query WAF events from DynamoDB, write correlation findings, and invoke Bedrock models"
   policy      = data.aws_iam_policy_document.waf_threat_correlation_agent.json
 }
 

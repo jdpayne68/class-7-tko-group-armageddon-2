@@ -125,7 +125,7 @@ resource "aws_lambda_function" "waf_bedrock_analyzer" {
   handler     = "waf_bedrock_analyzer.lambda_handler"
   runtime     = "python3.14"
   memory_size = 128
-  timeout     = 120
+  timeout     = 180 # Increase for production and high volume testing
 
   # CloudWatch Application Signals Layer
   # https://docs.aws.amazon.com/lambda/latest/dg/monitoring-application-signals.html
@@ -173,7 +173,7 @@ resource "aws_lambda_function" "threat_correlation_agent" {
   handler     = "waf_threat_correlation_agent.lambda_handler"
   runtime     = "python3.14"
   memory_size = 128
-  timeout     = 120
+  timeout     = 180 # Increase for production and high volume testing
 
   # CloudWatch Application Signals Layer
   # https://docs.aws.amazon.com/lambda/latest/dg/monitoring-application-signals.html

@@ -93,10 +93,11 @@ resource "aws_iam_role_policy_attachment" "waf_bedrock_analyzer" {
   policy_arn = aws_iam_policy.waf_bedrock_analyzer.arn
 }
 
-# Attach CloudWatch Application Signals Policy
+# Attach Custom CloudWatch Application Signals Policy
+# Provides X-Ray write access and CloudWatch Logs permissions for telemetry data
 resource "aws_iam_role_policy_attachment" "waf_bedrock_analyzer_appsignals" {
-  role       = aws_iam_role.waf_bedrock_analyzer_role.name
-  policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/CloudWatchLambdaApplicationSignalsExecutionRolePolicy"
+  role       = aws_iam_role.waf_threat_correlation_agent_role.name
+  policy_arn = aws_iam_policy.lambda_application_signals_execution_role.arn
 }
 
 # -------------------------------------------------------------------------------
@@ -118,11 +119,13 @@ resource "aws_iam_role_policy_attachment" "waf_threat_correlation_agent" {
   policy_arn = aws_iam_policy.waf_threat_correlation_agent.arn
 }
 
-# Attach CloudWatch Application Signals Policy
+# Attach Custom CloudWatch Application Signals Policy
+# Provides X-Ray write access and CloudWatch Logs permissions for telemetry data
 resource "aws_iam_role_policy_attachment" "waf_threat_correlation_agent_appsignals" {
   role       = aws_iam_role.waf_threat_correlation_agent_role.name
-  policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/CloudWatchLambdaApplicationSignalsExecutionRolePolicy"
+  policy_arn = aws_iam_policy.lambda_application_signals_execution_role.arn
 }
+
 
 
 # ================================================================
@@ -152,7 +155,7 @@ resource "aws_iam_role" "api_gateway_cloudwatch_role" {
 
 resource "aws_iam_role_policy_attachment" "api_gateway_cloudwatch_logs" {
   role       = aws_iam_role.api_gateway_cloudwatch_role.name
-  policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+  policy_arn = "arn:${local.partition}:iam::aws:policy/CloudWatchLambdaApplicationSignalsExecutionRolePolicy"
 }
 
 # ================================================================
