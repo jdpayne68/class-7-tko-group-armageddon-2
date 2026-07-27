@@ -84,24 +84,41 @@ def decimal_to_native(value: Any) -> Any:
     return value
 
 # Used when WRITING data to DynamoDB
+# def native_to_decimal(value: Any) -> Any:
+#     """Convert Python numbers into DynamoDB Decimal values."""
+    
+#     if isinstance(value, list):
+#         return [native_to_decimal(item) for item in value]
+    
+#     if isinstance(value, dict):
+#         return {
+#             key: native_to_decimal(item)
+#             for key, item in value.items()
+#         }
+    
+#     if isinstance(value, float):
+#         return Decimal(str(value))
+    
+#     if isinstance(value, int):
+#         return Decimal(str(value))
+    
+#     return value
+
 def native_to_decimal(value: Any) -> Any:
     """Convert Python numbers into DynamoDB Decimal values."""
-    
     if isinstance(value, list):
         return [native_to_decimal(item) for item in value]
-    
     if isinstance(value, dict):
         return {
             key: native_to_decimal(item)
             for key, item in value.items()
         }
-    
-    if isinstance(value, float):
-        return Decimal(str(value))
-    
+    # Only convert int and float values
     if isinstance(value, int):
         return Decimal(str(value))
-    
+    if isinstance(value, float):
+        return Decimal(str(value))
+    # Ignore strings and return as-is
     return value
 
 def get_recent_events(
