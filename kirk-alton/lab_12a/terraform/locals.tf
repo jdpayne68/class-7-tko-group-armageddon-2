@@ -7,6 +7,11 @@ locals {
   # Core Account, Environment, And Naming Locals
   # -------------------------------------------------------------------
 
+  # AWS Environment
+  partition  = data.aws_partition.current.partition
+  region     = data.aws_region.current.name
+  account_id = data.aws_caller_identity.current.account_id
+
   # Environment setup
   env = lower(var.env)
   app = lower(var.app)
@@ -16,12 +21,16 @@ locals {
   name_suffix   = random_string.suffix.result
   bucket_suffix = random_id.bucket_suffix.hex
 
-  jedi_function_name              = "${local.name_prefix}-jedi-python"
-  sith_function_name              = "${local.name_prefix}-sith-node"
-  token_detector_function_name    = "${local.name_prefix}-unused-token-detector"
-  waf_bedrock_analyzer_function_name = "${local.name_prefix}-waf-log-analyzer"
-  token_table_name                = "${local.name_prefix}-token-holocron"
-  waf_table_name                  = "${local.name_prefix}-shield-generator-events"
+  jedi_function_name                        = "${local.name_prefix}-jedi-python"
+  sith_function_name                        = "${local.name_prefix}-sith-node"
+  token_detector_function_name              = "${local.name_prefix}-unused-token-detector"
+  waf_bedrock_analyzer_function_name        = "${local.name_prefix}-waf-bedrock-analyzer"
+  waf_bedrock_threat_correlation_agent_name = "${local.name_prefix}-waf-bedrock-threat-correlation-agent"
+
+  token_table_name           = "${local.name_prefix}-token-holocron"
+  waf_table_name             = "${local.name_prefix}-shield-generator-events"
+  waf_correlation_table_name = "${local.name_prefix}-waf-correlation-findings"
+
 
   # Cognito
   required_auth_scope = "aws.cognito.signin.user.admin"

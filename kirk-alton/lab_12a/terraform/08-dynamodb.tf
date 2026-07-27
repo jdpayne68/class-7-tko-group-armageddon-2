@@ -45,3 +45,25 @@ resource "aws_dynamodb_table" "shield_generator_events" {
     enabled = true
   }
 }
+
+# ----------------------------------------------------------------
+# Correlation Findings Table
+# ----------------------------------------------------------------
+resource "aws_dynamodb_table" "waf_correlation_findings" {
+  name         = local.waf_correlation_table_name
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "finding_id"
+
+  attribute {
+    name = "finding_id"
+    type = "S"
+  }
+
+  server_side_encryption {
+    enabled = true
+  }
+
+  point_in_time_recovery {
+    enabled = true
+  }
+}

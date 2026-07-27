@@ -28,7 +28,7 @@ resource "aws_iam_role" "jedi_python_role" {
 
 resource "aws_iam_role_policy_attachment" "jedi_python_basic_execution" {
   role       = aws_iam_role.jedi_python_role.name
-  policy_arn = "arn:${data.aws_partition.current.partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+  policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
 resource "aws_iam_role_policy_attachment" "jedi_python_token_update" {
@@ -47,7 +47,7 @@ resource "aws_iam_role" "sith_node_role" {
 
 resource "aws_iam_role_policy_attachment" "sith_node_basic_execution" {
   role       = aws_iam_role.sith_node_role.name
-  policy_arn = "arn:${data.aws_partition.current.partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+  policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
 resource "aws_iam_role_policy_attachment" "sith_node_token_update" {
@@ -66,7 +66,7 @@ resource "aws_iam_role" "unused_token_detector_role" {
 
 resource "aws_iam_role_policy_attachment" "unused_token_detector_basic_execution" {
   role       = aws_iam_role.unused_token_detector_role.name
-  policy_arn = "arn:${data.aws_partition.current.partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+  policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
 resource "aws_iam_role_policy_attachment" "unused_token_detector_scan" {
@@ -75,23 +75,55 @@ resource "aws_iam_role_policy_attachment" "unused_token_detector_scan" {
 }
 
 # -------------------------------------------------------------------------------
-# Lambda IAM Role - WAF Log to Bedrock
+# Lambda IAM Role - Bedrock Analyzer
 # -------------------------------------------------------------------------------
 resource "aws_iam_role" "waf_bedrock_analyzer_role" {
-  name               = "${local.name_prefix}-waf-log-analyzer-role"
+  name               = "${local.name_prefix}-waf-bedrock-analyzer-role"
   assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
   description        = "Execution role for the WAF log forwarder Lambda"
 }
 
 resource "aws_iam_role_policy_attachment" "waf_bedrock_analyzer_basic_execution" {
   role       = aws_iam_role.waf_bedrock_analyzer_role.name
-  policy_arn = "arn:${data.aws_partition.current.partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+  policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
 resource "aws_iam_role_policy_attachment" "waf_bedrock_analyzer" {
   role       = aws_iam_role.waf_bedrock_analyzer_role.name
   policy_arn = aws_iam_policy.waf_bedrock_analyzer.arn
 }
+
+# Attach CloudWatch Application Signals Policy
+resource "aws_iam_role_policy_attachment" "waf_bedrock_analyzer_appsignals" {
+  role       = aws_iam_role.waf_bedrock_analyzer_role.name
+  policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/CloudWatchLambdaApplicationSignalsExecutionRolePolicy"
+}
+
+# -------------------------------------------------------------------------------
+# Lambda IAM Role - WAF Threat Correlation Agent
+# -------------------------------------------------------------------------------
+resource "aws_iam_role" "waf_threat_correlation_agent_role" {
+  name               = "${local.name_prefix}-waf-threat-correlation-agent-role"
+  assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
+  description        = "Execution role for the WAF threat correlation agent"
+}
+
+resource "aws_iam_role_policy_attachment" "waf_threat_correlation_agent_basic_execution" {
+  role       = aws_iam_role.waf_threat_correlation_agent_role.name
+  policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
+resource "aws_iam_role_policy_attachment" "waf_threat_correlation_agent" {
+  role       = aws_iam_role.waf_threat_correlation_agent_role.name
+  policy_arn = aws_iam_policy.waf_threat_correlation_agent.arn
+}
+
+# Attach CloudWatch Application Signals Policy
+resource "aws_iam_role_policy_attachment" "waf_threat_correlation_agent_appsignals" {
+  role       = aws_iam_role.waf_threat_correlation_agent_role.name
+  policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/CloudWatchLambdaApplicationSignalsExecutionRolePolicy"
+}
+
 
 # ================================================================
 # API GATEWAY ROLES
@@ -120,7 +152,7 @@ resource "aws_iam_role" "api_gateway_cloudwatch_role" {
 
 resource "aws_iam_role_policy_attachment" "api_gateway_cloudwatch_logs" {
   role       = aws_iam_role.api_gateway_cloudwatch_role.name
-  policy_arn = "arn:${data.aws_partition.current.partition}:iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+  policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
 }
 
 # ================================================================

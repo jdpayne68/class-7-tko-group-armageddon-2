@@ -112,7 +112,7 @@ data "archive_file" "unused_token_detector" {
 }
 
 # -------------------------------------------------------------------------------
-# Lambda Function - WAF Log Analyzer
+# Lambda Function - WAF Bedrock Analyzer
 # -------------------------------------------------------------------------------
 resource "aws_lambda_function" "waf_bedrock_analyzer" {
   filename         = data.archive_file.waf_bedrock_analyzer.output_path
@@ -127,14 +127,21 @@ resource "aws_lambda_function" "waf_bedrock_analyzer" {
   memory_size = 128
   timeout     = 120
 
+  # CloudWatch Application Signals Layer
+  # https://docs.aws.amazon.com/lambda/latest/dg/monitoring-application-signals.html
+  # https://docs.aws.amazon.com/lambda/latest/dg/monitoring-application-signals.html
+
+  layers = [
+    "arn:${local.partition}:lambda:${local.region}:615299751070:layer:AWSOpenTelemetryDistroPython:5"
+  ]
+
   environment {
     variables = {
       WAF_LOG_GROUP    = aws_cloudwatch_log_group.waf_logs.name
       DYNAMODB_TABLE   = aws_dynamodb_table.shield_generator_events.name
-      # Use the latest model. anthropic.claude-3-haiku-20240307-v1:0 is legacy and not available for many users.
       BEDROCK_MODEL_ID = "us.anthropic.claude-sonnet-4-6"
       LOOKBACK_MINUTES = 10
-      MAX_LOG_EVENTS = 25
+      MAX_LOG_EVENTS   = 25
     }
   }
 
@@ -150,4 +157,53 @@ data "archive_file" "waf_bedrock_analyzer" {
   type        = "zip"
   source_file = "${path.module}/lambda-code/waf_bedrock_analyzer.py"
   output_path = "${path.module}/lambda-code/waf_bedrock_analyzer.zip"
+}
+
+# -------------------------------------------------------------------------------
+# Lambda Function - WAF Threat Correlation Agent
+# -------------------------------------------------------------------------------
+resource "aws_lambda_function" "threat_correlation_agent" {
+  filename         = data.archive_file.waf_threat_correlation_agent.output_path
+  source_code_hash = data.archive_file.waf_threat_correlation_agent.output_base64sha256
+
+  function_name = local.waf_bedrock_threat_correlation_agent_name
+  description   = "Reads WAF logs and sends to Bedrock for analysis"
+  role          = aws_iam_role.waf_threat_correlation_agent_role.arn
+
+  handler     = "waf_threat_correlation_agent.lambda_handler"
+  runtime     = "python3.14"
+  memory_size = 128
+  timeout     = 120
+
+  # CloudWatch Application Signals Layer
+  # https://docs.aws.amazon.com/lambda/latest/dg/monitoring-application-signals.html
+  # https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Signals-Enable-LambdaMain.html
+  layers = [
+    "arn:${local.partition}:lambda:${local.region}:615299751070:layer:AWSOpenTelemetryDistroPython:5"
+  ]
+
+  environment {
+    variables = {
+      WAF_EVENTS_TABLE           = aws_dynamodb_table.shield_generator_events.name
+      CORRELATION_FINDINGS_TABLE = aws_dynamodb_table.waf_correlation_findings.name
+      BEDROCK_MODEL_ID           = "us.anthropic.claude-sonnet-4-6"
+      CORRELATION_WINDOW_MINUTES = "60"
+      MINIMUM_EVENT_COUNT        = "3"
+      MAX_EVENTS                 = "500"
+      ADMIN_URI_KEYWORDS         = "admin,login,signin,auth,token,cognito"
+    }
+  }
+
+  depends_on = [
+    aws_cloudwatch_log_group.waf_logs,
+    aws_iam_role_policy_attachment.waf_threat_correlation_agent_basic_execution,
+    aws_iam_role_policy_attachment.waf_threat_correlation_agent,
+  ]
+}
+
+# Zip Archive - WAF Threat Correlation Agent
+data "archive_file" "waf_threat_correlation_agent" {
+  type        = "zip"
+  source_file = "${path.module}/lambda-code/waf_threat_correlation_agent.py"
+  output_path = "${path.module}/lambda-code/waf_threat_correlation_agent.zip"
 }

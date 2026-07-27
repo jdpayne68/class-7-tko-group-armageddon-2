@@ -3,7 +3,7 @@
 # ================================================================
 
 # -------------------------------------------------------------------------------
-# DynamoDB UpdateItem - Jedi And Sith Route Lambdas
+# Jedi And Sith Route Lambda Permissions
 # -------------------------------------------------------------------------------
 resource "aws_iam_policy" "route_lambda_token_update" {
   name        = "${local.name_prefix}-route-token-update"
@@ -20,7 +20,7 @@ data "aws_iam_policy_document" "route_lambda_token_update" {
 }
 
 # -------------------------------------------------------------------------------
-# DynamoDB Scan - Unused Token Detector Lambda
+# Unused Token Detector Lambda Permissions
 # -------------------------------------------------------------------------------
 resource "aws_iam_policy" "token_detector_scan" {
   name        = "${local.name_prefix}-token-detector-scan"
@@ -37,7 +37,7 @@ data "aws_iam_policy_document" "token_detector_scan" {
 }
 
 # -------------------------------------------------------------------------------
-# EventBridge Scheduler - Invoke Detector Lambda
+# EventBridge Scheduler Permissions
 # -------------------------------------------------------------------------------
 resource "aws_iam_policy" "scheduler_invoke_detector" {
   name        = "${local.name_prefix}-scheduler-invoke-detector"
@@ -54,10 +54,10 @@ data "aws_iam_policy_document" "scheduler_invoke_detector" {
 }
 
 # -------------------------------------------------------------------------------
-# WAF Log Analyzer - Lambda Permissions
+# WAF Log Analyzer Lambda Permissions
 # -------------------------------------------------------------------------------
 resource "aws_iam_policy" "waf_bedrock_analyzer" {
-  name        = "${local.name_prefix}-waf-log-analyzer-policy"
+  name        = "${local.name_prefix}-waf-bedrock-analyzer-policy"
   description = "IAM policy for WAF log analyzer lambda function"
   policy      = data.aws_iam_policy_document.waf_bedrock_analyzer.json
 }
@@ -71,7 +71,7 @@ data "aws_iam_policy_document" "waf_bedrock_analyzer" {
     ]
     resources = ["*"]
   }
-  # Bedrock permissions
+  # Bedrock Permissions - Invoke Model
   statement {
     effect = "Allow"
     actions = [
@@ -95,4 +95,59 @@ data "aws_iam_policy_document" "waf_bedrock_analyzer" {
   #   ]
   #   resources = ["*"]
   # }
+}
+
+# -------------------------------------------------------------------------------
+# WAF Threat Correlation Agent Lambda Permissions
+# -------------------------------------------------------------------------------
+resource "aws_iam_policy" "waf_threat_correlation_agent" {
+  name        = "${local.name_prefix}-waf-threat-correlation-agent-policy"
+  description = "IAM policy for WAF threat correlation agent lambda function"
+  policy      = data.aws_iam_policy_document.waf_threat_correlation_agent.json
+}
+
+data "aws_iam_policy_document" "waf_threat_correlation_agent" {
+  # CloudWatch Logs permissions
+  statement {
+    effect = "Allow"
+    actions = [
+      "logs:FilterLogEvents"
+    ]
+    resources = ["*"]
+  }
+
+
+  # DynamoDB Read permissions - WAF Events Table
+  statement {
+    effect = "Allow"
+    actions = [
+      "dynamodb:Scan",
+      "dynamodb:Query",
+      "dynamodb:GetItem",
+      "dynamodb:BatchGetItem"
+    ]
+    resources = [
+      aws_dynamodb_table.shield_generator_events.arn,
+      "${aws_dynamodb_table.shield_generator_events.arn}/index/*"
+    ]
+  }
+  # DynamoDB Write permissions - Correlation Findings Table
+  statement {
+    effect = "Allow"
+    actions = [
+      "dynamodb:PutItem",
+      "dynamodb:UpdateItem"
+    ]
+    resources = [
+      aws_dynamodb_table.waf_correlation_findings.arn
+    ]
+  }
+  # Bedrock Permissions - Invoke Model
+  statement {
+    effect = "Allow"
+    actions = [
+      "bedrock:InvokeModel"
+    ]
+    resources = ["*"]
+  }
 }
