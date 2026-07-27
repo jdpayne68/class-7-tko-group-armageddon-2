@@ -1,5 +1,5 @@
 aws_region          = "us-east-1"
 project_name        = "armageddon-2"
-bedrock_model_id    = "<enabled-bedrock-model-or-inference-profile-id>"
+bedrock_model_id    = "us.anthropic.claude-3-haiku-20240307-v1:0"
 report_bucket_name  = "<globally-unique-report-bucket-name>"
-notification_email  = "<optional-email-address>"
+notification_email  = "j.dewhitt.payne@gmail.com"
