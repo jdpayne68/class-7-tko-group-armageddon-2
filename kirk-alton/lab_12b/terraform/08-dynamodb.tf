@@ -67,3 +67,25 @@ resource "aws_dynamodb_table" "waf_correlation_findings" {
     enabled = true
   }
 }
+
+# ----------------------------------------------------------------
+# Security Incidents Table
+# ----------------------------------------------------------------
+resource "aws_dynamodb_table" "waf_security_incidents" {
+  name         = local.waf_security_incidents_table_name
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "incident_id"
+
+  attribute {
+    name = "incident_id"
+    type = "S"
+  }
+
+  server_side_encryption {
+    enabled = true
+  }
+
+  point_in_time_recovery {
+    enabled = true
+  }
+}

@@ -15,7 +15,7 @@ resource "aws_api_gateway_rest_api" "chewbacca_auth_rest_api" {
 }
 
 resource "aws_api_gateway_authorizer" "cognito" {
-  name            = "${local.name_prefix}-cognito-authorizer"
+  name            = "${local.name_prefix}-cognito-authorizer-${local.name_suffix}"
   rest_api_id     = aws_api_gateway_rest_api.chewbacca_auth_rest_api.id
   type            = "COGNITO_USER_POOLS"
   provider_arns   = [aws_cognito_user_pool.chewbacca_auth_rest.arn]

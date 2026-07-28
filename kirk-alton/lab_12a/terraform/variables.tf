@@ -108,9 +108,23 @@ variable "token_scan_schedule" {
   description = "EventBridge Scheduler expression for the unused-token detector."
 }
 
-variable "alert_email" {
-  type        = string
-  default     = null
-  nullable    = true
-  description = "Optional email address subscribed to unused-token SNS alerts."
+variable "bedrock_lambda_timeout" {
+  type        = number
+  default     = 600
+  nullable    = false
+  description = "Timeout in seconds for Bedrock Lambda functions. Default 600s (10m). Max 900s (15m)."
+  # Use up to 900 for production
+
+  validation {
+    condition     = var.bedrock_lambda_timeout >= 60 && var.bedrock_lambda_timeout <= 900
+    error_message = "Lambda timeout must be between 60 and 900 seconds (1-15 minutes)."
+  }
+}
+
+# Upgraded alert emails to a list for multiple recipients.
+# Better pattern for scaling to production.
+variable "alert_emails" {
+  type        = list(string)
+  default     = []
+  description = "List of email addresses for alerts (leave empty to skip alerts)"
 }

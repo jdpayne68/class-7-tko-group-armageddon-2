@@ -31,7 +31,6 @@ locals {
   waf_table_name             = "${local.name_prefix}-shield-generator-events"
   waf_correlation_table_name = "${local.name_prefix}-waf-correlation-findings"
 
-
   # Cognito
   required_auth_scope = "aws.cognito.signin.user.admin"
 

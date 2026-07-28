@@ -155,7 +155,7 @@ resource "aws_iam_role" "api_gateway_cloudwatch_role" {
 
 resource "aws_iam_role_policy_attachment" "api_gateway_cloudwatch_logs" {
   role       = aws_iam_role.api_gateway_cloudwatch_role.name
-  policy_arn = "arn:${local.partition}:iam::aws:policy/CloudWatchLambdaApplicationSignalsExecutionRolePolicy"
+  policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
 }
 
 # ================================================================

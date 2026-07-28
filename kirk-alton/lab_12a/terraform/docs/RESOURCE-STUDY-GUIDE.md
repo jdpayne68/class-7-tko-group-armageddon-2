@@ -55,7 +55,7 @@ Every managed resource block is listed here. Repeated resources are intentionall
 | `aws_scheduler_schedule.unused_token_check` | periodically invokes the detector | detector Lambda |
 | `aws_cloudwatch_log_metric_filter.unused_token` | converts `ALERT:` log lines to metric points | alarm |
 | `aws_sns_topic.token_alerts` | notification fan-out destination | alarm and subscribers |
-| `aws_sns_topic_subscription.token_alert_email` | optional human email endpoint | SNS topic |
+| `aws_sns_topic_subscription.token_alert_emails` | optional human email endpoint | SNS topic |
 | `aws_cloudwatch_metric_alarm.unused_token` | evaluates alert metric and publishes to SNS | operator notification |
 
 ## Cognito Resources

@@ -126,15 +126,17 @@ resource "aws_cloudwatch_metric_alarm" "unused_token" {
 # -------------------------------------------------------------------------------
 # SNS Alert Topic And Optional Email Subscription
 # -------------------------------------------------------------------------------
+
+# Token Alerts
 resource "aws_sns_topic" "token_alerts" {
   name              = "${local.name_prefix}-auth-alerts"
   kms_master_key_id = "alias/aws/sns"
 }
 
-resource "aws_sns_topic_subscription" "token_alert_email" {
-  count = var.alert_email == null ? 0 : 1
+resource "aws_sns_topic_subscription" "token_alert_emails" {
+  count = length(var.alert_emails)
 
   topic_arn = aws_sns_topic.token_alerts.arn
   protocol  = "email"
-  endpoint  = var.alert_email
+  endpoint  = var.alert_emails[count.index]
 }

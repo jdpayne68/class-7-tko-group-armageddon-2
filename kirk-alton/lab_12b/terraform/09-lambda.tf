@@ -125,7 +125,7 @@ resource "aws_lambda_function" "waf_bedrock_analyzer" {
   handler     = "waf_bedrock_analyzer.lambda_handler"
   runtime     = "python3.14"
   memory_size = 128
-  timeout     = 600 # Use up to 900 (15 min) for production
+  timeout     = var.bedrock_lambda_timeout
 
   # CloudWatch Application Signals Layer
   # https://docs.aws.amazon.com/lambda/latest/dg/monitoring-application-signals.html
@@ -173,7 +173,7 @@ resource "aws_lambda_function" "threat_correlation_agent" {
   handler     = "waf_threat_correlation_agent.lambda_handler"
   runtime     = "python3.14"
   memory_size = 128
-  timeout     = 600 # Use up to 900 (15 min) for production
+  timeout     = var.bedrock_lambda_timeout
 
   # CloudWatch Application Signals Layer
   # https://docs.aws.amazon.com/lambda/latest/dg/monitoring-application-signals.html
@@ -206,4 +206,48 @@ data "archive_file" "waf_threat_correlation_agent" {
   type        = "zip"
   source_file = "${path.module}/lambda-code/waf_threat_correlation_agent.py"
   output_path = "${path.module}/lambda-code/waf_threat_correlation_agent.zip"
+}
+# -------------------------------------------------------------------------------
+# Lambda Function - SOAR Response Agent
+# -------------------------------------------------------------------------------
+resource "aws_lambda_function" "soar_response_agent" {
+  filename         = data.archive_file.soar_response_agent.output_path
+  source_code_hash = data.archive_file.soar_response_agent.output_base64sha256
+
+  function_name = local.soar_response_agent_name
+  description   = "SOAR response agent that processes WAF threat findings and creates security incidents"
+  role          = aws_iam_role.soar_response_agent_role.arn
+
+  handler     = "soar_response_agent.lambda_handler"
+  runtime     = "python3.14"
+  memory_size = 128
+  timeout     = var.bedrock_lambda_timeout
+
+  layers = [
+    "arn:${local.partition}:lambda:${local.region}:615299751070:layer:AWSOpenTelemetryDistroPython:5"
+  ]
+
+  environment {
+    variables = {
+      CORRELATION_FINDINGS_TABLE = aws_dynamodb_table.waf_correlation_findings.name
+      SECURITY_INCIDENTS_TABLE   = aws_dynamodb_table.waf_security_incidents.name
+      SNS_TOPIC_ARN              = aws_sns_topic.waf_security_incidents_alert.arn
+      BEDROCK_MODEL_ID           = "us.anthropic.claude-sonnet-4-6"
+      ENABLE_BEDROCK             = "true"
+    }
+  }
+
+  depends_on = [
+    aws_cloudwatch_log_group.soar_response_agent,
+    aws_iam_role_policy_attachment.soar_response_agent_basic_execution,
+    aws_iam_role_policy_attachment.soar_response_agent,
+    aws_iam_role_policy_attachment.soar_response_agent_appsignals,
+  ]
+}
+
+# Zip Archive - SOAR Response Agent
+data "archive_file" "soar_response_agent" {
+  type        = "zip"
+  source_file = "${path.module}/lambda-code/soar_response_agent.py"
+  output_path = "${path.module}/lambda-code/soar_response_agent.zip"
 }

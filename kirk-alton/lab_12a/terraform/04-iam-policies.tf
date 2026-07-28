@@ -2,6 +2,8 @@
 # IAM POLICIES
 # ================================================================
 
+# NOTE: Scope CloudWatch Logs policies each Lambda's respective log stream.
+
 # -------------------------------------------------------------------------------
 # Jedi And Sith Route Lambda Permissions
 # -------------------------------------------------------------------------------
@@ -66,11 +68,11 @@ data "aws_iam_policy_document" "scheduler_invoke_detector" {
 resource "aws_iam_policy" "lambda_application_signals_execution_role" {
   name        = "${local.name_prefix}-appsignals-policy"
   description = "Allows Lambda to write X-Ray trace segments and create CloudWatch log streams for Application Signals telemetry data"
-  policy      = jsonencode({
+  policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
       {
-        Sid = "CloudWatchApplicationSignalsXrayWritePermissions"
+        Sid    = "CloudWatchApplicationSignalsXrayWritePermissions"
         Effect = "Allow"
         Action = [
           "xray:PutTraceSegments"
@@ -83,7 +85,7 @@ resource "aws_iam_policy" "lambda_application_signals_execution_role" {
         }
       },
       {
-        Sid = "CloudWatchApplicationSignalsLogGroupWritePermissions"
+        Sid    = "CloudWatchApplicationSignalsLogGroupWritePermissions"
         Effect = "Allow"
         Action = [
           "logs:CreateLogGroup",

@@ -6,7 +6,7 @@
 # Regional Web ACL For API Gateways - Shield Generator
 # -------------------------------------------------------------------------------
 resource "aws_wafv2_web_acl" "shield_generator" {
-  name        = "${local.name_prefix}-shield-generator-waf"
+  name        = "${local.name_prefix}-shield-generator-waf-${local.name_suffix}"
   description = "Regional Web ACL protecting API Gateways"
   scope       = "REGIONAL"
 
@@ -32,7 +32,7 @@ resource "aws_wafv2_web_acl" "shield_generator" {
 
     visibility_config {
       cloudwatch_metrics_enabled = true
-      metric_name                = "${local.name_prefix}-waf-sqli-rule-set"
+      metric_name                = "${local.name_prefix}-waf-sqli-rule-set-${local.name_suffix}"
       sampled_requests_enabled   = true
     }
   }
@@ -78,7 +78,7 @@ resource "aws_wafv2_web_acl" "shield_generator" {
 
     visibility_config {
       cloudwatch_metrics_enabled = true
-      metric_name                = "${local.name_prefix}-waf-rate-limit"
+      metric_name                = "${local.name_prefix}-waf-rate-limit-${local.name_suffix}"
       sampled_requests_enabled   = true
     }
   }
@@ -101,7 +101,7 @@ resource "aws_wafv2_web_acl" "shield_generator" {
 
     visibility_config {
       cloudwatch_metrics_enabled = true
-      metric_name                = "${local.name_prefix}-waf-common-rule-set"
+      metric_name                = "${local.name_prefix}-waf-common-rule-set-${local.name_suffix}"
       sampled_requests_enabled   = true
     }
   }
@@ -124,7 +124,7 @@ resource "aws_wafv2_web_acl" "shield_generator" {
 
     visibility_config {
       cloudwatch_metrics_enabled = true
-      metric_name                = "${local.name_prefix}-waf-known-bad-inputs"
+      metric_name                = "${local.name_prefix}-waf-known-bad-inputs-${local.name_suffix}"
       sampled_requests_enabled   = true
     }
   }
@@ -147,14 +147,14 @@ resource "aws_wafv2_web_acl" "shield_generator" {
 
     visibility_config {
       cloudwatch_metrics_enabled = true
-      metric_name                = "${local.name_prefix}-waf-anonymous-ip-list"
+      metric_name                = "${local.name_prefix}-waf-anonymous-ip-list-${local.name_suffix}"
       sampled_requests_enabled   = true
     }
   }
 
   visibility_config {
     cloudwatch_metrics_enabled = true
-    metric_name                = "${local.name_prefix}-api-waf"
+    metric_name                = "${local.name_prefix}-api-waf-${local.name_suffix}"
     sampled_requests_enabled   = true
   }
 }

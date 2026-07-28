@@ -6,7 +6,7 @@
 # Cognito User Pool
 # ----------------------------------------------------------------
 resource "aws_cognito_user_pool" "chewbacca_auth_rest" {
-  name                     = "${local.name_prefix}-users"
+  name                     = "${local.name_prefix}-users-${local.name_suffix}"
   alias_attributes         = ["email"]
   auto_verified_attributes = ["email"]
   mfa_configuration        = "ON"
@@ -85,7 +85,7 @@ resource "aws_cognito_user_pool" "chewbacca_auth_rest" {
 # Public App Client - Token Helper And Managed Login
 # ----------------------------------------------------------------
 resource "aws_cognito_user_pool_client" "public" {
-  name         = "${local.name_prefix}-public-client"
+  name         = "${local.name_prefix}-public-client-${local.name_suffix}"
   user_pool_id = aws_cognito_user_pool.chewbacca_auth_rest.id
 
   generate_secret                      = false
@@ -119,7 +119,7 @@ resource "aws_cognito_user_pool_client" "public" {
 # Secret-Bearing App Client - SECRET_HASH Practice
 # ----------------------------------------------------------------
 resource "aws_cognito_user_pool_client" "cli" {
-  name         = "${local.name_prefix}-cli-client"
+  name         = "${local.name_prefix}-cli-client-${local.name_suffix}"
   user_pool_id = aws_cognito_user_pool.chewbacca_auth_rest.id
 
   generate_secret                      = true
