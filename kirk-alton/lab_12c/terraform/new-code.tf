@@ -17,10 +17,12 @@ resource "aws_lambda_function" "executive_dashboard" {
 
   handler     = "executive_dashboard_agent.lambda_handler"
   runtime     = "python3.14"
-  memory_size = 256  # ReportLab needs more memory
-  timeout     = 120  # Report generation can take time
+  memory_size = 1024
+  timeout     = 120
 
-  # No layers needed - ReportLab is packaged in the ZIP
+  ephemeral_storage {
+    size = 512
+  }
 
   environment {
     variables = {
