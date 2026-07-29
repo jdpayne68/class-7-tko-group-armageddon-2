@@ -33,6 +33,9 @@ locals {
   waf_correlation_table_name        = "${local.name_prefix}-waf-correlation-findings-${local.name_suffix}"
   waf_security_incidents_table_name = "${local.name_prefix}-waf-security-incidents-${local.name_suffix}"
 
+  # API Gateway Base URL
+  api_base_url = "https://${aws_api_gateway_rest_api.chewbacca_auth_rest_api.id}.execute-api.${local.region}.amazonaws.com/${aws_api_gateway_stage.prod.stage_name}"
+  
   # Cognito
   required_auth_scope = "aws.cognito.signin.user.admin"
 

@@ -34,8 +34,8 @@ resource "aws_lambda_function" "jedi_python" {
 # Zip Archive - Jedi Python
 data "archive_file" "jedi_python" {
   type        = "zip"
-  source_file = "${path.module}/lambda-code/jedi_python.py"
-  output_path = "${path.module}/lambda-code/jedi_python.zip"
+  source_file = "${path.module}/lambda/src/jedi_python.py"
+  output_path = "${path.module}/lambda/src/jedi_python.zip"
 }
 
 # -------------------------------------------------------------------------------
@@ -70,8 +70,8 @@ resource "aws_lambda_function" "sith_node" {
 # Zip Archive - Sith Node
 data "archive_file" "sith_node" {
   type        = "zip"
-  source_file = "${path.module}/lambda-code/sith_node.js"
-  output_path = "${path.module}/lambda-code/sith_node.zip"
+  source_file = "${path.module}/lambda/src/sith_node.js"
+  output_path = "${path.module}/lambda/src/sith_node.zip"
 }
 
 # -------------------------------------------------------------------------------
@@ -107,8 +107,8 @@ resource "aws_lambda_function" "unused_token_detector" {
 # Zip Archive - Unused Token Detector
 data "archive_file" "unused_token_detector" {
   type        = "zip"
-  source_file = "${path.module}/lambda-code/unused_token_detector.py"
-  output_path = "${path.module}/lambda-code/unused_token_detector.zip"
+  source_file = "${path.module}/lambda/src/unused_token_detector.py"
+  output_path = "${path.module}/lambda/src/unused_token_detector.zip"
 }
 
 # -------------------------------------------------------------------------------
@@ -155,8 +155,8 @@ resource "aws_lambda_function" "waf_bedrock_analyzer" {
 # Zip Archive - Unused Token Detector
 data "archive_file" "waf_bedrock_analyzer" {
   type        = "zip"
-  source_file = "${path.module}/lambda-code/waf_bedrock_analyzer.py"
-  output_path = "${path.module}/lambda-code/waf_bedrock_analyzer.zip"
+  source_file = "${path.module}/lambda/src/waf_bedrock_analyzer.py"
+  output_path = "${path.module}/lambda/src/waf_bedrock_analyzer.zip"
 }
 
 # -------------------------------------------------------------------------------
@@ -204,6 +204,6 @@ resource "aws_lambda_function" "threat_correlation_agent" {
 # Zip Archive - WAF Threat Correlation Agent
 data "archive_file" "waf_threat_correlation_agent" {
   type        = "zip"
-  source_file = "${path.module}/lambda-code/waf_threat_correlation_agent.py"
-  output_path = "${path.module}/lambda-code/waf_threat_correlation_agent.zip"
+  source_file = "${path.module}/lambda/src/waf_threat_correlation_agent.py"
+  output_path = "${path.module}/lambda/src/waf_threat_correlation_agent.zip"
 }
