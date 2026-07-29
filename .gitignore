@@ -1,0 +1,51 @@
+# ============================================
+# Terraform
+# ============================================
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.*
+crash.log
+
+# Ignore local variable files
+*.tfvars
+*.tfvars.json
+
+# ============================================
+# Python Lambda Build Artifacts
+# ============================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Lambda deployment packages
+*.zip
+
+# ============================================
+# OS / Editor Junk
+# ============================================
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# ============================================
+# Logs
+# ============================================
+*.log
+
+# ============================================
+# Node (if you ever use it)
+# ============================================
+node_modules/
+npm-debug.log
