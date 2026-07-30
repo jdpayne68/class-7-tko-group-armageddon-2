@@ -1,4 +1,18 @@
 # -------------------------------------------------------------------------------
+# Lambda Layer - ReportLab
+# -------------------------------------------------------------------------------
+resource "aws_lambda_layer_version" "reportlab" {
+  filename            = "${path.module}/lambda/layer/reportlab-layer.zip" 
+  layer_name          = "${local.name_prefix}-reportlab-${local.name_suffix}"
+  description         = "ReportLab PDF generation library for Executive Dashboard Agent"
+
+  compatible_runtimes = ["python3.14"]
+  compatible_architectures = ["x86_64", "arm64"]
+
+  source_code_hash = filebase64sha256("${path.module}/lambda/layer/reportlab-layer.zip")
+}
+
+# -------------------------------------------------------------------------------
 # Lambda Function - Executive Dashboard Agent
 # -------------------------------------------------------------------------------
 data "archive_file" "executive_dashboard_agent" {
@@ -17,8 +31,16 @@ resource "aws_lambda_function" "executive_dashboard" {
 
   handler     = "executive_dashboard_agent.lambda_handler"
   runtime     = "python3.14"
-  memory_size = 1024
+  memory_size = 256
   timeout     = 120
+
+  # ================================================================
+  # ATTACH THE REPORTLAB LAYER HERE
+  # ================================================================
+  layers = [
+    aws_lambda_layer_version.reportlab.arn,
+    "arn:${local.partition}:lambda:${local.region}:615299751070:layer:AWSOpenTelemetryDistroPython:5"
+  ]
 
   ephemeral_storage {
     size = 512
@@ -43,6 +65,7 @@ resource "aws_lambda_function" "executive_dashboard" {
     aws_cloudwatch_log_group.executive_dashboard,
     aws_iam_role_policy_attachment.executive_dashboard_basic_execution,
     aws_iam_role_policy_attachment.executive_dashboard,
+    aws_iam_role_policy_attachment.executive_dashboard_appsignals,
   ]
 }
 
