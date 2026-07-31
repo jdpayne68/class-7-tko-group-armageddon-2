@@ -1,26 +1,36 @@
 # -------------------------------------------------------------------------------
 # Lambda Layer - ReportLab
 # -------------------------------------------------------------------------------
+
+# Zip Archive - ReportLab Layer
+data "archive_file" "reportlab_layer" {
+  type        = "zip"
+  source_dir  = "${path.module}/lambda/layers/reportlab-layer"
+  output_path = "${path.module}/lambda/layers/reportlab-layer.zip"
+
+  excludes = [
+    "**/.DS_Store",
+    "**/__pycache__",
+    "**/*.pyc",
+  ]
+}
+
+# Lambda Layer - ReportLab
 resource "aws_lambda_layer_version" "reportlab" {
-  filename            = "${path.module}/lambda/layer/reportlab-layer.zip" 
+  filename            = data.archive_file.reportlab_layer.output_path
   layer_name          = "${local.name_prefix}-reportlab-${local.name_suffix}"
   description         = "ReportLab PDF generation library for Executive Dashboard Agent"
 
-  compatible_runtimes = ["python3.14"]
-  compatible_architectures = ["x86_64", "arm64"]
+  compatible_runtimes = ["python3.12"]
+  compatible_architectures = ["x86_64"]
 
-  source_code_hash = filebase64sha256("${path.module}/lambda/layer/reportlab-layer.zip")
+  source_code_hash = data.archive_file.reportlab_layer.output_base64sha256
 }
 
 # -------------------------------------------------------------------------------
 # Lambda Function - Executive Dashboard Agent
 # -------------------------------------------------------------------------------
-data "archive_file" "executive_dashboard_agent" {
-  type        = "zip"
-  source_file = "${path.module}/lambda/src/executive_dashboard_agent.py"
-  output_path = "${path.module}/lambda/executive_dashboard_agent.zip"
-}
-
+# Lambda Function - Executive Dashboard Agent
 resource "aws_lambda_function" "executive_dashboard" {
   filename         = data.archive_file.executive_dashboard_agent.output_path
   source_code_hash = data.archive_file.executive_dashboard_agent.output_base64sha256
@@ -30,7 +40,8 @@ resource "aws_lambda_function" "executive_dashboard" {
   role          = aws_iam_role.executive_dashboard_role.arn
 
   handler     = "executive_dashboard_agent.lambda_handler"
-  runtime     = "python3.14"
+  runtime     = "python3.12"
+  architectures = ["x86_64"]
   memory_size = 256
   timeout     = 120
 
@@ -68,6 +79,15 @@ resource "aws_lambda_function" "executive_dashboard" {
     aws_iam_role_policy_attachment.executive_dashboard_appsignals,
   ]
 }
+
+# Zip Archive - Executive Dashboard Agent
+data "archive_file" "executive_dashboard_agent" {
+  type        = "zip"
+  source_file = "${path.module}/lambda/src/executive_dashboard_agent.py"
+  output_path = "${path.module}/lambda/executive_dashboard_agent.zip"
+}
+
+
 
 
 # CloudWatch Log Group - Executive Dashboard

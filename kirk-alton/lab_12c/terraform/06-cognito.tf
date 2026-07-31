@@ -2,9 +2,9 @@
 # AMAZON COGNITO
 # ================================================================
 
-# ----------------------------------------------------------------
+# -------------------------------------------------------------------------------
 # Cognito User Pool
-# ----------------------------------------------------------------
+# -------------------------------------------------------------------------------
 resource "aws_cognito_user_pool" "chewbacca_auth_rest" {
   name                     = "${local.name_prefix}-users-${local.name_suffix}"
   alias_attributes         = ["email"]
@@ -81,9 +81,9 @@ resource "aws_cognito_user_pool" "chewbacca_auth_rest" {
   }
 }
 
-# ----------------------------------------------------------------
+# -------------------------------------------------------------------------------
 # Public App Client - Token Helper And Managed Login
-# ----------------------------------------------------------------
+# -------------------------------------------------------------------------------
 resource "aws_cognito_user_pool_client" "public" {
   name         = "${local.name_prefix}-public-client-${local.name_suffix}"
   user_pool_id = aws_cognito_user_pool.chewbacca_auth_rest.id
@@ -115,9 +115,9 @@ resource "aws_cognito_user_pool_client" "public" {
   }
 }
 
-# ----------------------------------------------------------------
+# -------------------------------------------------------------------------------
 # Secret-Bearing App Client - SECRET_HASH Practice
-# ----------------------------------------------------------------
+# -------------------------------------------------------------------------------
 resource "aws_cognito_user_pool_client" "cli" {
   name         = "${local.name_prefix}-cli-client-${local.name_suffix}"
   user_pool_id = aws_cognito_user_pool.chewbacca_auth_rest.id
@@ -149,9 +149,9 @@ resource "aws_cognito_user_pool_client" "cli" {
   }
 }
 
-# ----------------------------------------------------------------
+# -------------------------------------------------------------------------------
 # Cognito Prefix Domain And Managed Login Branding
-# ----------------------------------------------------------------
+# -------------------------------------------------------------------------------
 resource "aws_cognito_user_pool_domain" "chewbacca_auth_rest" {
   domain                = "${local.name_prefix}-${local.name_suffix}"
   user_pool_id          = aws_cognito_user_pool.chewbacca_auth_rest.id
@@ -174,9 +174,9 @@ resource "aws_cognito_managed_login_branding" "cli" {
   depends_on = [aws_cognito_user_pool_domain.chewbacca_auth_rest]
 }
 
-# ----------------------------------------------------------------
+# -------------------------------------------------------------------------------
 # Chewbacca Lab User
-# ----------------------------------------------------------------
+# -------------------------------------------------------------------------------
 resource "aws_cognito_user" "chewbacca" {
   user_pool_id   = aws_cognito_user_pool.chewbacca_auth_rest.id
   username       = var.test_username

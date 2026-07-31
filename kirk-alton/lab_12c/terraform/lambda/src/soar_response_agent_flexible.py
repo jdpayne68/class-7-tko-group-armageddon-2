@@ -106,21 +106,36 @@ PLAYBOOKS = {
 # Email-safe Markdown rendering
 # ============================================================
 
-REPORT_SECTION_HEADINGS = {
-    "incident title",
-    "soc alert",
-    "manager summary",
-    "analyst investigation checklist",
-    "investigation checklist",
-    "why this playbook was selected",
-    "limitations and unknowns",
-}
+def heading_key(value: str) -> str:
+    """Normalize a heading for comparison."""
+
+    return value.strip().rstrip(":").lower()
+
+
+REPORT_SECTION_TITLES = [
+    "Incident Title",
+    "SOC Alert",
+    "Manager Summary",
+    "Investigation Checklist",
+    "Why This Playbook Was Selected",
+    "Limitations and Unknowns",
+]
 
 REPORT_SECTION_HEADING_ALIASES = {
     "analyst investigation checklist": (
         "Investigation Checklist"
     ),
 }
+
+REPORT_SECTION_HEADINGS = {
+    heading_key(title)
+    for title in REPORT_SECTION_TITLES
+} | set(REPORT_SECTION_HEADING_ALIASES)
+
+REPORT_SECTION_MARKDOWN = "\n".join(
+    f"## {title}"
+    for title in REPORT_SECTION_TITLES
+)
 
 
 def normalize_email_text(text: str) -> str:
@@ -169,13 +184,13 @@ def append_blank(lines: list[str]) -> None:
 
 def is_report_section_heading(value: str) -> bool:
     """Return True for one of the fixed report section headings."""
-    return value.strip().rstrip(":").lower() in REPORT_SECTION_HEADINGS
+    return heading_key(value) in REPORT_SECTION_HEADINGS
 
 
 def normalize_report_section_heading(value: str) -> str:
     """Return the preferred display name for a report section."""
 
-    normalized = value.strip().rstrip(":").lower()
+    normalized = heading_key(value)
     return REPORT_SECTION_HEADING_ALIASES.get(
         normalized,
         value.strip().rstrip(":"),
@@ -576,12 +591,7 @@ Threat finding:
 Create a response in controlled Markdown using exactly these
 level-2 headings:
 
-## Incident Title
-## SOC Alert
-## Manager Summary
-## Investigation Checklist
-## Why This Playbook Was Selected
-## Limitations and Unknowns
+{REPORT_SECTION_MARKDOWN}
 
 Requirements:
 - Preserve the exact report structure and headings listed above.
@@ -682,30 +692,30 @@ def create_fallback_summary(finding_context: dict[str, Any]) -> dict[str, Any]:
     playbook = finding_context["selected_playbook"]["name"]
 
     text = f"""
-Incident Title:
+{REPORT_SECTION_TITLES[0]}:
 {severity} WAF Threat Finding {finding_id}
 
-SOC Alert:
+{REPORT_SECTION_TITLES[1]}:
 The threat-correlation workflow identified {event_count} related
 WAF event(s). The primary observed source IP was {source_ip}, and
 the primary target was {target}.
 
-Manager Summary:
+{REPORT_SECTION_TITLES[2]}:
 A {severity.lower()}-severity correlation finding requires review
 under playbook {playbook}.
 
-Investigation Checklist:
+{REPORT_SECTION_TITLES[3]}:
 1. Review the correlated WAF events.
 2. Confirm the source IP and targeted resources.
 3. Review API Gateway and application logs.
 4. Check related authentication activity.
 5. Document analyst conclusions.
 
-Why This Playbook Was Selected:
+{REPORT_SECTION_TITLES[4]}:
 The deterministic workflow selected {playbook} based on the
 stored severity.
 
-Limitations and Unknowns:
+{REPORT_SECTION_TITLES[5]}:
 This summary does not prove successful exploitation. Human review
 is required.
 """.strip()
