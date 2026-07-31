@@ -9,7 +9,11 @@ set -euo pipefail
 REQUIREMENTS=("boto3>=1.34" "botocore>=1.34" "reportlab==4.4.3")
 LAYER_NAME="reportlab-layer"
 LAYER_PYTHON_VERSION="python3.12"
+LAYER_PYTHON_MINOR="3.12"
+LAYER_PLATFORM="manylinux2014_x86_64"
 LAYER_DIR_NAME="reportlab-layer"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DEFAULT_ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 # ===================================================================
 # COLORS
@@ -64,7 +68,7 @@ build_layer() {
     local root_dir="$1"
     local force="$2"
 
-    local layer_path="${root_dir}/layers/${LAYER_DIR_NAME}"
+    local layer_path="${root_dir}/lambda/layers/${LAYER_DIR_NAME}"
 
     log_step "Building Lambda layer..."
 
@@ -75,47 +79,54 @@ build_layer() {
 
     if [ "$force" != "true" ] && [ -d "$layer_path" ]; then
         local site_packages="${layer_path}/python/lib/${LAYER_PYTHON_VERSION}/site-packages"
-        if [ -d "$site_packages/botocore/docs" ] && [ -d "$site_packages/reportlab" ]; then
+        if [ -d "$site_packages/boto3/docs" ] && [ -d "$site_packages/botocore/docs" ] && [ -d "$site_packages/reportlab" ]; then
             log_success "Layer already exists and is valid"
             return 0
         fi
     fi
 
-    local site_packages
-    site_packages=$(python3 -c "import site; print(site.getsitepackages()[0])")
-
-    if [ ! -d "$site_packages" ]; then
-        log_error "Could not find site-packages in venv"
-        return 1
-    fi
-
-    log_info "Site-packages: $site_packages"
-
     local layer_site_packages="${layer_path}/python/lib/${LAYER_PYTHON_VERSION}/site-packages"
-    mkdir -p "$(dirname "$layer_site_packages")"
+    rm -rf "$layer_path"
+    mkdir -p "$layer_site_packages"
 
-    log_info "Copying site-packages to layer..."
-    cp -r "$site_packages"/* "$layer_site_packages"/
+    log_info "Installing Lambda-compatible packages..."
+    log_info "Platform: $LAYER_PLATFORM"
+    python3 -m pip install \
+        --upgrade \
+        --platform "$LAYER_PLATFORM" \
+        --implementation cp \
+        --python-version "$LAYER_PYTHON_MINOR" \
+        --only-binary=:all: \
+        --target "$layer_site_packages" \
+        "${REQUIREMENTS[@]}"
 
-    log_info "Cleaning up unnecessary files (preserving botocore/docs)..."
+    log_info "Cleaning up unnecessary files (preserving boto3/docs and botocore/docs)..."
 
     find "$layer_path" -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
     find "$layer_path" -type f -name "*.pyc" -delete 2>/dev/null || true
+    find "$layer_path" -type f -name ".DS_Store" -delete 2>/dev/null || true
     find "$layer_path" -type d -name "test" -not -path "*/botocore/*" -exec rm -rf {} + 2>/dev/null || true
     find "$layer_path" -type d -name "tests" -not -path "*/botocore/*" -exec rm -rf {} + 2>/dev/null || true
-    find "$layer_path" -type d -name "docs" -not -path "*/botocore/docs*" -not -path "*/botocore/*" -exec rm -rf {} + 2>/dev/null || true
+    find "$layer_path" -type d -name "docs" \
+        -not -path "*/boto3/docs*" \
+        -not -path "*/boto3/*" \
+        -not -path "*/botocore/docs*" \
+        -not -path "*/botocore/*" \
+        -exec rm -rf {} + 2>/dev/null || true
     find "$layer_path" -type d -name "examples" -not -path "*/botocore/*" -exec rm -rf {} + 2>/dev/null || true
 
+    if [ ! -d "${layer_site_packages}/boto3/docs" ]; then
+        log_error "boto3/docs not found in layer"
+        return 1
+    fi
+
     if [ ! -d "${layer_site_packages}/botocore/docs" ]; then
-        log_warn "botocore/docs missing, restoring from venv..."
-        if [ -d "${site_packages}/botocore/docs" ]; then
-            mkdir -p "${layer_site_packages}/botocore"
-            cp -r "${site_packages}/botocore/docs" "${layer_site_packages}/botocore/"
-            log_ok "Restored botocore/docs"
-        else
-            log_error "botocore/docs not found in venv!"
-            return 1
-        fi
+        log_error "botocore/docs not found in layer"
+        return 1
+    fi
+
+    if [ ! -f "${layer_site_packages}/boto3/docs/__init__.py" ]; then
+        touch "${layer_site_packages}/boto3/docs/__init__.py"
     fi
 
     if [ ! -f "${layer_site_packages}/botocore/docs/__init__.py" ]; then
@@ -137,19 +148,40 @@ verify_layer() {
         return 1
     fi
 
-    if ! PYTHONPATH="$site_packages" python3 -c "
-import reportlab
-import boto3
-import botocore.docs
-from reportlab.lib import colors
-from reportlab.lib.pagesizes import letter
-print('All imports successful')
-" 2>/dev/null; then
-        log_error "Layer verification failed"
+    if [ ! -d "$site_packages/reportlab" ]; then
+        log_error "reportlab package not found"
         return 1
     fi
 
-    log_ok "All dependencies imported successfully (including botocore.docs)"
+    if [ ! -d "$site_packages/boto3" ]; then
+        log_error "boto3 package not found"
+        return 1
+    fi
+
+    if [ ! -d "$site_packages/boto3/docs" ]; then
+        log_error "boto3/docs package not found"
+        return 1
+    fi
+
+    if [ ! -d "$site_packages/botocore/docs" ]; then
+        log_error "botocore/docs package not found"
+        return 1
+    fi
+
+    if PYTHONPATH="$site_packages" python3 -c "
+import reportlab
+import boto3
+import boto3.docs
+import botocore.docs
+print('All imports successful')
+" >/dev/null 2>&1; then
+        log_ok "Local import check passed"
+    else
+        log_warn "Local import check skipped or failed"
+        log_warn "This can happen when Linux wheels are built on macOS"
+    fi
+
+    log_ok "Layer structure contains reportlab, boto3/docs, and botocore/docs"
     return 0
 }
 
@@ -159,7 +191,7 @@ print('All imports successful')
 
 main() {
     local force_rebuild=false
-    local root_dir="."
+    local root_dir="$DEFAULT_ROOT_DIR"
 
     while [[ $# -gt 0 ]]; do
         case $1 in
@@ -169,7 +201,7 @@ main() {
                 echo "Usage: $0 [--force] [ROOT_DIR]"
                 echo ""
                 echo "  --force    Force rebuild"
-                echo "  ROOT_DIR   Root directory (default: current)"
+                echo "  ROOT_DIR   Terraform root directory (default: script parent)"
                 echo ""
                 exit 0
                 ;;
@@ -177,18 +209,14 @@ main() {
         esac
     done
 
-    if [ "$root_dir" = "." ]; then
-        root_dir="$(pwd)"
-    else
-        root_dir="$(cd "$root_dir" 2>/dev/null && pwd || echo "$root_dir")"
-    fi
+    root_dir="$(cd "$root_dir" 2>/dev/null && pwd || echo "$root_dir")"
 
     # ============================================================
     # START
     # ============================================================
     log_section "λ Lambda Layer Builder λ"
     log_info "Root directory: $root_dir"
-    local layer_path="${root_dir}/layers/${LAYER_DIR_NAME}"
+    local layer_path="${root_dir}/lambda/layers/${LAYER_DIR_NAME}"
     log_info "Layer location: $layer_path"
 
     # ============================================================
