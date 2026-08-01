@@ -6,7 +6,7 @@
 resource "aws_lambda_function" "waf_analyzer" {
   function_name = "${var.prefix}-waf-analyzer"
   role          = var.waf_analyzer_role_arn
-  handler       = "waf_analyzer.lambda_handler"
+  handler       = "handler.lambda_handler"
   runtime       = "python3.12"
   filename      = "${path.module}/code/waf_analyzer.zip"
 
@@ -25,7 +25,7 @@ resource "aws_lambda_function" "waf_analyzer" {
 resource "aws_lambda_function" "threat_correlation" {
   function_name = "${var.prefix}-threat-correlation"
   role          = var.threat_correlation_role_arn
-  handler       = "threat_correlation.lambda_handler"
+  handler       = "handler.lambda_handler"
   runtime       = "python3.12"
   filename      = "${path.module}/code/threat_correlation.zip"
 
@@ -47,7 +47,7 @@ resource "aws_lambda_function" "threat_correlation" {
 resource "aws_lambda_function" "soar_response" {
   function_name = "${var.prefix}-soar-response"
   role          = var.soar_response_role_arn
-  handler       = "soar_response.lambda_handler"
+  handler       = "handler.lambda_handler"
   runtime       = "python3.12"
   filename      = "${path.module}/code/soar_response.zip"
 
@@ -73,7 +73,7 @@ resource "aws_lambda_function" "soar_response" {
 resource "aws_lambda_function" "executive_dashboard" {
   function_name = "${var.prefix}-executive-dashboard"
   role          = var.executive_dashboard_role_arn
-  handler       = "executive_dashboard.lambda_handler"
+  handler       = "handler.lambda_handler"
   runtime       = "python3.12"
   filename      = "${path.module}/code/executive_dashboard.zip"
 

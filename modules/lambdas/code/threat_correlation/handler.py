@@ -4,7 +4,8 @@ import boto3
 import time
 
 dynamodb = boto3.resource("dynamodb")
-table = dynamodb.Table(os.environ["WAF_CORRELATION_TABLE"])
+table = dynamodb.Table(os.environ["WAF_CORRELATION_FINDINGS_TABLE"])
+
 
 def lambda_handler(event, context):
     print("Threat Correlation triggered")
