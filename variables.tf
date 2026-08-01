@@ -12,9 +12,9 @@ variable "environment" {
 }
 
 variable "app_name" {
-  description = "armageddon_2026_summer_deployment"
+  description = "armageddon-2026-summer-deployment"
   type        = string
-  default     = "armageddon_summer_2026"
+  default     = "armageddon-summer-2026"
 }
 
 

@@ -5,17 +5,16 @@
 module "waf" {
   source = "./modules/waf"
 
-  app_name    = var.app_name
-  environment = var.environment
+  prefix      = local.prefix
   common_tags = local.common_tags
+  # prefix      = local.prefix
 }
 
 # Logging Module (CloudWatch Log Groups)
 module "logging" {
   source = "./modules/logging"
 
-  app_name    = var.app_name
-  environment = var.environment
+  prefix      = local.prefix
   common_tags = local.common_tags
 }
 
@@ -67,6 +66,9 @@ module "iam" {
   sns_topic_arn = module.sns.alerts_topic_arn
 
   common_tags = local.common_tags
+  prefix      = local.prefix
+  # reports_bucket_name = local.reports_bucket_name
+  reports_bucket_arn = module.s3.reports_bucket_arn
 }
 
 # Lambda Functions
@@ -87,6 +89,9 @@ module "lambdas" {
 
   # S3 bucket for reports
   reports_bucket_name = local.reports_bucket_name
+  sns_topic_arn = module.sns.alerts_topic_arn
+prefix        = local.prefix
+
 
   common_tags = local.common_tags
 }
@@ -107,4 +112,5 @@ module "eventbridge" {
   executive_dashboard_schedule_expression = var.executive_dashboard_schedule_expression
 
   common_tags = local.common_tags
+  prefix      = local.prefix
 }
