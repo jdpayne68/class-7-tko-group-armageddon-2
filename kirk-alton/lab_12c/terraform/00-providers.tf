@@ -42,9 +42,7 @@ provider "aws" {
 }
 
 provider "archive" {
-  # no config needed
 }
 
 provider "random" {
-  # no config needed
 }

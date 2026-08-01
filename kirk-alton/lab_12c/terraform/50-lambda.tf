@@ -279,7 +279,7 @@ data "archive_file" "reportlab_layer" {
 resource "aws_lambda_layer_version" "reportlab" {
   filename    = data.archive_file.reportlab_layer.output_path
   layer_name  = "${local.name_prefix}-reportlab-${local.name_suffix}"
-  description = "ReportLab PDF generation library for Executive Dashboard Agent"
+  description = "ReportLab PDF generation library for reporting Lambdas"
 
   compatible_runtimes      = ["python3.12"]
   compatible_architectures = ["x86_64"]
@@ -340,4 +340,70 @@ data "archive_file" "executive_dashboard_agent" {
   type        = "zip"
   source_file = "${path.module}/lambda/src/executive_dashboard_agent.py"
   output_path = "${path.module}/lambda/executive_dashboard_agent.zip"
+}
+
+# -------------------------------------------------------------------------------
+# Lambda Function - Compliance Agent
+# -------------------------------------------------------------------------------
+resource "aws_lambda_function" "compliance_agent" {
+  filename         = data.archive_file.compliance_agent.output_path
+  source_code_hash = data.archive_file.compliance_agent.output_base64sha256
+
+  function_name = local.compliance_agent_function_name
+  description   = "Generates compliance evidence reports with PDF and JSON outputs"
+  role          = aws_iam_role.compliance_agent_role.arn
+
+  handler       = "compliance_agent.lambda_handler"
+  runtime       = "python3.12"
+  architectures = ["x86_64"]
+  memory_size   = 512
+  timeout       = 120
+
+  layers = [
+    aws_lambda_layer_version.reportlab.arn,
+    "arn:${local.partition}:lambda:${local.region}:615299751070:layer:AWSOpenTelemetryDistroPython:5"
+  ]
+
+  ephemeral_storage {
+    size = 512
+  }
+
+  environment {
+    variables = {
+      TOKEN_TABLE_NAME           = aws_dynamodb_table.token_holocron.name
+      WAF_EVENTS_TABLE           = aws_dynamodb_table.shield_generator_events.name
+      CORRELATION_FINDINGS_TABLE = aws_dynamodb_table.waf_correlation_findings.name
+      SECURITY_INCIDENTS_TABLE   = aws_dynamodb_table.waf_security_incidents.name
+      COMPLIANCE_EVIDENCE_TABLE  = aws_dynamodb_table.compliance_evidence.name
+      REPORT_BUCKET              = aws_s3_bucket.compliance_evidence_report_bucket.id
+      EXECUTIVE_REPORT_BUCKET    = aws_s3_bucket.executive_report_bucket.id
+      REPORT_PREFIX              = "compliance-reports"
+      COMPLIANCE_FRAMEWORKS      = "NIST CSF 2.0,CIS Controls v8"
+      BEDROCK_MODEL_ID           = "us.anthropic.claude-sonnet-4-6"
+      ORGANIZATION_NAME          = "SEIR Cloud Security"
+      REPORT_TITLE               = "Compliance Evidence Report"
+      ENABLE_BEDROCK             = "true"
+      UNEVALUATED_STATUS         = "REVIEW"
+      CONTROLS_FILE              = "/var/task/controls.json"
+    }
+  }
+
+  depends_on = [
+    aws_cloudwatch_log_group.compliance_agent,
+    aws_iam_role_policy_attachment.compliance_agent_basic_execution,
+    aws_iam_role_policy_attachment.compliance_agent,
+    aws_iam_role_policy_attachment.compliance_agent_appsignals,
+  ]
+}
+
+data "archive_file" "compliance_agent" {
+  type        = "zip"
+  source_dir  = "${path.module}/lambda/src/compliance_agent"
+  output_path = "${path.module}/lambda/compliance_agent.zip"
+
+  excludes = [
+    "**/.DS_Store",
+    "**/__pycache__",
+    "**/*.pyc",
+  ]
 }

@@ -39,6 +39,11 @@ resource "aws_cloudwatch_log_group" "executive_dashboard" {
   retention_in_days = var.log_retention_days
 }
 
+resource "aws_cloudwatch_log_group" "compliance_agent" {
+  name              = "/aws/lambda/${local.compliance_agent_function_name}"
+  retention_in_days = var.log_retention_days
+}
+
 # -------------------------------------------------------------------------------
 # API Gateway Access Log Group
 # -------------------------------------------------------------------------------

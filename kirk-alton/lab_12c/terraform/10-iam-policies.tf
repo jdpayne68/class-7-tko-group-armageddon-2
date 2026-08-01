@@ -2,7 +2,9 @@
 # IAM POLICIES
 # ================================================================
 
-# NOTE: Scope CloudWatch Logs policies each Lambda's respective log stream.
+# -------------------------------------------------------------------------------
+# IAM - LAMBDA PERMISSIONS
+# -------------------------------------------------------------------------------
 
 # -------------------------------------------------------------------------------
 # Jedi And Sith Route Lambda Permissions
@@ -12,7 +14,6 @@ resource "aws_iam_policy" "route_lambda_token_update" {
   description = "Allows the Jedi and Sith route Lambdas to mark token records as used"
   policy      = data.aws_iam_policy_document.route_lambda_token_update.json
 }
-
 
 data "aws_iam_policy_document" "route_lambda_token_update" {
   statement {
@@ -203,50 +204,154 @@ data "aws_iam_policy_document" "soar_response_agent" {
 }
 
 # -------------------------------------------------------------------------------
-# IAM Policy - Application Signals Policy (Copy of AWS Managed Policy)
+# Executive Dashboard Agent Lambda Permissions
 # -------------------------------------------------------------------------------
-# BUG: Attaching the managed policy to Lambda results in the error: "Does not exist or is not attachable"
-# Managed Policy: arn:aws:iam::aws:policy/CloudWatchLambdaApplicationSignalsExecutionRolePolicy
-# Custom policy used as a workaround
-# FIXME: Managed policy can be attached to role in console. Need to debug further to find permanent solution.
-
-resource "aws_iam_policy" "lambda_application_signals_execution_role" {
-  name        = "${local.name_prefix}-appsignals-policy-${local.name_suffix}"
-  description = "Allows Lambda to write X-Ray trace segments and create CloudWatch log streams for Application Signals telemetry data"
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Sid    = "CloudWatchApplicationSignalsXrayWritePermissions"
-        Effect = "Allow"
-        Action = [
-          "xray:PutTraceSegments"
-        ]
-        Resource = ["*"]
-        Condition = {
-          StringEquals = {
-            "aws:ResourceAccount" = local.account_id
-          }
-        }
-      },
-      {
-        Sid    = "CloudWatchApplicationSignalsLogGroupWritePermissions"
-        Effect = "Allow"
-        Action = [
-          "logs:CreateLogGroup",
-          "logs:CreateLogStream",
-          "logs:PutLogEvents"
-        ]
-        Resource = "arn:${local.partition}:logs:${local.region}:${local.account_id}:log-group:/aws/application-signals/data:*"
-        Condition = {
-          StringEquals = {
-            "aws:ResourceAccount" = local.account_id
-          }
-        }
-      }
-    ]
-  })
+resource "aws_iam_policy" "executive_dashboard" {
+  name        = "${local.name_prefix}-executive-dashboard-${local.name_suffix}"
+  description = "Allows Executive Dashboard Agent to read tables and write to S3"
+  policy      = data.aws_iam_policy_document.executive_dashboard.json
 }
+
+data "aws_iam_policy_document" "executive_dashboard" {
+  # DynamoDB Read permissions
+  statement {
+    effect = "Allow"
+    actions = [
+      "dynamodb:Scan",
+      "dynamodb:Query",
+      "dynamodb:GetItem",
+      "dynamodb:BatchGetItem"
+    ]
+    resources = [
+      aws_dynamodb_table.shield_generator_events.arn,
+      aws_dynamodb_table.waf_correlation_findings.arn,
+      aws_dynamodb_table.waf_security_incidents.arn,
+    ]
+  }
+
+  # S3 Write permissions
+  statement {
+    effect = "Allow"
+    actions = [
+      "s3:PutObject",
+      "s3:PutObjectAcl",
+      "s3:GetObject",
+    ]
+    resources = [
+      "${aws_s3_bucket.executive_report_bucket.arn}/*",
+    ]
+  }
+
+  # Bedrock Permissions - Invoke Model
+  statement {
+    effect = "Allow"
+    actions = [
+      "bedrock:InvokeModel"
+    ]
+    resources = ["*"]
+  }
+}
+
+# -------------------------------------------------------------------------------
+# Compliance Agent Lambda Permissions
+# -------------------------------------------------------------------------------
+resource "aws_iam_policy" "compliance_agent" {
+  name        = "${local.name_prefix}-compliance-agent-${local.name_suffix}"
+  description = "Allows Compliance Agent to evaluate evidence, write compliance records, invoke Bedrock, and publish reports"
+  policy      = data.aws_iam_policy_document.compliance_agent.json
+}
+
+data "aws_iam_policy_document" "compliance_agent" {
+  # DynamoDB Read permissions
+  statement {
+    effect = "Allow"
+    actions = [
+      "dynamodb:DescribeTable",
+      "dynamodb:Scan",
+      "dynamodb:Query",
+      "dynamodb:GetItem",
+      "dynamodb:BatchGetItem"
+    ]
+    resources = [
+      aws_dynamodb_table.token_holocron.arn,
+      aws_dynamodb_table.shield_generator_events.arn,
+      aws_dynamodb_table.waf_correlation_findings.arn,
+      aws_dynamodb_table.waf_security_incidents.arn,
+      aws_dynamodb_table.compliance_evidence.arn,
+    ]
+  }
+
+  # DynamoDB Evidence Write permissions
+  statement {
+    effect = "Allow"
+    actions = [
+      "dynamodb:BatchWriteItem",
+      "dynamodb:PutItem"
+    ]
+    resources = [
+      aws_dynamodb_table.compliance_evidence.arn,
+    ]
+  }
+
+  # S3 Report Read and Write permissions
+  statement {
+    effect = "Allow"
+    actions = [
+      "s3:ListBucket"
+    ]
+    resources = [
+      aws_s3_bucket.executive_report_bucket.arn,
+      aws_s3_bucket.compliance_evidence_report_bucket.arn,
+    ]
+  }
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "s3:GetObject",
+    ]
+    resources = [
+      "${aws_s3_bucket.executive_report_bucket.arn}/*",
+    ]
+  }
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "s3:GetObject",
+      "s3:PutObject",
+      "s3:PutObjectAcl"
+    ]
+    resources = [
+      "${aws_s3_bucket.compliance_evidence_report_bucket.arn}/*",
+    ]
+  }
+
+  # AWS Resource Inspection permissions
+  statement {
+    effect = "Allow"
+    actions = [
+      "events:DescribeRule",
+      "lambda:GetFunctionConfiguration",
+      "scheduler:GetSchedule",
+      "sns:GetTopicAttributes"
+    ]
+    resources = ["*"]
+  }
+
+  # Bedrock Permissions - Invoke Model
+  statement {
+    effect = "Allow"
+    actions = [
+      "bedrock:InvokeModel"
+    ]
+    resources = ["*"]
+  }
+}
+
+# ================================================================
+# IAM - EVENTBRIDGE PERMISSIONS
+# ================================================================
 
 # -------------------------------------------------------------------------------
 # EventBridge Scheduler Permissions - Invoke Unused Token Detector
@@ -320,77 +425,6 @@ resource "aws_lambda_permission" "soar_response_critical" {
 }
 
 # -------------------------------------------------------------------------------
-# EventBridge Permissions - SNS Publish
-# -------------------------------------------------------------------------------
-
-resource "aws_sns_topic_policy" "waf_security_incidents_alert" {
-  arn = aws_sns_topic.waf_security_incidents_alert.arn
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Sid    = "AllowEventBridgePublish"
-        Effect = "Allow"
-        Principal = {
-          Service = "events.amazonaws.com"
-        }
-        Action   = "sns:Publish"
-        Resource = aws_sns_topic.waf_security_incidents_alert.arn
-      }
-    ]
-  })
-}
-
-# -------------------------------------------------------------------------------
-# Executive Dashboard Agent Lambda Permissions
-# -------------------------------------------------------------------------------
-resource "aws_iam_policy" "executive_dashboard" {
-  name        = "${local.name_prefix}-executive-dashboard-${local.name_suffix}"
-  description = "Allows Executive Dashboard Agent to read tables and write to S3"
-  policy      = data.aws_iam_policy_document.executive_dashboard.json
-}
-
-data "aws_iam_policy_document" "executive_dashboard" {
-  # DynamoDB Read permissions
-  statement {
-    effect = "Allow"
-    actions = [
-      "dynamodb:Scan",
-      "dynamodb:Query",
-      "dynamodb:GetItem",
-      "dynamodb:BatchGetItem"
-    ]
-    resources = [
-      aws_dynamodb_table.shield_generator_events.arn,
-      aws_dynamodb_table.waf_correlation_findings.arn,
-      aws_dynamodb_table.waf_security_incidents.arn,
-    ]
-  }
-
-  # S3 Write permissions
-  statement {
-    effect = "Allow"
-    actions = [
-      "s3:PutObject",
-      "s3:PutObjectAcl",
-      "s3:GetObject",
-    ]
-    resources = [
-      "${aws_s3_bucket.executive_report_bucket.arn}/*",
-    ]
-  }
-
-  # Bedrock Permissions - Invoke Model
-  statement {
-    effect = "Allow"
-    actions = [
-      "bedrock:InvokeModel"
-    ]
-    resources = ["*"]
-  }
-}
-
-# -------------------------------------------------------------------------------
 # EventBridge Scheduler Permissions - Invoke Executive Dashboard Agent
 # -------------------------------------------------------------------------------
 resource "aws_iam_policy" "scheduler_invoke_executive_dashboard" {
@@ -413,4 +447,76 @@ resource "aws_lambda_permission" "executive_dashboard_scheduler" {
   function_name = aws_lambda_function.executive_dashboard.function_name
   principal     = "scheduler.amazonaws.com"
   source_arn    = aws_scheduler_schedule.executive_dashboard.arn
+}
+
+# -------------------------------------------------------------------------------
+# EventBridge Permissions - SNS Publish
+# -------------------------------------------------------------------------------
+
+resource "aws_sns_topic_policy" "waf_security_incidents_alert" {
+  arn = aws_sns_topic.waf_security_incidents_alert.arn
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid    = "AllowEventBridgePublish"
+        Effect = "Allow"
+        Principal = {
+          Service = "events.amazonaws.com"
+        }
+        Action   = "sns:Publish"
+        Resource = aws_sns_topic.waf_security_incidents_alert.arn
+      }
+    ]
+  })
+}
+
+# ================================================================
+# IAM - APPLICATION SIGNALS PERMISSIONS
+# ================================================================
+
+# -------------------------------------------------------------------------------
+# IAM Policy - Application Signals Policy (Copy of AWS Managed Policy)
+# -------------------------------------------------------------------------------
+# BUG: Attaching the managed policy to Lambda results in the error: "Does not exist or is not attachable"
+# Managed Policy: arn:aws:iam::aws:policy/CloudWatchLambdaApplicationSignalsExecutionRolePolicy
+# Custom policy used as a workaround
+# FIXME: Managed policy can be attached to role in console. Need to debug further to find permanent solution.
+
+resource "aws_iam_policy" "lambda_application_signals_execution_role" {
+  name        = "${local.name_prefix}-appsignals-policy-${local.name_suffix}"
+  description = "Allows Lambda to write X-Ray trace segments and create CloudWatch log streams for Application Signals telemetry data"
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid    = "CloudWatchApplicationSignalsXrayWritePermissions"
+        Effect = "Allow"
+        Action = [
+          "xray:PutTraceSegments"
+        ]
+        Resource = ["*"]
+        Condition = {
+          StringEquals = {
+            "aws:ResourceAccount" = local.account_id
+          }
+        }
+      },
+      {
+        Sid    = "CloudWatchApplicationSignalsLogGroupWritePermissions"
+        Effect = "Allow"
+        Action = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ]
+        Resource = "arn:${local.partition}:logs:${local.region}:${local.account_id}:log-group:/aws/application-signals/data:*"
+        Condition = {
+          StringEquals = {
+            "aws:ResourceAccount" = local.account_id
+          }
+        }
+      }
+    ]
+  })
 }

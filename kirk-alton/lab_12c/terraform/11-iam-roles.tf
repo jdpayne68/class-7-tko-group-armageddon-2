@@ -249,3 +249,27 @@ resource "aws_iam_role_policy_attachment" "scheduler_invoke_executive_dashboard"
   role       = aws_iam_role.scheduler_role.name
   policy_arn = aws_iam_policy.scheduler_invoke_executive_dashboard.arn
 }
+
+# -------------------------------------------------------------------------------
+# Lambda IAM Role - Compliance Agent
+# -------------------------------------------------------------------------------
+resource "aws_iam_role" "compliance_agent_role" {
+  name               = "${local.name_prefix}-compliance-agent-role-${local.name_suffix}"
+  assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
+  description        = "Execution role for the Compliance Agent Lambda"
+}
+
+resource "aws_iam_role_policy_attachment" "compliance_agent_basic_execution" {
+  role       = aws_iam_role.compliance_agent_role.name
+  policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
+resource "aws_iam_role_policy_attachment" "compliance_agent" {
+  role       = aws_iam_role.compliance_agent_role.name
+  policy_arn = aws_iam_policy.compliance_agent.arn
+}
+
+resource "aws_iam_role_policy_attachment" "compliance_agent_appsignals" {
+  role       = aws_iam_role.compliance_agent_role.name
+  policy_arn = aws_iam_policy.lambda_application_signals_execution_role.arn
+}

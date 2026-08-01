@@ -89,3 +89,25 @@ resource "aws_dynamodb_table" "waf_security_incidents" {
     enabled = true
   }
 }
+
+# -------------------------------------------------------------------------------
+# Compliance Evidence Table
+# -------------------------------------------------------------------------------
+resource "aws_dynamodb_table" "compliance_evidence" {
+  name         = local.compliance_evidence_table_name
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "evidence_id"
+
+  attribute {
+    name = "evidence_id"
+    type = "S"
+  }
+
+  server_side_encryption {
+    enabled = true
+  }
+
+  point_in_time_recovery {
+    enabled = true
+  }
+}
