@@ -57,7 +57,7 @@ resource "aws_lambda_function" "soar_response" {
     variables = {
       WAF_CORRELATION_FINDINGS_TABLE = var.waf_correlation_findings_table_name
       SECURITY_INCIDENTS_TABLE       = var.security_incidents_table_name
-      ALERTS_TOPIC_ARN               = var.sns_topic_arn
+      SNS_TOPIC_ARN               = var.sns_topic_arn
     }
   }
 
