@@ -171,3 +171,44 @@ resource "aws_iam_role_policy" "application" {
   role   = aws_iam_role.application.name
   policy = data.aws_iam_policy_document.application.json
 }
+
+# ============================================================
+# EventBridge Scheduler execution role
+# ============================================================
+
+data "aws_iam_policy_document" "scheduler_assume_role" {
+  statement {
+    sid     = "AllowEventBridgeSchedulerAssumeRole"
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["scheduler.amazonaws.com"]
+    }
+  }
+}
+
+resource "aws_iam_role" "scheduler" {
+  name        = "${local.name_prefix}-scheduler-role"
+  description = "Allows EventBridge Scheduler to invoke Lab 12 Lambda functions"
+
+  assume_role_policy = data.aws_iam_policy_document.scheduler_assume_role.json
+}
+
+data "aws_iam_policy_document" "scheduler" {
+  statement {
+    sid     = "InvokeScheduledLambdaFunctions"
+    actions = ["lambda:InvokeFunction"]
+
+    resources = [
+      aws_lambda_function.analyzer.arn,
+      aws_lambda_function.correlation.arn,
+    ]
+  }
+}
+
+resource "aws_iam_role_policy" "scheduler" {
+  name   = "${local.name_prefix}-scheduler-policy"
+  role   = aws_iam_role.scheduler.name
+  policy = data.aws_iam_policy_document.scheduler.json
+}

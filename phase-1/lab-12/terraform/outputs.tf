@@ -48,3 +48,13 @@ output "web_acl_arn" {
   description = "ARN of the AWS WAF Web ACL protecting API Gateway"
   value       = aws_wafv2_web_acl.application.arn
 }
+
+output "scheduler_schedule_group_name" {
+  description = "EventBridge Scheduler group containing the Lab 12 schedules"
+  value       = aws_scheduler_schedule_group.lab12.name
+}
+
+output "schedules_enabled" {
+  description = "Whether automatic analyzer and correlation schedules are enabled"
+  value       = var.enable_schedules
+}

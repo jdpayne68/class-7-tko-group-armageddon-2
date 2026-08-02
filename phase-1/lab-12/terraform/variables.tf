@@ -157,3 +157,41 @@ variable "bedrock_resource_arns" {
     error_message = "Provide at least one valid Bedrock resource ARN."
   }
 }
+
+variable "enable_schedules" {
+  description = "Enable automatic EventBridge Scheduler invocation of the analyzer and correlation Lambdas"
+  type        = bool
+  default     = false
+}
+
+variable "analyzer_schedule_expression" {
+  description = "EventBridge Scheduler rate or cron expression for the WAF analyzer Lambda"
+  type        = string
+  default     = "rate(5 minutes)"
+
+  validation {
+    condition = can(
+      regex(
+        "^(rate|cron)\\(.+\\)$",
+        trimspace(var.analyzer_schedule_expression)
+      )
+    )
+    error_message = "Use a valid EventBridge rate(...) or cron(...) expression."
+  }
+}
+
+variable "correlation_schedule_expression" {
+  description = "EventBridge Scheduler rate or cron expression for the threat-correlation Lambda"
+  type        = string
+  default     = "rate(1 hour)"
+
+  validation {
+    condition = can(
+      regex(
+        "^(rate|cron)\\(.+\\)$",
+        trimspace(var.correlation_schedule_expression)
+      )
+    )
+    error_message = "Use a valid EventBridge rate(...) or cron(...) expression."
+  }
+}
