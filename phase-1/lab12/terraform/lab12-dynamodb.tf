@@ -1,3 +1,7 @@
+##############################################################
+# DynamoDB Table
+##############################################################
+
 resource "aws_dynamodb_table" "waf_events" {
   name         = "waf-events"
   billing_mode = "PAY_PER_REQUEST"
@@ -14,6 +18,13 @@ resource "aws_dynamodb_table" "waf_events" {
 
   point_in_time_recovery {
     enabled = true
+  }
+
+  tags = {
+
+    Name        = "waf-events"
+    Environment = "prod"
+    Project     = var.project_name
   }
 }
 
@@ -34,6 +45,12 @@ resource "aws_dynamodb_table" "correlation_findings" {
   point_in_time_recovery {
     enabled = true
   }
+  tags = {
+
+    Name        = "waf-correlation-findings"
+    Environment = "prod"
+    Project     = var.project_name
+  }
 }
 
 resource "aws_dynamodb_table" "security_incidents" {
@@ -52,5 +69,12 @@ resource "aws_dynamodb_table" "security_incidents" {
 
   point_in_time_recovery {
     enabled = true
+  }
+
+  tags = {
+
+    Name        = "waf-security-incidents"
+    Environment = "prod"
+    Project     = var.project_name
   }
 }

@@ -143,3 +143,22 @@ rendered/*
 # ───────────────────────────────
 
 backup/
+# Terraform local configuration
+terraform.tfvars
+*.auto.tfvars
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfplan
+
+# Terraform local configuration
+terraform.tfvars
+*.auto.tfvars
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfplan
+phase-1/lab12/build/
+phase-1/lab12/lambda-packages/
+phase-1/lab12/layers/**/python/
+phase-1/lab12/terraform/terraform.tfvars

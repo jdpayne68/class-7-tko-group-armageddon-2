@@ -1,0 +1,57 @@
+# Terraform working directory
+.terraform/
+
+# Terraform state
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# Local Terraform configuration
+terraform.tfvars
+terraform.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Local backend configuration
+backend.hcl
+backend.tfvars
+
+# Generated Lambda packages
+*.zip
+build/
+dist/
+lambda-packages/
+
+# Generated Lambda layer content
+layers/**/python/
+python/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# AWS SAM and Serverless
+.aws-sam/
+.serverless/
+
+# IDE and operating-system files
+.DS_Store
+.idea/
+.vscode/
+*.swp
