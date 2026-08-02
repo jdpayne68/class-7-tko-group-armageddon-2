@@ -176,3 +176,9 @@ resource "aws_iam_role_policy" "executive_dashboard_policy" {
     ]
   })
 }
+
+
+resource "aws_iam_role_policy_attachment" "soar_basic_execution" {
+  role       = aws_iam_role.soar_response_role.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
