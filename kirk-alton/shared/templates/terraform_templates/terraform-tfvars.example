@@ -1,0 +1,5 @@
+aws_region          = "us-east-1"
+project_name        = "armageddon-2"
+bedrock_model_id    = "<enabled-bedrock-model-or-inference-profile-id>"
+report_bucket_name  = "<globally-unique-report-bucket-name>"
+notification_email  = "<optional-email-address>"

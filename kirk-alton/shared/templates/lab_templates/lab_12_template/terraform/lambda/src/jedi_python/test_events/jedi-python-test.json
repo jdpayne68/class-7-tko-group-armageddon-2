@@ -1,0 +1,8 @@
+{
+  "headers": {
+    "x-token-id": "test-token-123"
+  },
+  "queryStringParameters": {
+    "name": "Chewbacca"
+  }
+}
