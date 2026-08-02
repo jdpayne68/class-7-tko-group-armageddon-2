@@ -339,7 +339,7 @@ resource "aws_lambda_function" "executive_dashboard" {
 data "archive_file" "executive_dashboard_agent" {
   type        = "zip"
   source_dir  = "${path.module}/lambda/src/executive_dashboard_agent"
-  output_path = "${path.module}/lambda/executive_dashboard_agent.zip"
+  output_path = "${path.module}/lambda/src/executive_dashboard_agent.zip"
 }
 
 # -------------------------------------------------------------------------------
@@ -399,7 +399,7 @@ resource "aws_lambda_function" "compliance_agent" {
 data "archive_file" "compliance_agent" {
   type        = "zip"
   source_dir  = "${path.module}/lambda/src/compliance_agent"
-  output_path = "${path.module}/lambda/compliance_agent.zip"
+  output_path = "${path.module}/lambda/src/compliance_agent.zip"
 
   excludes = [
     "**/.DS_Store",

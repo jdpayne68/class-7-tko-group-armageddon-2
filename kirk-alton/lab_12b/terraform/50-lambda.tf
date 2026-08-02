@@ -332,5 +332,5 @@ resource "aws_lambda_function" "executive_dashboard" {
 data "archive_file" "executive_dashboard_agent" {
   type        = "zip"
   source_dir  = "${path.module}/lambda/src/executive_dashboard_agent"
-  output_path = "${path.module}/lambda/executive_dashboard_agent.zip"
+  output_path = "${path.module}/lambda/src/executive_dashboard_agent.zip"
 }

@@ -271,7 +271,7 @@ main() {
     log_info "Requirements: ${REQUIREMENTS[*]}"
 
     log_success "Layer is ready to deploy!"
-    log_reminder "Move layers/ folder to /lambda root directory if needed"
+    log_reminder "Run terraform apply from this lab's terraform directory to package and publish the layer."
 
 }
 

@@ -35,6 +35,14 @@ WHITE="\033[97m"
 BOLD="\033[1m"
 
 should_color() {
+  if [ "${NO_COLOR:-false}" = "true" ]; then
+    return 1
+  fi
+
+  if [ "${FORCE_COLOR:-false}" = "true" ]; then
+    return 0
+  fi
+
   [ -t 1 ] && [ "${TERM:-}" != "dumb" ]
 }
 
@@ -90,20 +98,44 @@ short_header() {
   printf "\n"
 }
 
-log_tag() {
+print_tag() {
   local tag="$1"
   local color="$2"
 
   color_text "$color" "[$tag]"
 }
 
-log_alert() { printf "%s %s\n" "$(log_tag ALERT "$RED")" "$*"; }
-log_info() { printf "%s %s\n" "$(log_tag INFO "$CYAN")" "$*"; }
-log_warn() { printf "%s %s\n" "$(log_tag WARN "$YELLOW")" "$*"; }
-log_step() { printf "\n%s %s\n" "$(log_tag STEP "$BLUE")" "$*"; }
+log_alert() {
+  print_tag ALERT "$RED"
+  printf " "
+  color_text "$RED" "$*"
+  printf "\n"
+}
+
+log_info() {
+  print_tag INFO "$CYAN"
+  printf " "
+  color_text "$WHITE" "$*"
+  printf "\n"
+}
+
+log_warn() {
+  print_tag WARN "$YELLOW"
+  printf " %s\n" "$*"
+}
+
+log_step() {
+  printf "\n"
+  print_tag STEP "$BLUE"
+  printf " "
+  color_text "$WHITE" "$*"
+  printf "\n"
+}
+
 log_debug() {
   if [ "${DEBUG:-false}" = "true" ]; then
-    printf "%s %s\n" "$(log_tag DEBUG "$YELLOW")" "$*"
+    print_tag DEBUG "$YELLOW"
+    printf " %s\n" "$*"
   fi
 }
 
@@ -244,7 +276,7 @@ select_level() {
 
   while :; do
     if [ -z "$level" ]; then
-      sub_header "Attack Level" "$MAGENTA"
+      sub_header "Attack Level" "$WHITE"
       printf "  1) Medium   - 27 events, basic XSS/SQLi/LFI mix\n"
       printf "  2) High     - 36 events, stronger encoded payloads\n"
       printf "  3) Critical - 45 events, evasive payload variants\n"
@@ -294,7 +326,7 @@ collect_inputs() {
 
   select_level
 
-  sub_header "Pacing" "$BLUE"
+  sub_header "Pacing" "$WHITE"
   if [ -n "${TEST_DURATION_MIN:-}" ]; then
     if ! require_number_range "$TEST_DURATION_MIN" 1 10; then
       log_error "TEST_DURATION_MIN must be a number from 1 to 10."
