@@ -27,6 +27,11 @@ resource "aws_dynamodb_table" "waf_correlation_findings" {
     type = "S"
   }
 
+# Enable DynamoDB Streams for the waf_correlation_findings table
+  stream_enabled   = true
+  stream_view_type = "NEW_IMAGE"
+
+# Enable TTL for the waf_correlation_findings table
   tags = var.common_tags
 }
 
