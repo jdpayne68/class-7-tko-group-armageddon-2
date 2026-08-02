@@ -23,3 +23,15 @@ data "archive_file" "correlation" {
     filename = "waf_threat_correlation_agent.py"
   }
 }
+
+data "archive_file" "application" {
+  type        = "zip"
+  output_path = "${path.module}/protected-api.zip"
+
+  source {
+    content = file(
+      "${path.module}/../src/protected_api_handler.py"
+    )
+    filename = "protected_api_handler.py"
+  }
+}

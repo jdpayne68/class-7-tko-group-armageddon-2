@@ -140,3 +140,34 @@ resource "aws_iam_role_policy" "correlation" {
   role   = aws_iam_role.correlation.name
   policy = data.aws_iam_policy_document.correlation.json
 }
+
+# ============================================================
+# Protected application execution role
+# ============================================================
+
+resource "aws_iam_role" "application" {
+  name               = "${local.name_prefix}-application-role"
+  description        = "Execution role for the Lab 12 protected API Lambda"
+  assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
+}
+
+data "aws_iam_policy_document" "application" {
+  statement {
+    sid = "WriteApplicationLogs"
+
+    actions = [
+      "logs:CreateLogStream",
+      "logs:PutLogEvents",
+    ]
+
+    resources = [
+      "${aws_cloudwatch_log_group.application.arn}:*",
+    ]
+  }
+}
+
+resource "aws_iam_role_policy" "application" {
+  name   = "${local.name_prefix}-application-policy"
+  role   = aws_iam_role.application.name
+  policy = data.aws_iam_policy_document.application.json
+}
