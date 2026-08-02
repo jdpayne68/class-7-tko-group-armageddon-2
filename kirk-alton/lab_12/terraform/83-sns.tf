@@ -3,9 +3,8 @@
 # ================================================================
 
 # -------------------------------------------------------------------------------
-# SNS Alerts and Subscriptions
+# SNS Alert and Subscription - Token Alerts
 # -------------------------------------------------------------------------------
-
 resource "aws_sns_topic" "token_alerts" {
   name              = "${local.name_prefix}-auth-alerts-${local.name_suffix}"
   kms_master_key_id = "alias/aws/sns"

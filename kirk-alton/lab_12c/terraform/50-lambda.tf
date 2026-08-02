@@ -8,7 +8,7 @@
 # Zip Archive - Jedi Python Lambda
 data "archive_file" "jedi_python" {
   type        = "zip"
-  source_file = "${path.module}/lambda/src/jedi_python.py"
+  source_dir  = "${path.module}/lambda/src/jedi_python"
   output_path = "${path.module}/lambda/src/jedi_python.zip"
 }
 
@@ -45,7 +45,7 @@ resource "aws_lambda_function" "jedi_python" {
 # Zip Archive - Sith Node Lambda
 data "archive_file" "sith_node" {
   type        = "zip"
-  source_file = "${path.module}/lambda/src/sith_node.js"
+  source_dir  = "${path.module}/lambda/src/sith_node"
   output_path = "${path.module}/lambda/src/sith_node.zip"
 }
 
@@ -82,7 +82,7 @@ resource "aws_lambda_function" "sith_node" {
 # Zip Archive - Unused Token Detector Lambda
 data "archive_file" "unused_token_detector" {
   type        = "zip"
-  source_file = "${path.module}/lambda/src/unused_token_detector.py"
+  source_dir  = "${path.module}/lambda/src/unused_token_detector"
   output_path = "${path.module}/lambda/src/unused_token_detector.zip"
 }
 
@@ -120,7 +120,7 @@ resource "aws_lambda_function" "unused_token_detector" {
 # Zip Archive - WAF Bedrock Analyzer Lambda
 data "archive_file" "waf_bedrock_analyzer" {
   type        = "zip"
-  source_file = "${path.module}/lambda/src/waf_bedrock_analyzer.py"
+  source_dir  = "${path.module}/lambda/src/waf_bedrock_analyzer"
   output_path = "${path.module}/lambda/src/waf_bedrock_analyzer.zip"
 }
 
@@ -171,7 +171,7 @@ resource "aws_lambda_function" "waf_bedrock_analyzer" {
 # Zip Archive - WAF Threat Correlation Agent Lambda
 data "archive_file" "waf_threat_correlation_agent" {
   type        = "zip"
-  source_file = "${path.module}/lambda/src/waf_threat_correlation_agent.py"
+  source_dir  = "${path.module}/lambda/src/waf_threat_correlation_agent"
   output_path = "${path.module}/lambda/src/waf_threat_correlation_agent.zip"
 }
 
@@ -221,7 +221,7 @@ resource "aws_lambda_function" "waf_threat_correlation_agent" {
 # Zip Archive - SOAR Response Agent Lambda
 data "archive_file" "soar_response_agent" {
   type        = "zip"
-  source_file = "${path.module}/lambda/src/soar_response_agent.py"
+  source_dir  = "${path.module}/lambda/src/soar_response_agent"
   output_path = "${path.module}/lambda/src/soar_response_agent.zip"
 }
 
@@ -338,7 +338,7 @@ resource "aws_lambda_function" "executive_dashboard" {
 
 data "archive_file" "executive_dashboard_agent" {
   type        = "zip"
-  source_file = "${path.module}/lambda/src/executive_dashboard_agent.py"
+  source_dir  = "${path.module}/lambda/src/executive_dashboard_agent"
   output_path = "${path.module}/lambda/executive_dashboard_agent.zip"
 }
 

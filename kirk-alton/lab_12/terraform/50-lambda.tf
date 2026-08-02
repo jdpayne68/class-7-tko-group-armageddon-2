@@ -3,12 +3,12 @@
 # ================================================================
 
 # -------------------------------------------------------------------------------
-# Core Route and Token Lambdas
+# Lambda Function - Jedi Python
 # -------------------------------------------------------------------------------
-
+# Zip Archive - Jedi Python Lambda
 data "archive_file" "jedi_python" {
   type        = "zip"
-  source_file = "${path.module}/lambda/src/jedi_python.py"
+  source_dir  = "${path.module}/lambda/src/jedi_python"
   output_path = "${path.module}/lambda/src/jedi_python.zip"
 }
 
@@ -38,9 +38,13 @@ resource "aws_lambda_function" "jedi_python" {
   ]
 }
 
+# -------------------------------------------------------------------------------
+# Lambda Function - Sith Node
+# -------------------------------------------------------------------------------
+# Zip Archive - Sith Node Lambda
 data "archive_file" "sith_node" {
   type        = "zip"
-  source_file = "${path.module}/lambda/src/sith_node.js"
+  source_dir  = "${path.module}/lambda/src/sith_node"
   output_path = "${path.module}/lambda/src/sith_node.zip"
 }
 
@@ -70,9 +74,13 @@ resource "aws_lambda_function" "sith_node" {
   ]
 }
 
+# -------------------------------------------------------------------------------
+# Lambda Function - Unused Token Detector
+# -------------------------------------------------------------------------------
+# Zip Archive - Unused Token Detector Lambda
 data "archive_file" "unused_token_detector" {
   type        = "zip"
-  source_file = "${path.module}/lambda/src/unused_token_detector.py"
+  source_dir  = "${path.module}/lambda/src/unused_token_detector"
   output_path = "${path.module}/lambda/src/unused_token_detector.zip"
 }
 
@@ -104,12 +112,12 @@ resource "aws_lambda_function" "unused_token_detector" {
 }
 
 # -------------------------------------------------------------------------------
-# WAF Analysis and Threat Correlation Lambdas
+# Lambda Function - WAF Bedrock Analyzer
 # -------------------------------------------------------------------------------
-
+# Zip Archive - WAF Bedrock Analyzer Lambda
 data "archive_file" "waf_bedrock_analyzer" {
   type        = "zip"
-  source_file = "${path.module}/lambda/src/waf_bedrock_analyzer.py"
+  source_dir  = "${path.module}/lambda/src/waf_bedrock_analyzer"
   output_path = "${path.module}/lambda/src/waf_bedrock_analyzer.zip"
 }
 
@@ -152,9 +160,13 @@ resource "aws_lambda_function" "waf_bedrock_analyzer" {
   ]
 }
 
+# -------------------------------------------------------------------------------
+# Lambda Function - WAF Threat Correlation Agent
+# -------------------------------------------------------------------------------
+# Zip Archive - WAF Threat Correlation Agent Lambda
 data "archive_file" "waf_threat_correlation_agent" {
   type        = "zip"
-  source_file = "${path.module}/lambda/src/waf_threat_correlation_agent.py"
+  source_dir  = "${path.module}/lambda/src/waf_threat_correlation_agent"
   output_path = "${path.module}/lambda/src/waf_threat_correlation_agent.zip"
 }
 

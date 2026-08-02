@@ -1,5 +1,5 @@
 # ================================================================
-# LAMBDA AND SERVICE ROLES
+# LAMBDA ROLES
 # ================================================================
 
 # -------------------------------------------------------------------------------
@@ -19,9 +19,8 @@ data "aws_iam_policy_document" "lambda_assume_role" {
 }
 
 # -------------------------------------------------------------------------------
-# Core Lambda Roles
+# Lambda IAM Role - Jedi Python
 # -------------------------------------------------------------------------------
-
 resource "aws_iam_role" "jedi_python_role" {
   name               = "${local.name_prefix}-lambda-python-role-${local.name_suffix}"
   assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
@@ -38,6 +37,9 @@ resource "aws_iam_role_policy_attachment" "jedi_python_token_update" {
   policy_arn = aws_iam_policy.route_lambda_token_update.arn
 }
 
+# -------------------------------------------------------------------------------
+# Lambda IAM Role - Sith Node
+# -------------------------------------------------------------------------------
 resource "aws_iam_role" "sith_node_role" {
   name               = "${local.name_prefix}-lambda-node-role-${local.name_suffix}"
   assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
@@ -54,6 +56,9 @@ resource "aws_iam_role_policy_attachment" "sith_node_token_update" {
   policy_arn = aws_iam_policy.route_lambda_token_update.arn
 }
 
+# -------------------------------------------------------------------------------
+# Lambda IAM Role - Unused Token Detector
+# -------------------------------------------------------------------------------
 resource "aws_iam_role" "unused_token_detector_role" {
   name               = "${local.name_prefix}-unused-token-detector-role-${local.name_suffix}"
   assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
@@ -70,6 +75,9 @@ resource "aws_iam_role_policy_attachment" "unused_token_detector_scan" {
   policy_arn = aws_iam_policy.token_detector_scan.arn
 }
 
+# -------------------------------------------------------------------------------
+# Lambda IAM Role - Bedrock Analyzer
+# -------------------------------------------------------------------------------
 resource "aws_iam_role" "waf_bedrock_analyzer_role" {
   name               = "${local.name_prefix}-waf-bedrock-analyzer-role-${local.name_suffix}"
   assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
@@ -91,6 +99,9 @@ resource "aws_iam_role_policy_attachment" "waf_bedrock_analyzer_appsignals" {
   policy_arn = aws_iam_policy.lambda_application_signals_execution_role.arn
 }
 
+# -------------------------------------------------------------------------------
+# Lambda IAM Role - WAF Threat Correlation Agent
+# -------------------------------------------------------------------------------
 resource "aws_iam_role" "waf_threat_correlation_agent_role" {
   name               = "${local.name_prefix}-waf-threat-correlation-agent-role-${local.name_suffix}"
   assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
@@ -112,10 +123,13 @@ resource "aws_iam_role_policy_attachment" "waf_threat_correlation_agent_appsigna
   policy_arn = aws_iam_policy.lambda_application_signals_execution_role.arn
 }
 
-# -------------------------------------------------------------------------------
-# API Gateway Roles
-# -------------------------------------------------------------------------------
+# ================================================================
+# API GATEWAY ROLES
+# ================================================================
 
+# -------------------------------------------------------------------------------
+# API Gateway IAM Role - API Gateway CloudWatch Logging
+# -------------------------------------------------------------------------------
 data "aws_iam_policy_document" "api_gateway_assume_role" {
   statement {
     effect  = "Allow"
@@ -139,10 +153,13 @@ resource "aws_iam_role_policy_attachment" "api_gateway_cloudwatch_logs" {
   policy_arn = "arn:${local.partition}:iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
 }
 
-# -------------------------------------------------------------------------------
-# EventBridge Scheduler Role
-# -------------------------------------------------------------------------------
+# ================================================================
+# EVENTBRIDGE ROLES
+# ================================================================
 
+# -------------------------------------------------------------------------------
+# EventBridge IAM Role - EventBridge Scheduler
+# -------------------------------------------------------------------------------
 data "aws_iam_policy_document" "scheduler_assume_role" {
   statement {
     effect  = "Allow"

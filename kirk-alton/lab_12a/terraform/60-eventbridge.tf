@@ -1,11 +1,15 @@
 # ================================================================
-# EVENTBRIDGE RULES AND SCHEDULES
+# EVENTBRIDGE RULES
 # ================================================================
 
 # -------------------------------------------------------------------------------
-# SOAR Response Event Rules
+# EventBridge Rule - Unused-Token Check
 # -------------------------------------------------------------------------------
+# EventBridge is best for event routing.
 
+# -------------------------------------------------------------------------------
+# EventBridge Rules - SOAR Response Agent - Medium and High Severity Findings
+# -------------------------------------------------------------------------------
 resource "aws_cloudwatch_event_rule" "soar_response_medium_high" {
   name        = "${local.name_prefix}-soar-response-medium-high-${local.name_suffix}"
   description = "Triggers SOAR response agent for MEDIUM and HIGH severity WAF findings"
@@ -24,6 +28,9 @@ resource "aws_cloudwatch_event_target" "soar_response_medium_high" {
   arn       = aws_lambda_function.soar_response_agent.arn
 }
 
+# -------------------------------------------------------------------------------
+# EventBridge Rules - SOAR Response Agent - Critical Severity Findings
+# -------------------------------------------------------------------------------
 resource "aws_cloudwatch_event_rule" "soar_response_critical" {
   name        = "${local.name_prefix}-soar-response-critical${local.name_suffix}"
   description = "Triggers SOAR response agent and critical alert for CRITICAL severity WAF findings"
@@ -48,10 +55,14 @@ resource "aws_cloudwatch_event_target" "soar_response_critical_sns" {
   arn       = aws_sns_topic.waf_security_incidents_alert.arn
 }
 
-# -------------------------------------------------------------------------------
-# Scheduled Detectors and Correlation
-# -------------------------------------------------------------------------------
+# ================================================================
+# EVENTBRIDGE SCHEDULER
+# ================================================================
 
+# -------------------------------------------------------------------------------
+# EventBridge Scheduler - Unused-Token Check
+# -------------------------------------------------------------------------------
+# EventBridge Scheduler is best for scheduled tasks (cron/rate).
 resource "aws_scheduler_schedule" "unused_token_check" {
   name        = "${local.name_prefix}-unused-token-check${local.name_suffix}"
   description = "Checks for unused Cognito tokens every 5 minutes"
@@ -72,6 +83,9 @@ resource "aws_scheduler_schedule" "unused_token_check" {
   depends_on = [aws_iam_role_policy_attachment.scheduler_invoke_detector]
 }
 
+# -------------------------------------------------------------------------------
+# EventBridge Scheduler - WAF Bedrock Analyzer
+# -------------------------------------------------------------------------------
 resource "aws_scheduler_schedule" "waf_bedrock_analyzer" {
   name        = "${local.name_prefix}-waf-bedrock-analyzer${local.name_suffix}"
   description = "Runs WAF log analysis every 5 minutes"
@@ -92,6 +106,9 @@ resource "aws_scheduler_schedule" "waf_bedrock_analyzer" {
   depends_on = [aws_iam_role_policy_attachment.scheduler_invoke_analyzer]
 }
 
+# -------------------------------------------------------------------------------
+# EventBridge Scheduler - Threat Correlation
+# -------------------------------------------------------------------------------
 resource "aws_scheduler_schedule" "threat_correlation" {
   name        = "${local.name_prefix}-threat-correlation${local.name_suffix}"
   description = "Runs WAF threat correlation every 5 minutes"

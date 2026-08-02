@@ -2,13 +2,8 @@
 # CLOUDWATCH METRICS AND ALARMS
 # ================================================================
 
-
-# ================================================================
-# CLOUDWATCH METRICS
-# ================================================================
-
 # -------------------------------------------------------------------------------
-# CloudWatch Metric - Unused Token Detector
+# Detector Log Metric
 # -------------------------------------------------------------------------------
 resource "aws_cloudwatch_log_metric_filter" "unused_token" {
   name           = "${local.name_prefix}-unused-token-filter-${local.name_suffix}"
@@ -23,10 +18,6 @@ resource "aws_cloudwatch_log_metric_filter" "unused_token" {
     unit          = "Count"
   }
 }
-
-# ================================================================
-# CLOUDWATCH ALARMS
-# ================================================================
 
 # -------------------------------------------------------------------------------
 # CloudWatch Alarm - Unused Token Alert

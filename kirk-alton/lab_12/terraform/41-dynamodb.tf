@@ -1,11 +1,10 @@
 # ================================================================
-# DYNAMODB TABLES
+# DYNAMODB TOKEN TRACKING
 # ================================================================
 
 # -------------------------------------------------------------------------------
-# DynamoDB Tables
+# Token Holocron Table
 # -------------------------------------------------------------------------------
-
 resource "aws_dynamodb_table" "token_holocron" {
   name         = local.token_table_name
   billing_mode = "PAY_PER_REQUEST"
@@ -25,6 +24,9 @@ resource "aws_dynamodb_table" "token_holocron" {
   }
 }
 
+# -------------------------------------------------------------------------------
+# Shield Generator Events Table
+# -------------------------------------------------------------------------------
 resource "aws_dynamodb_table" "shield_generator_events" {
   name         = local.waf_table_name
   billing_mode = "PAY_PER_REQUEST"
@@ -44,6 +46,9 @@ resource "aws_dynamodb_table" "shield_generator_events" {
   }
 }
 
+# -------------------------------------------------------------------------------
+# Correlation Findings Table
+# -------------------------------------------------------------------------------
 resource "aws_dynamodb_table" "waf_correlation_findings" {
   name         = local.waf_correlation_table_name
   billing_mode = "PAY_PER_REQUEST"

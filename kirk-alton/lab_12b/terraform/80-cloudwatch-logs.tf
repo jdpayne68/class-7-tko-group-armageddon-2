@@ -3,9 +3,8 @@
 # ================================================================
 
 # -------------------------------------------------------------------------------
-# CloudWatch Log Groups and Policies
+# Lambda Log Groups
 # -------------------------------------------------------------------------------
-
 resource "aws_cloudwatch_log_group" "jedi_python" {
   name              = "/aws/lambda/${local.jedi_function_name}"
   retention_in_days = var.log_retention_days
@@ -37,16 +36,29 @@ resource "aws_cloudwatch_log_group" "executive_dashboard" {
   retention_in_days = var.log_retention_days
 }
 
+# -------------------------------------------------------------------------------
+# API Gateway Access Log Group
+# -------------------------------------------------------------------------------
 resource "aws_cloudwatch_log_group" "api_gateway_access" {
   name              = "/aws/apigateway/${local.name_prefix}-api/prod/access"
   retention_in_days = var.log_retention_days
 }
+
+# -------------------------------------------------------------------------------
+# WAF Log Group
+# -------------------------------------------------------------------------------
+# WAF enforces naming prefix on CloudWatch logs.
+# You must choose a logging destination whose name begins with aws-waf-logs-
+# https://docs.aws.amazon.com/waf/latest/developerguide/logging-management-configure.html
 
 resource "aws_cloudwatch_log_group" "waf_logs" {
   name              = "aws-waf-logs-${local.name_prefix}-${local.name_suffix}/api-gateway-waf"
   retention_in_days = var.log_retention_days
 }
 
+# -------------------------------------------------------------------------------
+# Resource Policy for WAF Log Group
+# -------------------------------------------------------------------------------
 resource "aws_cloudwatch_log_resource_policy" "cloudwatch_waf_log_delivery" {
   policy_document = data.aws_iam_policy_document.cloudwatch_waf_log_delivery.json
   policy_name     = "${local.name_prefix}-cloudwatch-waf-log-delivery-${local.name_suffix}"
