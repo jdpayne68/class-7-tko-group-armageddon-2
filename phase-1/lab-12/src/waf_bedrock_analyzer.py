@@ -376,8 +376,14 @@ def lambda_handler(
 
             was_stored = save_to_dynamodb(waf_summary)
 
-            if was_stored:
-                stored_count += 1
+            if not was_stored:
+                print(
+                    "Skipping Bedrock analysis for duplicate event "
+                    f"{waf_summary['event_id']}."
+                )
+                continue
+
+            stored_count += 1
 
             ai_summary = call_bedrock(waf_summary)
             analyzed_count += 1
