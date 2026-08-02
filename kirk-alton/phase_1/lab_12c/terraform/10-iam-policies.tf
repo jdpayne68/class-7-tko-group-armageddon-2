@@ -64,7 +64,7 @@ data "aws_iam_policy_document" "waf_bedrock_analyzer" {
     actions = [
       "bedrock:InvokeModel"
     ]
-    resources = ["*"]
+    resources = local.bedrock_invoke_resources
   }
   # DynamoDB Permissions
   statement {
@@ -127,7 +127,7 @@ data "aws_iam_policy_document" "waf_threat_correlation_agent" {
     actions = [
       "bedrock:InvokeModel"
     ]
-    resources = ["*"]
+    resources = local.bedrock_invoke_resources
   }
 
   # EventBridge Permissions
@@ -188,7 +188,7 @@ data "aws_iam_policy_document" "soar_response_agent" {
     actions = [
       "bedrock:InvokeModel"
     ]
-    resources = ["*"]
+    resources = local.bedrock_invoke_resources
   }
 
   # SNS Publish Permissions
@@ -248,7 +248,7 @@ data "aws_iam_policy_document" "executive_dashboard" {
     actions = [
       "bedrock:InvokeModel"
     ]
-    resources = ["*"]
+    resources = local.bedrock_invoke_resources
   }
 }
 
@@ -345,7 +345,7 @@ data "aws_iam_policy_document" "compliance_agent" {
     actions = [
       "bedrock:InvokeModel"
     ]
-    resources = ["*"]
+    resources = local.bedrock_invoke_resources
   }
 }
 

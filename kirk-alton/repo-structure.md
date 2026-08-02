@@ -21,7 +21,7 @@
 │   │   ├── assets/
 │   │   ├── evidence/
 │   │   ├── sample_output/
-│   │   ├── env.example
+│   │   ├── .env.example
 │   │   ├── readme.md
 │   │   ├── requirements.txt
 │   │   └── terraform/
@@ -30,7 +30,7 @@
 │   │   ├── assets/
 │   │   ├── evidence/
 │   │   ├── sample_output/
-│   │   ├── env.example
+│   │   ├── .env.example
 │   │   ├── readme.md
 │   │   ├── requirements.txt
 │   │   └── terraform/
@@ -39,7 +39,7 @@
 │   │   ├── assets/
 │   │   ├── evidence/
 │   │   ├── sample_output/
-│   │   ├── env.example
+│   │   ├── .env.example
 │   │   ├── readme.md
 │   │   ├── requirements.txt
 │   │   └── terraform/
@@ -48,7 +48,7 @@
 │       ├── assets/
 │       ├── evidence/
 │       ├── sample_output/
-│       ├── env.example
+│       ├── .env.example
 │       ├── readme.md
 │       ├── requirements.txt
 │       └── terraform/
@@ -93,7 +93,7 @@ lab_12*/
 ├── assets/
 ├── evidence/
 ├── sample_output/
-├── env.example
+├── .env.example
 ├── readme.md
 ├── requirements.txt
 └── terraform/

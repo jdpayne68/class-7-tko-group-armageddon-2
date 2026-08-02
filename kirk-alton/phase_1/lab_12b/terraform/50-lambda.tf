@@ -174,7 +174,7 @@ resource "aws_lambda_function" "waf_bedrock_analyzer" {
     variables = {
       WAF_LOG_GROUP    = aws_cloudwatch_log_group.waf_logs.name
       DYNAMODB_TABLE   = aws_dynamodb_table.shield_generator_events.name
-      BEDROCK_MODEL_ID = "us.anthropic.claude-sonnet-4-6"
+      BEDROCK_MODEL_ID = local.bedrock_model_id
       LOOKBACK_MINUTES = 10
       MAX_LOG_EVENTS   = 25
     }
@@ -229,7 +229,7 @@ resource "aws_lambda_function" "waf_threat_correlation_agent" {
     variables = {
       WAF_EVENTS_TABLE           = aws_dynamodb_table.shield_generator_events.name
       CORRELATION_FINDINGS_TABLE = aws_dynamodb_table.waf_correlation_findings.name
-      BEDROCK_MODEL_ID           = "us.anthropic.claude-sonnet-4-6"
+      BEDROCK_MODEL_ID           = local.bedrock_model_id
       CORRELATION_WINDOW_MINUTES = "60"
       MINIMUM_EVENT_COUNT        = "3"
       MAX_EVENTS                 = "500"
@@ -283,7 +283,7 @@ resource "aws_lambda_function" "soar_response_agent" {
       CORRELATION_FINDINGS_TABLE = aws_dynamodb_table.waf_correlation_findings.name
       SECURITY_INCIDENTS_TABLE   = aws_dynamodb_table.waf_security_incidents.name
       SNS_TOPIC_ARN              = aws_sns_topic.waf_security_incidents_alert.arn
-      BEDROCK_MODEL_ID           = "us.anthropic.claude-sonnet-4-6"
+      BEDROCK_MODEL_ID           = local.bedrock_model_id
       ENABLE_BEDROCK             = "true"
     }
   }
@@ -354,7 +354,7 @@ resource "aws_lambda_function" "executive_dashboard" {
       CORRELATION_FINDINGS_TABLE = aws_dynamodb_table.waf_correlation_findings.name
       SECURITY_INCIDENTS_TABLE   = aws_dynamodb_table.waf_security_incidents.name
       REPORT_BUCKET              = aws_s3_bucket.executive_report_bucket.id
-      BEDROCK_MODEL_ID           = "us.anthropic.claude-sonnet-4-6"
+      BEDROCK_MODEL_ID           = local.bedrock_model_id
       REPORT_PERIOD_HOURS        = "24"
       ORGANIZATION_NAME          = "SEIR Cloud Security"
       REPORT_TITLE               = "Executive Security Report"

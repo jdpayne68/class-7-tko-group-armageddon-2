@@ -44,14 +44,23 @@ locals {
   required_auth_scope = "aws.cognito.signin.user.admin"
 
   # Bedrock Configuration
-  bedrock_model_id  = "anthropic.claude-3-haiku-20240307-v1:0"
-  bedrock_model_arn = "arn:aws:bedrock:${var.aws_region}::foundation-model/${local.bedrock_model_id}"
+  bedrock_model_id = "us.anthropic.claude-sonnet-4-6"
+  bedrock_model_arn = (
+    startswith(local.bedrock_model_id, "us.")
+    ? "arn:${local.partition}:bedrock:${local.region}:${local.account_id}:inference-profile/${local.bedrock_model_id}"
+    : "arn:${local.partition}:bedrock:${local.region}::foundation-model/${local.bedrock_model_id}"
+  )
+  bedrock_foundation_model_arn = "arn:${local.partition}:bedrock:*::foundation-model/*"
+  bedrock_invoke_resources = (
+    startswith(local.bedrock_model_id, "us.")
+    ? [local.bedrock_model_arn, local.bedrock_foundation_model_arn]
+    : [local.bedrock_model_arn]
+  )
 
   # Tags
   common_tags = {
     Application = local.app
     Environment = local.env
     ManagedBy   = "Terraform"
-    Lab         = "CognitoAuthFlowREST"
   }
 }
