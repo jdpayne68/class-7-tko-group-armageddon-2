@@ -19,8 +19,11 @@ __pycache__/
 *.py[cod]
 
 # Evidence generated during deployment
+# Track approved, numbered evidence artifacts only.
 evidence/*
 !evidence/.gitkeep
+!evidence/[0-9][0-9]-*.png
+!evidence/[0-9][0-9]-*.pdf
 
 # macOS metadata
 .DS_Store
