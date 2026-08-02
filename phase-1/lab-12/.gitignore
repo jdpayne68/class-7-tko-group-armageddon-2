@@ -1,0 +1,26 @@
+# Terraform working data
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+terraform.tfvars
+*.auto.tfvars
+.terraform.tfstate.lock.info
+crash.log
+crash.*.log
+
+# Generated Lambda packages
+build/
+lambda-packages/
+*.zip
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# Evidence generated during deployment
+evidence/*
+!evidence/.gitkeep
+
+# macOS metadata
+.DS_Store
