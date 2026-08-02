@@ -81,11 +81,11 @@ resource "aws_cloudwatch_event_rule" "finding_created_rule" {
   tags = var.common_tags
 }
 
-resource "aws_cloudwatch_event_target" "finding_created_target" {
-  rule      = aws_cloudwatch_event_rule.finding_created_rule.name
-  target_id = "soarResponseLambda"
-  arn       = var.soar_response_lambda_arn
-}
+# resource "aws_cloudwatch_event_target" "finding_created_target" {
+#   rule      = aws_cloudwatch_event_rule.finding_created_rule.name
+#   target_id = "soarResponseLambda"
+#   arn       = var.soar_response_lambda_arn
+# }
 
 
 # SOAR Response Target this will trigger the SOAR Response Lambda when a FindingCreated event is emitted by the Threat Correlation service.
@@ -93,7 +93,25 @@ resource "aws_cloudwatch_event_target" "finding_created_target" {
 resource "aws_cloudwatch_event_target" "soar_target" {
   rule      = aws_cloudwatch_event_rule.finding_created_rule.name
   target_id = "soar-response"
-  arn       = var.soar_response_arn
+  arn       = var.soar_response_lambda_arn
+
+  input_transformer {
+    input_paths = {
+      newImage  = "$.detail.newImage"
+      findingId = "$.detail.findingId"
+      summary   = "$.detail.summary"
+      timestamp = "$.detail.timestamp"
+    }
+
+    input_template = <<EOF
+{
+  "newImage": <newImage>,
+  "findingId": <findingId>,
+  "summary": <summary>,
+  "timestamp": <timestamp>
+}
+EOF
+  }
 }
 
 #EventBridge cannot invoke SOAR unless SOAR explicitly allows it.
