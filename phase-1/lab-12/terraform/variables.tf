@@ -141,3 +141,19 @@ variable "resource_prefix" {
     error_message = "resource_prefix must be 3–32 lowercase letters, numbers, or hyphens."
   }
 }
+
+variable "bedrock_resource_arns" {
+  description = "Bedrock inference-profile and foundation-model ARNs permitted by Lambda IAM policies"
+  type        = list(string)
+
+  validation {
+    condition = (
+      length(var.bedrock_resource_arns) > 0 &&
+      alltrue([
+        for arn in var.bedrock_resource_arns :
+        startswith(arn, "arn:")
+      ])
+    )
+    error_message = "Provide at least one valid Bedrock resource ARN."
+  }
+}
