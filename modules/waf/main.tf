@@ -64,3 +64,11 @@ resource "aws_wafv2_web_acl" "armageddon_waf" {
 
   tags = var.common_tags
 }
+
+
+# module "eventbridge" {
+#   source = "../eventbridge"
+
+#   soar_response_arn  = module.lambdas.soar_response_arn
+#   soar_response_name = module.lambdas.soar_response_name
+# }

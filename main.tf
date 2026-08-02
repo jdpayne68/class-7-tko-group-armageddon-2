@@ -89,8 +89,8 @@ module "lambdas" {
 
   # S3 bucket for reports
   reports_bucket_name = local.reports_bucket_name
-  sns_topic_arn = module.sns.alerts_topic_arn
-prefix        = local.prefix
+  sns_topic_arn       = module.sns.alerts_topic_arn
+  prefix              = local.prefix
 
 
   common_tags = local.common_tags
@@ -110,6 +110,9 @@ module "eventbridge" {
   waf_analyzer_schedule_expression        = var.waf_analyzer_schedule_expression
   threat_correlation_schedule_expression  = var.threat_correlation_schedule_expression
   executive_dashboard_schedule_expression = var.executive_dashboard_schedule_expression
+  soar_response_arn                       = module.lambdas.soar_response_arn
+  soar_response_name                      = module.lambdas.soar_response_name
+
 
   common_tags = local.common_tags
   prefix      = local.prefix

@@ -93,14 +93,15 @@ resource "aws_cloudwatch_event_target" "finding_created_target" {
 resource "aws_cloudwatch_event_target" "soar_target" {
   rule      = aws_cloudwatch_event_rule.finding_created_rule.name
   target_id = "soar-response"
-  arn       = aws_lambda_function.soar_response.arn
+  arn       = var.soar_response_arn
 }
 
 #EventBridge cannot invoke SOAR unless SOAR explicitly allows it.
 resource "aws_lambda_permission" "allow_eventbridge" {
   statement_id  = "AllowExecutionFromEventBridge"
   action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.soar_response.function_name
+ function_name = var.soar_response_name
+
   principal     = "events.amazonaws.com"
   source_arn    = aws_cloudwatch_event_rule.finding_created_rule.arn
 }

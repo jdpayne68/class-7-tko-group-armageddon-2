@@ -37,3 +37,11 @@ variable "threat_correlation_schedule_expression" {
 variable "executive_dashboard_schedule_expression" {
   type        = string
 }
+
+variable "soar_response_arn" {
+  type = string
+}
+
+variable "soar_response_name" {
+  type = string
+}
