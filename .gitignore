@@ -110,7 +110,7 @@ sandbox.ipynb
 
 # Terraform lock files
 # Note: some teams commit this to lock provider versions
-.terraform.lock.hcl
+# Commit Terraform dependency lock files for reproducible provider selections.
 
 # Local override files (used for local experimentation)
 override.tf
