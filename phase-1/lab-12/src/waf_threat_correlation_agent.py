@@ -166,6 +166,32 @@ def contains_sensitive_uri(uri: str) -> bool:
     )
 
 
+def to_dynamodb_compatible(value: Any) -> Any:
+    """Recursively convert Python values for DynamoDB."""
+    if isinstance(value, float):
+        return Decimal(str(value))
+
+    if isinstance(value, dict):
+        return {
+            key: to_dynamodb_compatible(item)
+            for key, item in value.items()
+        }
+
+    if isinstance(value, list):
+        return [
+            to_dynamodb_compatible(item)
+            for item in value
+        ]
+
+    if isinstance(value, tuple):
+        return [
+            to_dynamodb_compatible(item)
+            for item in value
+        ]
+
+    return value
+
+
 def calculate_risk_score(
     event_count: int,
     unique_uris: int,
@@ -719,7 +745,9 @@ def save_finding(
         "evidence": evidence_package,
     }
 
-    findings_table.put_item(Item=item)
+    findings_table.put_item(
+        Item=to_dynamodb_compatible(item)
+    )
 
     print(
         f"Saved correlation finding {finding_id} "
