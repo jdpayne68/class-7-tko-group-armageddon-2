@@ -97,6 +97,10 @@ resource "aws_iam_role_policy" "threat_correlation_policy" {
   })
 }
 
+
+data "aws_region" "current" {}
+data "aws_caller_identity" "current" {}
+
 resource "aws_iam_role_policy" "threat_correlation_eventbridge_policy" {
   name = "${var.prefix}-threat-correlation-eventbridge-policy"
   role = aws_iam_role.threat_correlation_role.id
@@ -106,15 +110,13 @@ resource "aws_iam_role_policy" "threat_correlation_eventbridge_policy" {
     Statement = [
       {
         Effect   = "Allow"
-        Action   = [
-          "events:PutEvents"
-        ]
-        Resource = "arn:aws:events:*:*:event-bus/default"
-
+        Action   = ["events:PutEvents"]
+        Resource = "arn:aws:events:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:event-bus/default"
       }
     ]
   })
 }
+
 
 
 # SOAR Response Lambda Role
