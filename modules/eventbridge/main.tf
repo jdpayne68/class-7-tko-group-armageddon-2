@@ -81,11 +81,6 @@ resource "aws_cloudwatch_event_rule" "finding_created_rule" {
   tags = var.common_tags
 }
 
-# resource "aws_cloudwatch_event_target" "finding_created_target" {
-#   rule      = aws_cloudwatch_event_rule.finding_created_rule.name
-#   target_id = "soarResponseLambda"
-#   arn       = var.soar_response_lambda_arn
-# }
 
 
 # SOAR Response Target this will trigger the SOAR Response Lambda when a FindingCreated event is emitted by the Threat Correlation service.

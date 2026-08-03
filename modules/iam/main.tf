@@ -97,6 +97,25 @@ resource "aws_iam_role_policy" "threat_correlation_policy" {
   })
 }
 
+resource "aws_iam_role_policy" "threat_correlation_eventbridge_policy" {
+  name = "${var.prefix}-threat-correlation-eventbridge-policy"
+  role = aws_iam_role.threat_correlation_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = [
+          "events:PutEvents"
+        ]
+        Resource = "arn:aws:events:*:*:event-bus/default"
+
+      }
+    ]
+  })
+}
+
 
 # SOAR Response Lambda Role
 # this role allows the SOAR Response Lambda function to read correlated findings, write security incidents, and send alerts to SNS
@@ -180,5 +199,11 @@ resource "aws_iam_role_policy" "executive_dashboard_policy" {
 
 resource "aws_iam_role_policy_attachment" "soar_basic_execution" {
   role       = aws_iam_role.soar_response_role.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
+
+resource "aws_iam_role_policy_attachment" "threat_correlation_logs" {
+  role       = aws_iam_role.threat_correlation_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
