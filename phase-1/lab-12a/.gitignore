@@ -1,0 +1,34 @@
+# Terraform working data
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+terraform.tfvars
+*.auto.tfvars
+.terraform.tfstate.lock.info
+crash.log
+crash.*.log
+
+# Generated Lambda packages
+build/
+lambda-packages/
+*.zip
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# Evidence generated during deployment
+# Track approved, numbered evidence artifacts only.
+evidence/*
+!evidence/.gitkeep
+!evidence/[0-9][0-9]-*.png
+!evidence/[0-9][0-9]-*.pdf
+
+# macOS metadata
+.DS_Store
+!evidence/README.md
+!evidence/redactions.example.json
+!evidence/09a-correlation-eventbridge-publication.png
+!evidence/09b-soar-incident-completion.png
+!terraform/terraform.tfvars.example
