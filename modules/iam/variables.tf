@@ -32,3 +32,15 @@ variable "reports_bucket_arn" {
   type        = string
   description = "ARN of the S3 bucket for executive reports"
 }
+variable "soar_role_arn" {
+  type        = string
+  description = "IAM role ARN for the SOAR reasoning Lambda"
+}
+
+variable "aws_region" {
+  type = string
+}
+
+variable "model_id" {
+  type = string
+}

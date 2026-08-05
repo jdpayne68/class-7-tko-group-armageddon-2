@@ -209,3 +209,27 @@ resource "aws_iam_role_policy_attachment" "threat_correlation_logs" {
   role       = aws_iam_role.threat_correlation_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
+
+
+resource "aws_iam_role" "soar_role" {
+  name = "${var.prefix}-soar-role"
+  assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
+}
+
+
+# resource "aws_lambda_function" "soar" {
+#   function_name = "${var.prefix}-soar"
+#   role          = var.soar_role_arn
+#   handler       = "handler.lambda_handler"
+#   runtime       = "python3.12"
+#   filename      = "${path.module}/code/soar.zip"
+
+#   environment {
+#     variables = {
+#       AWS_REGION = var.aws_region
+#       MODEL_ID   = var.model_id
+#     }
+#   }
+
+#   tags = var.common_tags
+# }

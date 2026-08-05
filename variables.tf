@@ -80,3 +80,12 @@ variable "executive_dashboard_schedule_expression" {
   type        = string
   default     = "rate(1 hour)"
 }
+# variable "soar_role_arn" {
+#   type = string
+# }
+
+variable "model_id" {
+  type = string
+  default = "anthropic.claude-3-sonnet-20240229-v1:0"
+
+}

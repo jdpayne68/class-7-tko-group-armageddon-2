@@ -20,3 +20,8 @@ output "soar_response_arn" {
 output "soar_response_name" {
   value = aws_lambda_function.soar_response.function_name
 }
+
+output "soar_lambda_arn" {
+  value = aws_lambda_function.soar_response.arn
+}
+

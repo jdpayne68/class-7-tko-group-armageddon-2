@@ -50,3 +50,18 @@ variable "sns_topic_arn" {
 variable "reports_bucket_name" {
   type        = string
 }
+variable "soar_role_arn" {
+  type        = string
+  description = "IAM role ARN for the SOAR reasoning Lambda"
+}
+
+variable "aws_region" {
+  type        = string
+  description = "AWS region for the SOAR reasoning Lambda"
+}
+
+variable "model_id" {
+  type        = string
+  description = "Model ID for the SOAR reasoning Lambda"
+  default     =  "anthropic.claude-3-sonnet-20240229-v1:0"
+}

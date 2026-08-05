@@ -45,3 +45,6 @@ variable "soar_response_arn" {
 variable "soar_response_name" {
   type = string
 }
+variable "soar_lambda_arn" {
+  type = string
+}

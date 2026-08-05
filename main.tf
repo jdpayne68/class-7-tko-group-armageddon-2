@@ -61,6 +61,10 @@ module "iam" {
   waf_events_table_arn               = module.dynamodb.waf_events_table_arn
   waf_correlation_findings_table_arn = module.dynamodb.waf_correlation_findings_table_arn
   security_incidents_table_arn       = module.dynamodb.security_incidents_table_arn
+  soar_role_arn                      = module.iam.soar_role_arn
+  aws_region                         = var.aws_region
+  model_id                           = var.model_id
+
 
   # Pass SNS topic ARN from SNS module to IAM module
   sns_topic_arn = module.sns.alerts_topic_arn
@@ -81,6 +85,9 @@ module "lambdas" {
   threat_correlation_role_arn  = module.iam.threat_correlation_role_arn
   soar_response_role_arn       = module.iam.soar_response_role_arn
   executive_dashboard_role_arn = module.iam.executive_dashboard_role_arn
+  soar_role_arn                = module.iam.soar_role_arn
+  aws_region                   = var.aws_region
+  model_id                     = var.model_id
 
   # DynamoDB table names
   waf_events_table_name               = local.waf_events_table_name
@@ -105,15 +112,23 @@ module "eventbridge" {
   threat_correlation_lambda_arn  = module.lambdas.threat_correlation_lambda_arn
   soar_response_lambda_arn       = module.lambdas.soar_response_lambda_arn
   executive_dashboard_lambda_arn = module.lambdas.executive_dashboard_lambda_arn
-
+  soar_lambda_arn                = module.lambdas.soar_lambda_arn
   # Schedule expressions
   waf_analyzer_schedule_expression        = var.waf_analyzer_schedule_expression
   threat_correlation_schedule_expression  = var.threat_correlation_schedule_expression
   executive_dashboard_schedule_expression = var.executive_dashboard_schedule_expression
   soar_response_arn                       = module.lambdas.soar_response_arn
   soar_response_name                      = module.lambdas.soar_response_name
-
+  # soar_lambda_arn                         = module.lambdas.soar_lambda_arn
 
   common_tags = local.common_tags
   prefix      = local.prefix
 }
+
+
+
+# module "lambdas" {
+#   source = "./modules/lambdas"
+
+#   soar_role_arn = module.iam.soar_role_arn
+# }

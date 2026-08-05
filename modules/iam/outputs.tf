@@ -13,3 +13,6 @@ output "soar_response_role_arn" {
 output "executive_dashboard_role_arn" {
   value = aws_iam_role.executive_dashboard_role.arn
 }
+output "soar_role_arn" {
+  value = aws_iam_role.soar_role.arn
+}

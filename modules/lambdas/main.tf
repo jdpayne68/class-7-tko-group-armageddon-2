@@ -41,6 +41,11 @@ resource "aws_lambda_function" "threat_correlation" {
   tags = var.common_tags
 }
 
+# module "soar" {
+#   source = "./code/soar"
+
+#   soar_lambda_arn = var.soar_lambda_arn
+# }
 
 # SOAR Response Lambda
 # what this does is respond to security incidents based on the correlated findings and send alerts via SNS
@@ -81,6 +86,25 @@ resource "aws_lambda_function" "executive_dashboard" {
     variables = {
       SECURITY_INCIDENTS_TABLE = var.security_incidents_table_name
       REPORTS_BUCKET           = var.reports_bucket_name
+    }
+  }
+
+  tags = var.common_tags
+}
+
+
+
+resource "aws_lambda_function" "soar" {
+  function_name = "${var.prefix}-soar"
+  role          = var.soar_role_arn
+  handler       = "handler.lambda_handler"
+  runtime       = "python3.12"
+  filename      = "${path.module}/code/soar.zip"
+
+  environment {
+    variables = {
+      # AWS_REGION = var.aws_region
+      MODEL_ID   = var.model_id
     }
   }
 
