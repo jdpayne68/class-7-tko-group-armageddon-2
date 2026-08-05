@@ -1,0 +1,25 @@
+If you get this error with a model with cross-region inference profile: the us. prefix means Bedrock can route your request to any of several underlying regions (typically us-east-1, us-east-2, us-west-2) — not necessarily whichever region your Lambda itself runs in. 
+
+When it does this the fix is widen the foundation-model resource to cover all regions the us. profile can use
+
+Hardcode Ex.
+{
+  "Effect" : "Allow"
+  "Action" : ["bedrock:InvokeModel"],
+  "Resource" : [
+    "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0",
+    "arn:aws:bedrock:us-east-2::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0",
+    "arn:aws:bedrock:us-west-2::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0",
+    "arn:aws:bedrock:${var.region}:${data.aws_caller_identity.current.account_id}:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0"
+  ]
+}
+
+Wildcard Ex.
+{
+  "Effect" : "Allow"
+  "Action" : ["bedrock:InvokeModel"],
+  "Resource" : [
+    "arn:aws:bedrock:*::foundation-model/anthropic.claude-haiku-4-5-202,51001-v1:0"
+    "arn:aws:bedrock:${var.region}:${data.aws_caller_identity.current.account_id}:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0"
+  ]
+}
