@@ -68,4 +68,6 @@ Based on the severity score, the Response Lambda runs the right playbook. High-s
 
 ---
 
+![RAPTOR architecture](assets/raptor_pipeline_architecture.png)
+
 *Last updated: August 5, 2026*
