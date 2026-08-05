@@ -4,7 +4,7 @@
 
 A serverless, AI-powered security automation pipeline built entirely on AWS. Deployed with a single `terraform apply`.
 
-Built by Marvin Evins, Chicago.
+Built by Marvin, Chicago.
 
 ---
 
@@ -49,6 +49,8 @@ This is a real, working system, not a demo. Every Lambda runs, events flow throu
 
 ## How It Works
 
+![RAPTOR architecture](raptor_pipeline_architecture.png)
+
 **1. Ingestion**
 A raw event comes in: a GuardDuty finding, a weird CloudTrail entry, whatever. The Ingestion Lambda validates it and reshapes it into one consistent format (source, event type, severity, affected resource, timestamp, details). Anything malformed gets rejected and logged, so bad data never makes it further down the pipeline.
 
@@ -67,7 +69,5 @@ The Response Lambda hands the incident to Amazon Bedrock (Claude), which returns
 Based on the severity score, the Response Lambda runs the right playbook. High-severity incidents get pushed to SNS for immediate alerting; lower-severity ones are logged and tracked without paging anyone.
 
 ---
-
-![RAPTOR architecture](assets/raptor_pipeline_architecture.png)
 
 *Last updated: August 5, 2026*
