@@ -4,25 +4,25 @@
 
 A serverless, AI-powered security automation pipeline built entirely on AWS. Deployed with a single `terraform apply`.
 
-Built by Marvin, Chicago.
+Built by Marvin Evins, Chicago.
 
 ---
 
 ## The Problem
 
-Cloud environments throw off thousands of security alerts a day — GuardDuty findings, weird CloudTrail activity, login spikes. Almost all of it is noise, but somewhere in there is the one alert that actually matters, and you can't tell which one until someone looks.
+Cloud environments throw off thousands of security alerts a day: GuardDuty findings, weird CloudTrail activity, login spikes. Almost all of it is noise, but somewhere in there is the one alert that actually matters, and you can't tell which one until someone looks.
 
-By the time a human gets through the queue, an attacker can already be moving laterally and pulling data out the door. That's not a staffing problem, it's a pipeline problem — manual triage just can't keep up with machine-speed alert volume.
+By the time a human gets through the queue, an attacker can already be moving laterally and pulling data out the door. That's not a staffing problem, it's a pipeline problem:  manual triage just can't keep up with machine-speed alert volume.
 
-Tools like Splunk SOAR and Palo Alto XSOAR solve this, but they're built (and priced) for big security teams with big budgets. Small teams and solo engineers usually don't have a real option — they're either ignoring the noise or overpaying for infrastructure they don't need.
+Tools like Splunk SOAR and Palo Alto XSOAR solve this, but they're built (and priced) for big security teams with big budgets. Small teams and solo engineers usually don't have a real option: they're either ignoring the noise or overpaying for infrastructure they don't need.
 
 **RAPTOR is the lightweight alternative:** a fully serverless SOAR pipeline that lives entirely in your own AWS account, costs only what you actually use, and deploys in one command.
 
 ## What It Does
 
-When a security event happens, RAPTOR detects it, triages it, uses AI to reason about it, and takes action — automatically, with no human in the loop.
+When a security event happens, RAPTOR detects it, triages it, uses AI to reason about it, and takes action, automatically, with no human in the loop.
 
-This is a real, working system — not a demo. Every Lambda runs, events flow through EventBridge, incidents are stored in DynamoDB, and Bedrock generates actual AI analysis on live event payloads.
+This is a real, working system: not a demo. Every Lambda runs, events flow through EventBridge, incidents are stored in DynamoDB, and Bedrock generates actual AI analysis on live event payloads.
 
 **Built with:**
 - AWS Lambda (3 functions)
