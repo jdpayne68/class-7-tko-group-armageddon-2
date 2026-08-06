@@ -4,15 +4,60 @@ Reusable Shields.io badge patterns for repository READMEs.
 
 This page is the front door for the badge system. Use the examples below as balanced starting points, then pull additional badges from the specialized libraries in [`library/`](library/).
 
-## Recommended Layout
+## Repository Badge Layout Standard
 
-Use blank-line groups instead of visible badge headings at the top of a README:
+Use the same five-row badge structure across repositories for consistency. Keep the visual README block clean by separating rows with blank lines instead of visible badge headings.
 
-1. Repository health
-2. Cloud providers where applicable
-3. Tooling and language requirements
-4. Platform, methodology, or project focus
-5. Documentation or community signals
+```text
+GitHub
+────────────────────────────────────────
+last commit | contributors | stars | forks | activity
+
+Cloud Providers                         ≤ 5
+────────────────────────────────────────
+AWS | Google Cloud | Azure | ...
+
+Languages & Tooling                     ≤ 5
+────────────────────────────────────────
+Terraform | Python | Node.js | Shell | ...
+
+Services & Skills                       ≤ 10
+────────────────────────────────────────
+Cognito | API Gateway | WAF | Lambda | ...
+
+Methodology & Documentation
+────────────────────────────────────────
+DevSecOps | Documentation | License
+```
+
+### Row Rules
+
+1. **GitHub**: Always first. Use canonical repository activity/status badges such as last commit, contributors, stars, forks, and commit activity.
+2. **Cloud Providers**: Use only providers directly demonstrated by the repository. Maximum 5.
+3. **Languages & Tooling**: Use the primary languages, runtimes, CLIs, IaC tools, and automation tooling needed to build, test, or operate the project. Maximum 5.
+4. **Services & Skills**: Use the services, frameworks, technologies, or professional skills that are essential to understanding what the repository demonstrates. Maximum 10.
+5. **Methodology & Documentation**: Always last. Include methodology, project focus, documentation type, and license when useful.
+
+> [!IMPORTANT]
+> Badges describe what the repository demonstrates, not every dependency, service, or tool that happens to appear somewhere in the codebase.
+
+### Adaptation Rules
+
+- Preserve row order even when a row is omitted.
+- Omit rows that do not apply instead of adding filler badges.
+- Prefer fewer, higher-signal badges over a complete inventory.
+- Keep service-specific badges focused on concepts users need to recognize immediately.
+- For libraries, use frameworks/APIs in the Services & Skills row.
+- For portfolios, use demonstrated professional capabilities in the Services & Skills row.
+- For docs-only repositories, use Documentation, Markdown, diagrams, architecture, or methodology badges instead of cloud/service badges.
+- For multi-cloud projects, keep provider badges broad and put specific services in the Services & Skills row only when they are central to the project.
+
+### Study References
+
+- [GitHub Docs: About READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
+- [Shields.io Docs](https://shields.io/docs)
+- [Shields.io Static Badges](https://shields.io/docs/static-badges)
+- [Shields.io Logos](https://shields.io/docs/logos)
 
 ## Badge Block Examples
 
