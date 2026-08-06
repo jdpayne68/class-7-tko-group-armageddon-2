@@ -1,4 +1,4 @@
-# Class 7.5 Armageddon - TKO Group Submission
+# Class 7 Armageddon - TKO Group Submission
 
 [![Last Commit](https://img.shields.io/github/last-commit/jdpayne68/class-7-tko-group-armageddon-2?logo=github&color=181717)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/commits/main)
 [![Contributors](https://img.shields.io/github/contributors/jdpayne68/class-7-tko-group-armageddon-2?logo=github&color=181717)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/graphs/contributors)
