@@ -1,15 +1,22 @@
 # Class 7.5 Armageddon - TKO Group Submission
 
 [![Last Commit](https://img.shields.io/github/last-commit/jdpayne68/class-7-tko-group-armageddon-2?logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/commits/main)
-[![Issues](https://img.shields.io/github/issues/jdpayne68/class-7-tko-group-armageddon-2?logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/jdpayne68/class-7-tko-group-armageddon-2?logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/pulls)
 [![Contributors](https://img.shields.io/github/contributors/jdpayne68/class-7-tko-group-armageddon-2?logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/graphs/contributors)
-[![Stars](https://img.shields.io/github/stars/jdpayne68/class-7-tko-group-armageddon-2?style=flat&logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/stargazers)
+[![Stars](https://img.shields.io/github/stars/jdpayne68/class-7-tko-group-armageddon-2?style=flat&logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2)
 [![Forks](https://img.shields.io/github/forks/jdpayne68/class-7-tko-group-armageddon-2?style=flat&logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/forks)
 [![Commit Activity](https://img.shields.io/github/commit-activity/m/jdpayne68/class-7-tko-group-armageddon-2?logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/graphs/commit-activity)
 
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-runtime-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Shell](https://img.shields.io/badge/Shell-scripts-4EAA25?logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/)
 [![Terraform](https://img.shields.io/badge/Terraform-%3E%3D%201.10-844FBA?logo=terraform&logoColor=white)](https://developer.hashicorp.com/terraform)
-[![AWS](https://img.shields.io/badge/AWS-serverless-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/serverless/)
+
+[![AWS Lambda](https://img.shields.io/badge/AWS%20Lambda-serverless-FF9900?logo=awslambda&logoColor=white)](https://aws.amazon.com/lambda/)
+[![AWS WAF](https://img.shields.io/badge/AWS%20WAF-web%20app%20firewall-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/waf/)
+[![Amazon Bedrock](https://img.shields.io/badge/Amazon%20Bedrock-AI%20agents-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/bedrock/)
+[![Amazon Cognito](https://img.shields.io/badge/Amazon%20Cognito-authentication-DD344C?logo=amazonaws&logoColor=white)](https://aws.amazon.com/cognito/)
+[![Amazon API Gateway](https://img.shields.io/badge/Amazon%20API%20Gateway-REST%20APIs-FF4F8B?logo=amazonaws&logoColor=white)](https://aws.amazon.com/api-gateway/)
+[![Amazon DynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-evidence%20tables-4053D6?logo=amazondynamodb&logoColor=white)](https://aws.amazon.com/dynamodb/)
 [![Documentation](https://img.shields.io/badge/docs-lab_guides-blue?logo=readthedocs&logoColor=white)](#documentation)
 
 Progressive series of production-oriented serverless AWS architectures showcasing secure application development, cloud security automation, advanced threat intelligence, security incident reporting, and AI-powered security response agents. Built with Cognito, API Gateway, Lambda, AWS WAF, Bedrock, DynamoDB, EventBridge, CloudWatch, SNS, and S3.
