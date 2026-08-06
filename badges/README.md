@@ -137,6 +137,12 @@ References:
 - [Shields.io Logos](https://shields.io/docs/logos)
 - [Shields.io Intro](https://shields.io/docs/)
 
+## Local Logo Assets
+
+Local SVG sources for badge logos live in [`assets/logos/`](assets/logos/). This includes custom provider logos, exported Simple Icons SVGs, and clearly marked fallback placeholders for logo slugs that do not currently resolve through Shields.io.
+
+Use [`assets/logos/logo-manifest.json`](assets/logos/logo-manifest.json) to trace a badge `logo=` parameter to its local SVG source.
+
 ## Badge Libraries
 
 Use the full libraries when a project needs a custom badge block:

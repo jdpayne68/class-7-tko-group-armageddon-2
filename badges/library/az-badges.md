@@ -16,7 +16,7 @@ Service entries: `203`
 ## Cloud Provider
 
 > [!IMPORTANT]
-> The provider logo is embedded as a custom `logo=data:image/svg+xml;base64,...` payload instead of a named Simple Icons slug. This avoids brittle AWS/Azure slug behavior in Shields.io. To revise it, edit the source SVG, base64 encode it, URL encode the `data:image/svg+xml;base64,...` value, and place it in the `logo=` query parameter. Shields documents this custom-logo pattern in its [Logos](https://shields.io/docs/logos) guide.
+> The provider logo is embedded as a custom `logo=data:image/svg+xml;base64,...` payload instead of a named Simple Icons slug. The editable source SVG is saved at [`../assets/logos/custom/azure.svg`](../assets/logos/custom/azure.svg). This avoids brittle AWS/Azure slug behavior in Shields.io. To revise it, edit the source SVG, base64 encode it, URL encode the `data:image/svg+xml;base64,...` value, and place it in the `logo=` query parameter. Shields documents this custom-logo pattern in its [Logos](https://shields.io/docs/logos) guide.
 
 > [!NOTE]
 > This badge uses Shields.io static badge syntax. See the Shields.io [Static Badges](https://shields.io/docs/static-badges) and [Logos](https://shields.io/docs/logos) documentation before revising badge structure, colors, or logo parameters.

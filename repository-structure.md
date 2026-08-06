@@ -145,6 +145,7 @@ Each lab stores operational helper scripts under `terraform/scripts/`.
 ```text
 badges/
 ├── README.md
+├── assets/logos/            # Local SVG sources, exported icons, and fallback placeholders
 ├── library/
 │   ├── aws-badges.md
 │   ├── az-badges.md
@@ -159,7 +160,7 @@ badges/
     └── gcp-services.md
 ```
 
-AWS and Azure provider badges use custom base64-encoded SVG logos in the Shields.io `logo=` parameter because named provider slugs have not rendered consistently. Google Cloud provider badges use the native `logo=googlecloud` slug. Individual cloud service badges remain simple provider-colored text badges unless a stable icon path is available. For maintenance guidance, see the badge library README and the Shields.io [Static Badges](https://shields.io/docs/static-badges) and [Logos](https://shields.io/docs/logos) documentation.
+AWS and Azure provider badges use custom base64-encoded SVG logos in the Shields.io `logo=` parameter because named provider slugs have not rendered consistently. Google Cloud provider badges use the native `logo=googlecloud` slug. Individual cloud service badges remain simple provider-colored text badges unless a stable icon path is available. For maintenance guidance, see the badge library README and the Shields.io [Static Badges](https://shields.io/docs/static-badges) and [Logos](https://shields.io/docs/logos) documentation. Local SVG sources for referenced badge logos are stored in `badges/assets/logos/` and indexed by `logo-manifest.json`.
 
 ## Internal Maintainer Area
 
