@@ -1,0 +1,87 @@
+This error is from the waf_threat_corelation_agent.py, its rejecting the float values and needs to go in as Decimal. 
+
+change decimal_to_native to native_to_decimal on all of the decimal_to_native in the code
+
+add this line into the code findings_table.put_item(Item=native_to_decimal(item)) 
+
+# ============================================================
+# Finding persistence
+# ============================================================
+
+def determine_overall_risk(
+    evidence_package: dict[str, Any],
+) -> tuple[int, str, str | None]:
+    """Determine the highest deterministic risk in the window."""
+
+    source_findings = evidence_package.get(
+        "top_source_ips",
+        [],
+    )
+
+    if not source_findings:
+        return 0, "LOW", None
+
+    highest = source_findings[0]
+
+    return (
+        highest.get("risk_score", 0),
+        highest.get("severity", "LOW"),
+        highest.get("source_ip"),
+    )
+
+
+def save_finding(
+    evidence_package: dict[str, Any],
+    bedrock_report: str,
+) -> str:
+    """Store the final correlation finding."""
+
+    finding_id = str(uuid.uuid4())
+    created_at = datetime.now(timezone.utc).isoformat()
+
+    risk_score, severity, primary_source_ip = (
+        determine_overall_risk(evidence_package)
+    )
+
+    targeted_uris = evidence_package.get(
+        "top_targeted_uris",
+        [],
+    )
+
+    primary_target = (
+        targeted_uris[0].get("uri")
+        if targeted_uris
+        else None
+    )
+
+    item = {
+        "finding_id": finding_id,
+        "created_at": created_at,
+        "window_start": evidence_package[
+            "analysis_window"
+        ]["start"],
+        "window_end": evidence_package[
+            "analysis_window"
+        ]["end"],
+        "severity": severity,
+        "risk_score": risk_score,
+        "event_count": evidence_package["summary"][
+            "total_events"
+        ],
+        "primary_source_ip": (
+            primary_source_ip or "NONE"
+        ),
+        "primary_target": primary_target or "NONE",
+        "status": "OPEN",
+        "bedrock_report": bedrock_report,
+        "evidence": evidence_package,
+    }
+
+    findings_table.put_item(Item=native_to_decimal(item))
+
+    print(
+        f"Saved correlation finding {finding_id} "
+        f"with severity {severity}."
+    )
+
+    return finding_id

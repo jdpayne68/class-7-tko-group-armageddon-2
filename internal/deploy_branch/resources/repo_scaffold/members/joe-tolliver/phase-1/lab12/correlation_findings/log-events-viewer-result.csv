@@ -1,0 +1,401 @@
+timestamp,message
+1785521794246,"],
+"
+1785521794246,"""first_seen"": ""2026-07-31T18:01:16.633000+00:00"",
+"
+1785521794246,"""last_seen"": ""2026-07-31T18:01:17.078000+00:00"",
+"
+1785521794246,"""active_span_minutes"": 0.02,
+"
+1785521794246,"""sensitive_uri_targeted"": false,
+"
+1785521794246,"""risk_score"": 55,
+"
+1785521794246,"""severity"": ""MEDIUM"",
+"
+1785521794246,"""score_reasons"": [
+"
+1785521794246,"""Source generated at least five WAF events."",
+"
+1785521794246,"""Source triggered at least two WAF rule types."",
+"
+1785521794246,"""All observed requests were blocked by WAF."",
+"
+1785521794246,"""At least five events occurred within five minutes.""
+"
+1785521794246,"]
+"
+1785521794246,"},
+"
+1785521794246,"{
+"
+1785521794246,"""source_ip"": ""104.23.190.238"",
+"
+1785521794246,"""event_count"": 5,
+"
+1785521794246,"""blocked_count"": 5,
+"
+1785521794246,"""allowed_count"": 0,
+"
+1785521794246,"""unique_uris"": 1,
+"
+1785521794246,"""uris"": [
+"
+1785521794246,"""/prod""
+"
+1785521794246,"],
+"
+1785521794246,"""unique_rules"": 2,
+"
+1785521794246,"""rules"": [
+"
+1785521794246,"""block_attacks"",
+"
+1785521794246,"""block_sql_inject""
+"
+1785521794246,"],
+"
+1785521794246,"""countries"": [
+"
+1785521794246,"""US""
+"
+1785521794246,"],
+"
+1785521794246,"""first_seen"": ""2026-07-31T18:01:16.772000+00:00"",
+"
+1785521794246,"""last_seen"": ""2026-07-31T18:01:17.030000+00:00"",
+"
+1785521794246,"""active_span_minutes"": 0.02,
+"
+1785521794246,"""sensitive_uri_targeted"": false,
+"
+1785521794246,"""risk_score"": 55,
+"
+1785521794246,"""severity"": ""MEDIUM"",
+"
+1785521794246,"""score_reasons"": [
+"
+1785521794246,"""Source generated at least five WAF events."",
+"
+1785521794246,"""Source triggered at least two WAF rule types."",
+"
+1785521794246,"""All observed requests were blocked by WAF."",
+"
+1785521794246,"""At least five events occurred within five minutes.""
+"
+1785521794246,"]
+"
+1785521794246,"},
+"
+1785521794246,"{
+"
+1785521794246,"""source_ip"": ""104.23.190.42"",
+"
+1785521794246,"""event_count"": 1,
+"
+1785521794246,"""blocked_count"": 1,
+"
+1785521794246,"""allowed_count"": 0,
+"
+1785521794246,"""unique_uris"": 1,
+"
+1785521794246,"""uris"": [
+"
+1785521794246,"""/prod""
+"
+1785521794246,"],
+"
+1785521794246,"""unique_rules"": 1,
+"
+1785521794246,"""rules"": [
+"
+1785521794246,"""block_sql_inject""
+"
+1785521794246,"],
+"
+1785521794246,"""countries"": [
+"
+1785521794246,"""US""
+"
+1785521794246,"],
+"
+1785521794246,"""first_seen"": ""2026-07-31T18:01:16.580000+00:00"",
+"
+1785521794246,"""last_seen"": ""2026-07-31T18:01:16.580000+00:00"",
+"
+1785521794246,"""active_span_minutes"": 0.0,
+"
+1785521794246,"""sensitive_uri_targeted"": false,
+"
+1785521794246,"""risk_score"": 5,
+"
+1785521794246,"""severity"": ""LOW"",
+"
+1785521794246,"""score_reasons"": [
+"
+1785521794246,"""All observed requests were blocked by WAF.""
+"
+1785521794246,"]
+"
+1785521794246,"},
+"
+1785521794246,"{
+"
+1785521794246,"""source_ip"": ""185.244.215.132"",
+"
+1785521794246,"""event_count"": 2,
+"
+1785521794246,"""blocked_count"": 0,
+"
+1785521794246,"""allowed_count"": 2,
+"
+1785521794246,"""unique_uris"": 1,
+"
+1785521794246,"""uris"": [
+"
+1785521794246,"""/prod/seir_analyze""
+"
+1785521794246,"],
+"
+1785521794246,"""unique_rules"": 1,
+"
+1785521794246,"""rules"": [
+"
+1785521794246,"""Default_Action""
+"
+1785521794246,"],
+"
+1785521794246,"""countries"": [
+"
+1785521794246,"""US""
+"
+1785521794246,"],
+"
+1785521794246,"""first_seen"": ""2026-07-31T17:48:15.175000+00:00"",
+"
+1785521794246,"""last_seen"": ""2026-07-31T17:49:40.760000+00:00"",
+"
+1785521794246,"""active_span_minutes"": 1.42,
+"
+1785521794246,"""sensitive_uri_targeted"": false,
+"
+1785521794246,"""risk_score"": 0,
+"
+1785521794246,"""severity"": ""LOW"",
+"
+1785521794246,"""score_reasons"": []
+"
+1785521794246,"}
+"
+1785521794246,"],
+"
+1785521794246,"""top_targeted_uris"": [
+"
+1785521794246,"{
+"
+1785521794246,"""uri"": ""/prod"",
+"
+1785521794246,"""event_count"": 66,
+"
+1785521794246,"""unique_source_ips"": 6,
+"
+1785521794246,"""most_common_rule"": ""block_sql_inject"",
+"
+1785521794246,"""sensitive_uri"": false
+"
+1785521794246,"},
+"
+1785521794246,"{
+"
+1785521794246,"""uri"": ""/prod/seir_analyze"",
+"
+1785521794246,"""event_count"": 2,
+"
+1785521794246,"""unique_source_ips"": 1,
+"
+1785521794246,"""most_common_rule"": ""Default_Action"",
+"
+1785521794246,"""sensitive_uri"": false
+"
+1785521794246,"}
+"
+1785521794246,"],
+"
+1785521794246,"""top_waf_rules"": [
+"
+1785521794246,"{
+"
+1785521794246,"""rule"": ""block_sql_inject"",
+"
+1785521794246,"""event_count"": 48,
+"
+1785521794246,"""unique_source_ips"": 6,
+"
+1785521794246,"""targeted_uris"": [
+"
+1785521794246,"""/prod""
+"
+1785521794246,"]
+"
+1785521794246,"},
+"
+1785521794246,"{
+"
+1785521794246,"""rule"": ""block_attacks"",
+"
+1785521794246,"""event_count"": 18,
+"
+1785521794246,"""unique_source_ips"": 5,
+"
+1785521794246,"""targeted_uris"": [
+"
+1785521794246,"""/prod""
+"
+1785521794246,"]
+"
+1785521794246,"},
+"
+1785521794246,"{
+"
+1785521794246,"""rule"": ""Default_Action"",
+"
+1785521794246,"""event_count"": 2,
+"
+1785521794246,"""unique_source_ips"": 1,
+"
+1785521794246,"""targeted_uris"": [
+"
+1785521794246,"""/prod/seir_analyze""
+"
+1785521794246,"]
+"
+1785521794246,"}
+"
+1785521794246,"],
+"
+1785521794246,"""deterministic_findings"": [
+"
+1785521794246,"""Highest-risk source IP 162.158.63.83 generated 23 event(s), targeted 1 URI(s), and triggered 2 rule type(s)."",
+"
+1785521794246,"""Most targeted URI was /prod with 66 event(s) from 6 unique source IP(s)."",
+"
+1785521794246,"""Most frequently triggered WAF rule was block_sql_inject with 48 event(s).""
+"
+1785521794246,"]
+"
+1785521794246,"}
+"
+1785521794246,'"==================================
+"
+1785521794246,"Invoking Bedrock correlation model us.anthropic.claude-haiku-4-5-20251001-v1:0.
+"
+1785521804426,"Bedrock correlation invocation successful.
+"
+1785521804426,'"===== BEDROCK THREAT REPORT =====
+"
+1785521804426,"# AWS WAF Threat Correlation Analysis
+"
+1785521804426,"**Threat Classification:**
+"
+1785521804426,"Coordinated SQL injection and application attack campaign with distributed source characteristics. The activity exhibits hallmarks of either a distributed attack orchestration or compromised infrastructure being leveraged for reconnaissance/exploitation attempts.
+"
+1785521804426,'"---
+"
+1785521804426,"**Overall Severity:**
+"
+1785521804426,"HIGH
+"
+1785521804426,"The 66 blocked events (97% block rate) targeting a single production endpoint, combined with multiple rule triggers and distributed source IPs, indicates a sustained threat with elevated operational concern despite successful WAF mitigation.
+"
+1785521804426,'"---
+"
+1785521804426,"**Confidence:**
+"
+1785521804426,"HIGH (for attack activity) / MEDIUM (for coordination hypothesis)
+"
+1785521804426,"**High confidence factors:**
+"
+1785521804426,'"- 100% block rate across 5 of 7 sources indicates WAF rules are functioning as designed
+"
+1785521804426,'"- Consistent rule triggers (block_sql_inject, block_attacks) across multiple sources
+"
+1785521804426,'"- All malicious activity concentrated on /prod endpoint
+"
+1785521804426,'"- Temporal clustering: two distinct attack waves (17:22 UTC and 18:01 UTC)
+"
+1785521804426,"**Medium confidence factors:**
+"
+1785521804426,'"- All 7 sources originate from US geolocation (observed fact only; does not confirm coordination)
+"
+1785521804426,'"- Cannot confirm whether sources are part of a botnet, compromised hosts, or independent actors
+"
+1785521804426,'"- No evidence of command-and-control communication patterns in WAF logs alone
+"
+1785521804426,'"---
+"
+1785521804426,"**Correlated Indicators:**
+"
+1785521804426,"**Observed Facts:**
+"
+1785521804426,'"- **Source IP Clustering:** 162.158.63.83 and 162.158.63.61 share identical /24 subnet prefix, triggered within 4 seconds of each other (17:22:53 UTC), both HIGH risk (65 score)
+"
+1785521804426,'"- **Rule Consistency:** All 6 malicious sources triggered both block_sql_inject and block_attacks rules (except 104.23.190.42 which triggered only block_sql_inject)
+"
+1785521804426,'"- **Temporal Patterns:** 
+"
+1785521804426,'"- Wave 1: 17:22:53–17:22:57 UTC (4-second window, 44 events from 2 sources)
+"
+1785521804426,'"- Wave 2: 18:01:16–18:01:17 UTC (1-second window, 22 events from 4 sources)
+"
+1785521804426,'"- **Endpoint Targeting:** 66 of 68 events targeted /prod; only 1 legitimate source (185.244.215.132) accessed /prod/seir_analyze with allowed requests
+"
+1785521804426,'"- **Attack Payload Indicators:** 48 events matched SQL injection signatures; 18 matched generic attack patterns
+"
+1785521804426,"**Possible Interpretations (not confirmed):**
+"
+1785521804426,'"- Subnet 162.158.63.0/24 may indicate shared infrastructure or coordinated deployment
+"
+1785521804426,'"- Rapid succession and identical rule triggers could suggest scripted/automated attack
+"
+1785521804426,'"- Two distinct temporal waves may indicate attack phases or separate threat actors
+"
+1785521804426,'"---
+"
+1785521804426,"**Likely Activity:**
+"
+1785521804426,"**Most Probable Scenario:**
+"
+1785521804426,"Reconnaissance and exploitation attempt against the /prod endpoint using SQL injection payloads. The WAF successfully blocked all malicious requests before application processing.
+"
+1785521804426,"**Attack Pattern Observations:**
+"
+1785521804426,"1. **Initial Reconnaissance (Wave 1, 17:22 UTC):** Two sources from adjacent IPs in 162.158.63.0/24 subnet rapidly probed /prod endpoint with SQL injection and generic attack payloads
+"
+1785521804426,"2. **Secondary Probing (Wave 2, 18:01 UTC):** Four sources from 104.23.190.0/24 subnet repeated similar attack pattern, suggesting either:
+"
+1785521804426,'"- Escalation by same actor using different infrastructure
+"
+1785521804426,'"- Independent actors using similar tooling/payloads
+"
+1785521804426,'"- Automated scanning infrastructure testing multiple source IPs
+"
+1785521804426,"3. **Benign Activity:** Single source (185.244.215.132) made 2 legitimate requests to /prod/seir_analyze endpoint with no rule violations
+"
+1785521804426,"**What Cannot Be Determined from WAF Logs:**
+"
+1785521804426,'"- Whether payloads contained zero-day exploits
+"
+1785521804426,'"- Whether any requests bypassed WAF rules
+"
+1785521804426,'"- Identity or motivation of threat actors
+"
+1785521804426,'"- Whether
+"
+1785521804426,'"=================================
+"
+1785521804427,"Unexpected correlation error: TypeError: Float types are not supported. Use Decimal types instead.
+"
+1785521804444,"END RequestId: d8408dfa-73d0-48db-9528-d9b7a48ba195
+"
+1785521804444,"REPORT RequestId: d8408dfa-73d0-48db-9528-d9b7a48ba195	Duration: 10362.58 ms	Billed Duration: 10791 ms	Memory Size: 256 MB	Max Memory Used: 99 MB	Init Duration: 427.95 ms	
+"

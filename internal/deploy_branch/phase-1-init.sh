@@ -7,9 +7,27 @@ IFS=$'\n\t'
 # ==================================================
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$SCRIPT_DIR"
-TEMPLATE_ROOT="${TEMPLATE_ROOT:-$REPO_ROOT/shared/templates/lab_templates}"
+
+if [ -d "$SCRIPT_DIR/resources/templates/lab_templates" ]; then
+  DEPLOY_ROOT="$SCRIPT_DIR"
+elif [ -d "$SCRIPT_DIR/internal/deploy_branch/resources/templates/lab_templates" ]; then
+  DEPLOY_ROOT="$SCRIPT_DIR/internal/deploy_branch"
+else
+  DEPLOY_ROOT="$SCRIPT_DIR"
+fi
+
+if [ "$(basename "$SCRIPT_DIR")" = "deploy_branch" ]   && [ "$(basename "$(dirname "$SCRIPT_DIR")")" = "internal" ]; then
+  DETECTED_REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+else
+  DETECTED_REPO_ROOT="$SCRIPT_DIR"
+fi
+
+REPO_ROOT="${REPO_ROOT:-$DETECTED_REPO_ROOT}"
+RESOURCE_ROOT="${RESOURCE_ROOT:-$DEPLOY_ROOT/resources}"
+SCAFFOLD_ROOT="${SCAFFOLD_ROOT:-$RESOURCE_ROOT/repo_scaffold}"
+TEMPLATE_ROOT="${TEMPLATE_ROOT:-$RESOURCE_ROOT/templates/lab_templates}"
 PHASE_ROOT="${PHASE_ROOT:-$REPO_ROOT/phase_1}"
+TARGET_OVERRIDDEN="false"
 
 MODE="interactive"
 ASSUME_YES="false"
@@ -161,13 +179,15 @@ Options:
   --yes                    Skip deploy confirmation prompts.
   --lab LAB                Limit to one lab. Can be used more than once.
                            Valid labs: lab_12, lab_12a, lab_12b, lab_12c
-  --templates PATH         Override template root.
+  --repo-root PATH         Override repository root for scaffold deployment.
+  --templates PATH         Override lab template root.
   --target PATH            Override phase_1 target root.
   -h, --help               Show this help.
 
 Safety:
   Existing files are never overwritten or deleted.
   Missing files and directories are created only during deploy.
+  Repository scaffold setup intentionally ignores RIKB/ and badges/.
 USAGE
 }
 
@@ -237,6 +257,17 @@ parse_args() {
         SELECTED_LABS+=("$2")
         shift 2
         ;;
+      --repo-root)
+        if [ "$#" -lt 2 ]; then
+          log_error "--repo-root requires a path."
+          exit 2
+        fi
+        REPO_ROOT="$2"
+        if [ "$TARGET_OVERRIDDEN" != "true" ]; then
+          PHASE_ROOT="$REPO_ROOT/phase_1"
+        fi
+        shift 2
+        ;;
       --templates)
         if [ "$#" -lt 2 ]; then
           log_error "--templates requires a path."
@@ -251,6 +282,7 @@ parse_args() {
           exit 2
         fi
         PHASE_ROOT="$2"
+        TARGET_OVERRIDDEN="true"
         shift 2
         ;;
       -h|--help)
@@ -288,10 +320,14 @@ is_ignored_file() {
 
   case "$path" in
     */.DS_Store) return 0 ;;
+    */.git/*) return 0 ;;
+    */RIKB/*|*/RIKB) return 0 ;;
+    */badges/*|*/badges) return 0 ;;
     *.zip) return 0 ;;
     *.tfstate|*.tfstate.*) return 0 ;;
     */tfplan|*/tfplan-*) return 0 ;;
     */.terraform/*) return 0 ;;
+    */terraform/lambda/layers/*|*/terraform/lambda/layers) return 0 ;;
     */__pycache__/*) return 0 ;;
     *.pyc) return 0 ;;
     *) return 1 ;;
@@ -305,18 +341,87 @@ require_template_root() {
   fi
 }
 
+has_scaffold_root() {
+  [ -d "$SCAFFOLD_ROOT" ]
+}
+
 show_configuration() {
   sub_header "Configuration" "$WHITE"
   log_info "Repository root: $REPO_ROOT"
+  log_info "Resource root:   $RESOURCE_ROOT"
+  log_info "Scaffold root:   $SCAFFOLD_ROOT"
   log_info "Template root:   $TEMPLATE_ROOT"
   log_info "Phase 1 target:  $PHASE_ROOT"
   log_info "Selected labs:   $(selected_labs | tr '\n' ' ')"
 }
 
 
+copy_template_directories() {
+  local source_root="$1"
+  local target_root="$2"
+  local source_dir rel target_dir_path
+
+  while IFS= read -r source_dir; do
+    rel="${source_dir#$source_root/}"
+    if [ "$rel" = "$source_dir" ]; then
+      continue
+    fi
+    if is_ignored_file "$source_dir"; then
+      continue
+    fi
+    target_dir_path="$target_root/$rel"
+    mkdir -p "$target_dir_path"
+  done < <(find "$source_root" -type d | sort)
+}
+
+
 # ==================================================
 # Check Logic
 # ==================================================
+
+check_scaffold() {
+  local source_file rel target_file
+  local total=0
+  local missing=0
+  local same=0
+  local changed=0
+
+  sub_header "Repository Scaffold" "$BLUE"
+
+  if ! has_scaffold_root; then
+    log_warn "No repository scaffold found: $SCAFFOLD_ROOT"
+    return 0
+  fi
+
+  while IFS= read -r source_file; do
+    if is_ignored_file "$source_file"; then
+      continue
+    fi
+
+    rel="${source_file#$SCAFFOLD_ROOT/}"
+    target_file="$REPO_ROOT/$rel"
+    total=$((total + 1))
+
+    if [ ! -e "$target_file" ]; then
+      missing=$((missing + 1))
+      continue
+    fi
+
+    if cmp -s "$source_file" "$target_file"; then
+      same=$((same + 1))
+    else
+      changed=$((changed + 1))
+      if [ "$SHOW_DIFFS" = "true" ]; then
+        log_warn "Differs: $rel"
+      fi
+    fi
+  done < <(find "$SCAFFOLD_ROOT" -type f | sort)
+
+  log_info "Scaffold files: $total"
+  log_info "Already matching: $same"
+  log_info "Missing from target: $missing"
+  log_info "Existing but different: $changed"
+}
 
 check_lab() {
   local lab="$1"
@@ -376,6 +481,7 @@ check_all() {
   header "PHASE 1 TEMPLATE CHECK" "$BOLD"
   require_template_root
   show_configuration
+  check_scaffold
 
   while IFS= read -r lab; do
     check_lab "$lab" || failed=1
@@ -392,16 +498,51 @@ check_all() {
 create_template_directories() {
   local template_dir="$1"
   local target_dir="$2"
-  local source_dir rel target_dir_path
 
-  while IFS= read -r source_dir; do
-    rel="${source_dir#$template_dir/}"
-    if [ "$rel" = "$source_dir" ]; then
+  copy_template_directories "$template_dir" "$target_dir"
+}
+
+deploy_scaffold() {
+  local source_file rel target_file
+  local copied=0
+  local skipped=0
+  local changed=0
+
+  sub_header "Repository Scaffold" "$BLUE"
+
+  if ! has_scaffold_root; then
+    log_warn "No repository scaffold found: $SCAFFOLD_ROOT"
+    return 0
+  fi
+
+  copy_template_directories "$SCAFFOLD_ROOT" "$REPO_ROOT"
+
+  while IFS= read -r source_file; do
+    if is_ignored_file "$source_file"; then
       continue
     fi
-    target_dir_path="$target_dir/$rel"
-    mkdir -p "$target_dir_path"
-  done < <(find "$template_dir" -type d | sort)
+
+    rel="${source_file#$SCAFFOLD_ROOT/}"
+    target_file="$REPO_ROOT/$rel"
+
+    if [ -e "$target_file" ]; then
+      skipped=$((skipped + 1))
+      if ! cmp -s "$source_file" "$target_file"; then
+        changed=$((changed + 1))
+        log_warn "Preserved existing different file: $rel"
+      fi
+      continue
+    fi
+
+    mkdir -p "$(dirname "$target_file")"
+    cp -p "$source_file" "$target_file"
+    copied=$((copied + 1))
+    log_success "Created $rel"
+  done < <(find "$SCAFFOLD_ROOT" -type f | sort)
+
+  log_info "Copied missing scaffold files: $copied"
+  log_info "Preserved existing scaffold files: $skipped"
+  log_info "Existing scaffold files with differences: $changed"
 }
 
 deploy_lab() {
@@ -469,6 +610,7 @@ deploy_all() {
   fi
 
   mkdir -p "$PHASE_ROOT"
+  deploy_scaffold
 
   while IFS= read -r lab; do
     deploy_lab "$lab" || failed=1
