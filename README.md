@@ -1,23 +1,26 @@
 # Class 7.5 Armageddon - TKO Group Submission
 
-[![Last Commit](https://img.shields.io/github/last-commit/jdpayne68/class-7-tko-group-armageddon-2?logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/commits/main)
-[![Contributors](https://img.shields.io/github/contributors/jdpayne68/class-7-tko-group-armageddon-2?logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/graphs/contributors)
-[![Stars](https://img.shields.io/github/stars/jdpayne68/class-7-tko-group-armageddon-2?style=flat&logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2)
-[![Forks](https://img.shields.io/github/forks/jdpayne68/class-7-tko-group-armageddon-2?style=flat&logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/forks)
-[![Commit Activity](https://img.shields.io/github/commit-activity/m/jdpayne68/class-7-tko-group-armageddon-2?logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/graphs/commit-activity)
+[![Last Commit](https://img.shields.io/github/last-commit/jdpayne68/class-7-tko-group-armageddon-2?logo=github&color=181717)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/commits/main)
+[![Contributors](https://img.shields.io/github/contributors/jdpayne68/class-7-tko-group-armageddon-2?logo=github&color=181717)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/jdpayne68/class-7-tko-group-armageddon-2?style=flat&logo=github&color=181717)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2)
+[![Forks](https://img.shields.io/github/forks/jdpayne68/class-7-tko-group-armageddon-2?style=flat&logo=github&color=181717)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/forks)
+[![Commit Activity](https://img.shields.io/github/commit-activity/m/jdpayne68/class-7-tko-group-armageddon-2?logo=github&color=181717)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/graphs/commit-activity)
 
-[![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-runtime-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Terraform](https://img.shields.io/badge/Terraform-%E2%89%A5%201.10-844FBA?logo=terraform&logoColor=white)](https://developer.hashicorp.com/terraform)
+[![Python](https://img.shields.io/badge/Python-%E2%89%A5%203.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A5%2024-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![Shell](https://img.shields.io/badge/Shell-scripts-4EAA25?logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/)
-[![Terraform](https://img.shields.io/badge/Terraform-%3E%3D%201.10-844FBA?logo=terraform&logoColor=white)](https://developer.hashicorp.com/terraform)
 
-[![AWS Lambda](https://img.shields.io/badge/AWS%20Lambda-serverless-FF9900?logo=awslambda&logoColor=white)](https://aws.amazon.com/lambda/)
-[![AWS WAF](https://img.shields.io/badge/AWS%20WAF-web%20app%20firewall-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/waf/)
-[![Amazon Bedrock](https://img.shields.io/badge/Amazon%20Bedrock-AI%20agents-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/bedrock/)
-[![Amazon Cognito](https://img.shields.io/badge/Amazon%20Cognito-authentication-DD344C?logo=amazonaws&logoColor=white)](https://aws.amazon.com/cognito/)
-[![Amazon API Gateway](https://img.shields.io/badge/Amazon%20API%20Gateway-REST%20APIs-FF4F8B?logo=amazonaws&logoColor=white)](https://aws.amazon.com/api-gateway/)
-[![Amazon DynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-evidence%20tables-4053D6?logo=amazondynamodb&logoColor=white)](https://aws.amazon.com/dynamodb/)
-[![Documentation](https://img.shields.io/badge/docs-lab_guides-blue?logo=readthedocs&logoColor=white)](#documentation)
+[![Amazon Cognito](https://img.shields.io/badge/Amazon%20Cognito-user%20authentication-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/cognito/)
+[![Amazon API Gateway](https://img.shields.io/badge/Amazon%20API%20Gateway-REST%20APIs-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/api-gateway/)
+[![AWS WAF](https://img.shields.io/badge/AWS%20WAF-managed%20rule%20groups-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/waf/)
+[![AWS Lambda](https://img.shields.io/badge/AWS%20Lambda-security%20agents-FF9900?logo=awslambda&logoColor=white)](https://aws.amazon.com/lambda/)
+[![Amazon EventBridge](https://img.shields.io/badge/Amazon%20EventBridge-event%20routing-FF9900?logo=amazoneventbridge&logoColor=white)](https://aws.amazon.com/eventbridge/)
+[![Amazon DynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-security%20evidence-FF9900?logo=amazondynamodb&logoColor=white)](https://aws.amazon.com/dynamodb/)
+[![Amazon Bedrock](https://img.shields.io/badge/Amazon%20Bedrock-foundation%20models-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/bedrock/)
+
+[![DevSecOps](https://img.shields.io/badge/DevSecOps-cloud%20security%20pipeline-0F766E?logo=securityscorecard&logoColor=white)](internal/CONTRIBUTING.md)
+[![Documentation](https://img.shields.io/badge/Documentation-lab%20guides-2563EB?logo=readthedocs&logoColor=white)](#documentation)
 
 Progressive series of production-oriented serverless AWS architectures showcasing secure application development, cloud security automation, advanced threat intelligence, security incident reporting, and AI-powered security response agents. Built with Cognito, API Gateway, Lambda, AWS WAF, Bedrock, DynamoDB, EventBridge, CloudWatch, SNS, and S3.
 
