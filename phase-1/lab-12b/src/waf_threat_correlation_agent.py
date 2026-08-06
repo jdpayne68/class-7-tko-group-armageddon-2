@@ -1,6 +1,6 @@
+import hashlib
 import json
 import os
-import uuid
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
@@ -699,13 +699,72 @@ def determine_overall_risk(
     )
 
 
+def create_finding_id(
+    events: list[dict[str, Any]],
+) -> str:
+    """
+    Create a deterministic ID from the correlated event set.
+
+    Reprocessing the same WAF event set produces the same finding
+    ID, preventing exact retries from creating duplicate findings
+    and duplicate SOAR incidents. Overlapping windows with changed
+    event sets intentionally produce different IDs.
+    """
+
+    event_keys: list[str] = []
+
+    for event in events:
+        event_id = event.get("event_id")
+
+        if event_id:
+            event_keys.append(str(event_id))
+            continue
+
+        fallback_key = {
+            "timestamp": event.get("timestamp"),
+            "source_ip": event.get("source_ip"),
+            "uri": event.get("uri"),
+            "rule": event.get("rule"),
+            "action": event.get("action"),
+        }
+
+        event_keys.append(
+            json.dumps(
+                fallback_key,
+                sort_keys=True,
+                separators=(",", ":"),
+                default=str,
+            )
+        )
+
+    fingerprint_material = json.dumps(
+        {
+            "fingerprint_version": 1,
+            "event_keys": sorted(event_keys),
+        },
+        sort_keys=True,
+        separators=(",", ":"),
+    )
+
+    fingerprint = hashlib.sha256(
+        fingerprint_material.encode("utf-8")
+    ).hexdigest()
+
+    return f"FINDING-{fingerprint}"
+
+
 def save_finding(
+    events: list[dict[str, Any]],
     evidence_package: dict[str, Any],
     bedrock_report: str,
-) -> str:
-    """Store the final correlation finding."""
+) -> tuple[str, bool]:
+    """
+    Store the final correlation finding.
 
-    finding_id = str(uuid.uuid4())
+    Returns the finding ID and whether a new item was created.
+    """
+
+    finding_id = create_finding_id(events)
     created_at = datetime.now(timezone.utc).isoformat()
 
     risk_score, severity, primary_source_ip = (
@@ -746,16 +805,36 @@ def save_finding(
         "evidence": evidence_package,
     }
 
-    findings_table.put_item(
-        Item=to_dynamodb_compatible(item)
-    )
+    try:
+        findings_table.put_item(
+            Item=to_dynamodb_compatible(item),
+            ConditionExpression=(
+                "attribute_not_exists(finding_id)"
+            ),
+        )
+
+    except ClientError as error:
+        error_code = error.response.get(
+            "Error",
+            {},
+        ).get("Code")
+
+        if error_code == "ConditionalCheckFailedException":
+            print(
+                f"Correlation finding {finding_id} already "
+                "exists. Skipping duplicate finding."
+            )
+
+            return finding_id, False
+
+        raise
 
     print(
         f"Saved correlation finding {finding_id} "
         f"with severity {severity}."
     )
 
-    return finding_id
+    return finding_id, True
 
 
 
@@ -897,7 +976,8 @@ def lambda_handler(
         print(bedrock_report)
         print("=================================\n")
 
-        finding_id = save_finding(
+        finding_id, finding_created = save_finding(
+            events=events,
             evidence_package=evidence_package,
             bedrock_report=bedrock_report,
         )
@@ -906,17 +986,30 @@ def lambda_handler(
             determine_overall_risk(evidence_package)
         )
 
-        eventbridge_event_id = publish_finding_event(
-            finding_id=finding_id,
-            severity=severity,
-            risk_score=risk_score,
-        )
+        eventbridge_event_id = None
+
+        if finding_created:
+            eventbridge_event_id = publish_finding_event(
+                finding_id=finding_id,
+                severity=severity,
+                risk_score=risk_score,
+            )
+        else:
+            print(
+                "Skipping EventBridge publication because "
+                "the correlation finding already exists."
+            )
 
         result = {
             "message": (
                 "Threat correlation completed."
+                if finding_created
+                else (
+                    "Threat correlation completed; "
+                    "duplicate finding skipped."
+                )
             ),
-            "finding_created": True,
+            "finding_created": finding_created,
             "finding_id": finding_id,
             "events_correlated": len(events),
             "severity": severity,
