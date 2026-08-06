@@ -1,0 +1,18 @@
+{
+  "defaults": {
+    "fill": "#000000",
+    "padding": 2
+  },
+  "files": {
+    "02-terraform-apply-complete.png": [
+      {
+        "x": 100,
+        "y": 50,
+        "width": 240,
+        "height": 28,
+        "note": "Example only. Replace with actual coordinates."
+      }
+    ],
+    "03-sns-subscriptions-confirmed.png": []
+  }
+}
