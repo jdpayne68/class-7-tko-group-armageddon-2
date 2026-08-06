@@ -143,6 +143,8 @@ terraform apply destroy.tfplan
 
 ## References
 
+### Project
+
 - [Repository README](../../README.md)
 - [Previous Lab: Compliance Reporting](../../phase_1/lab_12c/README.md)
 - [Security Intelligence Foundations](../../internal/security-intelligence-foundations.md)
@@ -151,3 +153,73 @@ terraform apply destroy.tfplan
 - [Threat Intelligence Agent Notes](terraform/lambda/src/threat_intelligence_agent/agent-changes.md)
 - [Threat Intelligence Event Contract](terraform/lambda/src/threat_intelligence_agent/event-contract.md)
 - [Provider Module Notes](terraform/lambda/src/threat_intelligence_agent/providers/providers-changes.md)
+
+### Terraform
+
+- [Terraform Documentation](https://developer.hashicorp.com/terraform/docs)
+- [Terraform Language Documentation](https://developer.hashicorp.com/terraform/language)
+- [Terraform CLI Documentation](https://developer.hashicorp.com/terraform/cli)
+- [Terraform CLI: `init`](https://developer.hashicorp.com/terraform/cli/commands/init)
+- [Terraform CLI: `validate`](https://developer.hashicorp.com/terraform/cli/commands/validate)
+- [Terraform CLI: `plan`](https://developer.hashicorp.com/terraform/cli/commands/plan)
+- [Terraform CLI: `apply`](https://developer.hashicorp.com/terraform/cli/commands/apply)
+- [Terraform AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [Terraform `aws_lambda_function`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function)
+- [Terraform `aws_lambda_layer_version`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_layer_version)
+- [Terraform `aws_cloudwatch_event_rule`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_rule)
+- [Terraform `aws_dynamodb_table`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table)
+- [Terraform `aws_s3_bucket`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)
+
+### AWS
+
+- [AWS CLI User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html)
+- [AWS IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
+- [IAM Security Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+- [AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
+- [AWS Lambda Python Handler Documentation](https://docs.aws.amazon.com/lambda/latest/dg/python-handler.html)
+- [AWS Lambda Python Deployment Packages](https://docs.aws.amazon.com/lambda/latest/dg/python-package.html)
+- [Working With Layers For Python Lambda Functions](https://docs.aws.amazon.com/lambda/latest/dg/python-layers.html)
+- [Amazon EventBridge User Guide](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html)
+- [Amazon EventBridge Event Patterns](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html)
+- [Amazon EventBridge `PutEvents` API](https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html)
+- [Amazon S3 User Guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+- [Amazon DynamoDB Developer Guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
+- [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
+- [AWS Secrets Manager User Guide](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html)
+- [AWS Systems Manager Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html)
+- [AWS Security Incident Response Guide](https://docs.aws.amazon.com/whitepapers/latest/aws-security-incident-response-guide/welcome.html)
+- [AWS Well-Architected Security Pillar](https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html)
+- [AWS Security Reference Architecture](https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/welcome.html)
+
+### Threat Intelligence And Vulnerability Intelligence
+
+- [AbuseIPDB APIv2 Documentation](https://docs.abuseipdb.com/)
+- [AbuseIPDB API Documentation](https://www.abuseipdb.com/api.html)
+- [AbuseIPDB Pricing And Plan Limits](https://www.abuseipdb.com/pricing)
+- [CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
+- [CISA KEV JSON Feed](https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json)
+- [CVE Program FAQ](https://www.cve.org/ResourcesSupport/FAQs)
+- [CVE Numbering Authorities](https://www.cve.org/programorganization/cnas)
+- [CVE Program Structure](https://www.cve.org/ProgramOrganization/Structure)
+- [CVE Services](https://www.cve.org/AllResources/CveServices)
+- [NVD Vulnerability Metrics](https://nvd.nist.gov/vuln-metrics)
+- [NVD CVE FAQ](https://nvd.nist.gov/general/FAQ-Sections/CVE-FAQs)
+- [FIRST CVSS v4.0 Specification](https://www.first.org/cvss/v4.0/specification-document)
+
+### MITRE ATT&CK
+
+- [ATT&CK Resources And Overview](https://attack.mitre.org/resources/)
+- [Enterprise Tactics](https://attack.mitre.org/tactics/)
+- [Enterprise Techniques](https://attack.mitre.org/techniques/)
+- [ATT&CK Data And Tools](https://attack.mitre.org/resources/attack-data-and-tools/)
+- [ATT&CK Data Model](https://mitre-attack.github.io/attack-data-model/)
+
+### Python, Reporting, Git, And GitHub
+
+- [Python Documentation](https://docs.python.org/3/)
+- [`venv` - Creation Of Virtual Environments](https://docs.python.org/3/library/venv.html)
+- [Python Packaging: Installing Packages Using Virtual Environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
+- [pip User Guide](https://pip.pypa.io/en/stable/user_guide/)
+- [ReportLab User Guide](https://docs.reportlab.com/reportlab/userguide/ch1_intro/)
+- [Git Documentation](https://git-scm.com/docs)
+- [GitHub Documentation: Repositories](https://docs.github.com/en/repositories)

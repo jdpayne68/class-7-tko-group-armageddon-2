@@ -140,6 +140,8 @@ terraform apply destroy.tfplan
 
 ## References
 
+### Project
+
 - [Repository README](../../README.md)
 - [Previous Lab: SOAR Response](../lab_12a/README.md)
 - [Next Lab: Compliance Reporting](../lab_12c/README.md)
@@ -149,3 +151,42 @@ terraform apply destroy.tfplan
 - [Security Design Notes](docs/security-design.md)
 - [Cleanup Notes](docs/cleanup.md)
 - [Troubleshooting Notes](docs/troubleshooting.md)
+
+### Terraform
+
+- [Terraform Documentation](https://developer.hashicorp.com/terraform/docs)
+- [Terraform Language Documentation](https://developer.hashicorp.com/terraform/language)
+- [Terraform CLI Documentation](https://developer.hashicorp.com/terraform/cli)
+- [Terraform CLI: `init`](https://developer.hashicorp.com/terraform/cli/commands/init)
+- [Terraform CLI: `validate`](https://developer.hashicorp.com/terraform/cli/commands/validate)
+- [Terraform CLI: `plan`](https://developer.hashicorp.com/terraform/cli/commands/plan)
+- [Terraform CLI: `apply`](https://developer.hashicorp.com/terraform/cli/commands/apply)
+- [Terraform AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [Terraform `aws_lambda_layer_version`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_layer_version)
+- [Terraform `archive_file` Data Source](https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file)
+
+### AWS
+
+- [AWS CLI User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html)
+- [AWS IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
+- [IAM Security Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+- [AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
+- [Working With Layers For Python Lambda Functions](https://docs.aws.amazon.com/lambda/latest/dg/python-layers.html)
+- [AWS Lambda Python Deployment Packages](https://docs.aws.amazon.com/lambda/latest/dg/python-package.html)
+- [Amazon S3 User Guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+- [Amazon DynamoDB Developer Guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
+- [Amazon EventBridge User Guide](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html)
+- [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
+- [AWS Security Incident Response Guide](https://docs.aws.amazon.com/whitepapers/latest/aws-security-incident-response-guide/welcome.html)
+- [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
+- [AWS Well-Architected Security Pillar](https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html)
+
+### Python, Reporting, Git, And GitHub
+
+- [Python Documentation](https://docs.python.org/3/)
+- [`venv` - Creation Of Virtual Environments](https://docs.python.org/3/library/venv.html)
+- [Python Packaging: Installing Packages Using Virtual Environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
+- [pip User Guide](https://pip.pypa.io/en/stable/user_guide/)
+- [ReportLab User Guide](https://docs.reportlab.com/reportlab/userguide/ch1_intro/)
+- [Git Documentation](https://git-scm.com/docs)
+- [GitHub Documentation: Repositories](https://docs.github.com/en/repositories)

@@ -131,6 +131,8 @@ terraform apply destroy.tfplan
 
 ## References
 
+### Project
+
 - [Repository README](../../README.md)
 - [Previous Lab: WAF Threat Correlation](../lab_12/README.md)
 - [Next Lab: Executive Reporting](../lab_12b/README.md)
@@ -139,3 +141,42 @@ terraform apply destroy.tfplan
 - [Security Design Notes](docs/security-design.md)
 - [Cleanup Notes](docs/cleanup.md)
 - [Troubleshooting Notes](docs/troubleshooting.md)
+
+### Terraform
+
+- [Terraform Documentation](https://developer.hashicorp.com/terraform/docs)
+- [Terraform Language Documentation](https://developer.hashicorp.com/terraform/language)
+- [Terraform CLI Documentation](https://developer.hashicorp.com/terraform/cli)
+- [Terraform CLI: `init`](https://developer.hashicorp.com/terraform/cli/commands/init)
+- [Terraform CLI: `validate`](https://developer.hashicorp.com/terraform/cli/commands/validate)
+- [Terraform CLI: `plan`](https://developer.hashicorp.com/terraform/cli/commands/plan)
+- [Terraform CLI: `apply`](https://developer.hashicorp.com/terraform/cli/commands/apply)
+- [Terraform AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [Terraform `aws_cloudwatch_event_rule`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_rule)
+- [Terraform `aws_sns_topic`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic)
+
+### AWS
+
+- [AWS CLI User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html)
+- [AWS IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
+- [IAM Security Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+- [Amazon EventBridge User Guide](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html)
+- [Amazon EventBridge Event Patterns](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html)
+- [Amazon SNS Developer Guide](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)
+- [AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
+- [AWS Lambda Python Handler Documentation](https://docs.aws.amazon.com/lambda/latest/dg/python-handler.html)
+- [Amazon DynamoDB Developer Guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
+- [AWS WAF Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html)
+- [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
+- [AWS Security Incident Response Guide](https://docs.aws.amazon.com/whitepapers/latest/aws-security-incident-response-guide/welcome.html)
+- [AWS Well-Architected Security Pillar](https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html)
+- [AWS Security Reference Architecture](https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/welcome.html)
+
+### Python, Git, And GitHub
+
+- [Python Documentation](https://docs.python.org/3/)
+- [`venv` - Creation Of Virtual Environments](https://docs.python.org/3/library/venv.html)
+- [Python Packaging: Installing Packages Using Virtual Environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
+- [pip User Guide](https://pip.pypa.io/en/stable/user_guide/)
+- [Git Documentation](https://git-scm.com/docs)
+- [GitHub Documentation: Repositories](https://docs.github.com/en/repositories)
