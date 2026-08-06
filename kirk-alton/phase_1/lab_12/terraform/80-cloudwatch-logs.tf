@@ -30,7 +30,7 @@ resource "aws_cloudwatch_log_group" "waf_bedrock_analyzer" {
 # API Gateway Access Log Group
 # -------------------------------------------------------------------------------
 resource "aws_cloudwatch_log_group" "api_gateway_access" {
-  name              = "/aws/apigateway/${local.name_prefix}-api/prod/access"
+  name              = "/aws/apigateway/${local.name_prefix}-api-${local.name_suffix}/prod/access"
   retention_in_days = var.log_retention_days
 }
 
