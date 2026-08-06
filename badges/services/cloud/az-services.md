@@ -1,6 +1,8 @@
-Based on the provided list, here are all the Azure services and their respective categories:
+# Microsoft Azure Services
 
-**AI + machine learning**
+***Current as of August 6, 2026.***
+
+## AI + machine learning
 *   Azure AI Bot Service
 *   Azure AI Search
 *   Azure Databricks
@@ -32,7 +34,7 @@ Based on the provided list, here are all the Azure services and their respective
 *   Azure Vision in Foundry Tools
 *   Foundry IQ
 
-**Analytics**
+## Analytics
 *   Azure Analysis Services
 *   Azure Data Explorer
 *   Azure Data Factory
@@ -53,7 +55,7 @@ Based on the provided list, here are all the Azure services and their respective
 *   Power BI
 *   Microsoft Planetary Computer Pro (Preview)
 
-**Compute**
+## Compute
 *   App Service
 *   Azure Compute Fleet (Preview)
 *   Azure Quantum
@@ -77,7 +79,7 @@ Based on the provided list, here are all the Azure services and their respective
 *   Azure Container Apps
 *   Nutanix Cloud Clusters
 
-**Containers**
+## Containers
 *   App Configuration
 *   Azure Kubernetes Service (AKS)
 *   Azure Kubernetes Fleet Manager
@@ -88,7 +90,7 @@ Based on the provided list, here are all the Azure services and their respective
 *   Azure Container Registry
 *   Azure Container Storage
 
-**Databases**
+## Databases
 *   Azure Cosmos DB
 *   Azure DocumentDB
 *   Azure SQL
@@ -105,7 +107,7 @@ Based on the provided list, here are all the Azure services and their respective
 *   Azure confidential ledger
 *   Azure HorizonDB (Preview)
 
-**Developer tools**
+## Developer tools
 *   App Configuration
 *   Azure DevOps
 *   Azure DevTest Labs
@@ -119,7 +121,7 @@ Based on the provided list, here are all the Azure services and their respective
 *   Microsoft Playwright Testing
 *   Artifact Signing
 
-**DevOps**
+## DevOps
 *   Azure Artifacts
 *   Azure Boards
 *   Azure DevOps
@@ -140,7 +142,7 @@ Based on the provided list, here are all the Azure services and their respective
 *   GitHub Copilot
 *   Azure SRE Agent (Preview)
 
-**Hybrid + multicloud**
+## Hybrid + multicloud
 *   Azure Arc
 *   Azure Database for PostgreSQL
 *   Azure DevOps
@@ -156,13 +158,13 @@ Based on the provided list, here are all the Azure services and their respective
 *   Azure Operator Nexus
 *   Azure Storage Mover
 
-**Identity**
+## Identity
 *   Microsoft Entra ID (formerly Azure AD)
 *   Microsoft Entra Domain Services
 *   Microsoft Entra Verified ID
 *   Microsoft Entra External ID
 
-**Integration**
+## Integration
 *   API Management
 *   Azure Health Data Services
 *   Event Grid
@@ -171,7 +173,7 @@ Based on the provided list, here are all the Azure services and their respective
 *   Azure Web PubSub
 *   Microsoft Energy Data Services
 
-**Internet of Things**
+## Internet of Things
 *   API Management
 *   Azure Cosmos DB
 *   Azure Digital Twins
@@ -189,7 +191,7 @@ Based on the provided list, here are all the Azure services and their respective
 *   Azure Sphere
 *   Event Grid
 
-**Management and governance**
+## Management and governance
 *   Azure Copilot
 *   Automation
 *   Azure Advisor
@@ -216,10 +218,10 @@ Based on the provided list, here are all the Azure services and their respective
 *   Update management center (Preview)
 *   Azure SRE Agent (Preview)
 
-**Media**
+## Media
 *   Content Delivery Network
 
-**Migration**
+## Migration
 *   Azure Database Migration Service
 *   Azure Migrate
 *   Azure Site Recovery
@@ -227,10 +229,10 @@ Based on the provided list, here are all the Azure services and their respective
 *   Azure Data Box
 *   Azure Storage Mover
 
-**Mixed reality**
+## Mixed reality## 
 *   Azure Digital Twins
 
-**Mobile**
+## Mobile
 *   API Management
 *   App Configuration
 *   App Service
@@ -240,7 +242,7 @@ Based on the provided list, here are all the Azure services and their respective
 *   Azure Communication Services
 *   Notification Hubs
 
-**Networking**
+## Networking
 *   Azure Application Gateway
 *   Azure Bastion
 *   Azure DDoS Protection
@@ -264,7 +266,7 @@ Based on the provided list, here are all the Azure services and their respective
 *   Azure VPN Gateway
 *   Azure Enclave
 
-**Security**
+## Security
 *   Azure App Configuration
 *   Azure Application Gateway
 *   Microsoft Entra Domain Services
@@ -285,7 +287,7 @@ Based on the provided list, here are all the Azure services and their respective
 *   Microsoft Azure Attestation
 *   Microsoft Security Copilot
 
-**Storage**
+## Storage
 *   Archive Storage
 *   Azure Managed Lustre
 *   Azure Backup
@@ -306,12 +308,12 @@ Based on the provided list, here are all the Azure services and their respective
 *   Azure Storage Discovery
 *   Azure Storage Mover
 
-**Virtual desktop infrastructure**
+## Virtual desktop infrastructure
 *   Azure Lab Services
 *   Azure Virtual Desktop
 *   Microsoft Dev Box
 
-**Web**
+## Web
 *   API Management
 *   App Configuration
 *   App Service
