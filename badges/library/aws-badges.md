@@ -8,6 +8,12 @@
 
 ## Cloud Provider
 
+> [!IMPORTANT]
+> The provider logo is embedded as a custom `logo=data:image/svg+xml;base64,...` payload instead of a named Simple Icons slug. This avoids brittle AWS/Azure slug behavior in Shields.io. To revise it, edit the source SVG, base64 encode it, URL encode the `data:image/svg+xml;base64,...` value, and place it in the `logo=` query parameter. Shields documents this custom-logo pattern in its [Logos](https://shields.io/docs/logos) guide.
+
+> [!NOTE]
+> This badge uses Shields.io static badge syntax. See the Shields.io [Static Badges](https://shields.io/docs/static-badges) and [Logos](https://shields.io/docs/logos) documentation before revising badge structure, colors, or logo parameters.
+
 ### Preview
 
 [![AWS](https://img.shields.io/badge/AWS-cloud%20provider-FF9900?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHRleHQgeD0iMiIgeT0iMTQiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjguNSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiPkFXUzwvdGV4dD48cGF0aCBkPSJNNCAxOGM0LjggMi43IDExLjIgMi43IDE2IDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTguNCAxNi44bDIgLjktMS41IDEuNiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg%3D%3D&logoColor=white)](https://aws.amazon.com/)

@@ -159,7 +159,7 @@ badges/
     └── gcp-services.md
 ```
 
-AWS and Azure badge entries intentionally avoid unstable provider logo parameters. Google Cloud badges retain `logo=googlecloud` where supported by Shields.io/Simple Icons.
+AWS and Azure provider badges use custom base64-encoded SVG logos in the Shields.io `logo=` parameter because named provider slugs have not rendered consistently. Google Cloud provider badges use the native `logo=googlecloud` slug. Individual cloud service badges remain simple provider-colored text badges unless a stable icon path is available. For maintenance guidance, see the badge library README and the Shields.io [Static Badges](https://shields.io/docs/static-badges) and [Logos](https://shields.io/docs/logos) documentation.
 
 ## Internal Maintainer Area
 

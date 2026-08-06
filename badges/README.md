@@ -119,6 +119,24 @@ AI application, agent, automation, or RAG repository.
 [![Documentation](https://img.shields.io/badge/Documentation-model%20guides-2563EB?logo=readthedocs&logoColor=white)](#documentation)
 ```
 
+
+## Provider Logo Maintenance
+
+AWS and Azure provider badges use custom base64-encoded SVG logos in the Shields.io `logo=` parameter because named provider slugs have not rendered consistently. Google Cloud uses the native `logo=googlecloud` slug because it currently renders reliably.
+
+When revising provider badges:
+
+1. Keep service badges simple unless an official icon path is stable.
+2. Prefer native Simple Icons slugs when Shields renders them reliably.
+3. Use a custom `logo=data:image/svg+xml;base64,...` payload only for provider badges that need reliable generic branding.
+4. Validate the final badge URL by checking that Shields returns SVG content containing an embedded `<image>` element.
+
+References:
+
+- [Shields.io Static Badges](https://shields.io/docs/static-badges)
+- [Shields.io Logos](https://shields.io/docs/logos)
+- [Shields.io Intro](https://shields.io/docs/)
+
 ## Badge Libraries
 
 Use the full libraries when a project needs a custom badge block:

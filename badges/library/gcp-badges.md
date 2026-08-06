@@ -15,6 +15,12 @@ Service entries: `315`
 
 ## Cloud Provider
 
+> [!NOTE]
+> The Google Cloud provider badge uses the native Shields.io/Simple Icons slug `logo=googlecloud`, which currently renders reliably. If that slug stops rendering, use the same custom `logo=data:image/svg+xml;base64,...` pattern documented in the Shields.io [Logos](https://shields.io/docs/logos) guide.
+
+> [!NOTE]
+> This badge uses Shields.io static badge syntax. See the Shields.io [Static Badges](https://shields.io/docs/static-badges) and [Logos](https://shields.io/docs/logos) documentation before revising badge structure, colors, or logo parameters.
+
 ### Preview
 
 [![Google Cloud](https://img.shields.io/badge/Google%20Cloud-cloud%20provider-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com/)
