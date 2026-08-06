@@ -6,18 +6,20 @@
 [![Forks](https://img.shields.io/github/forks/jdpayne68/class-7-tko-group-armageddon-2?style=flat&logo=github&color=181717)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/forks)
 [![Commit Activity](https://img.shields.io/github/commit-activity/m/jdpayne68/class-7-tko-group-armageddon-2?logo=github&color=181717)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/graphs/commit-activity)
 
+[![AWS](https://img.shields.io/badge/AWS-cloud%20provider-FF9900?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHRleHQgeD0iMiIgeT0iMTQiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjguNSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiPkFXUzwvdGV4dD48cGF0aCBkPSJNNCAxOGM0LjggMi43IDExLjIgMi43IDE2IDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTguNCAxNi44bDIgLjktMS41IDEuNiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg%3D%3D&logoColor=white)](https://aws.amazon.com/)
+
 [![Terraform](https://img.shields.io/badge/Terraform-%E2%89%A5%201.10-844FBA?logo=terraform&logoColor=white)](https://developer.hashicorp.com/terraform)
 [![Python](https://img.shields.io/badge/Python-%E2%89%A5%203.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A5%2024-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![Shell](https://img.shields.io/badge/Shell-scripts-4EAA25?logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/)
 
-[![Amazon Cognito](https://img.shields.io/badge/Amazon%20Cognito-user%20authentication-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/cognito/)
-[![Amazon API Gateway](https://img.shields.io/badge/Amazon%20API%20Gateway-REST%20APIs-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/api-gateway/)
-[![AWS WAF](https://img.shields.io/badge/AWS%20WAF-managed%20rule%20groups-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/waf/)
-[![AWS Lambda](https://img.shields.io/badge/AWS%20Lambda-security%20agents-FF9900?logo=awslambda&logoColor=white)](https://aws.amazon.com/lambda/)
-[![Amazon EventBridge](https://img.shields.io/badge/Amazon%20EventBridge-event%20routing-FF9900?logo=amazoneventbridge&logoColor=white)](https://aws.amazon.com/eventbridge/)
-[![Amazon DynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-security%20evidence-FF9900?logo=amazondynamodb&logoColor=white)](https://aws.amazon.com/dynamodb/)
-[![Amazon Bedrock](https://img.shields.io/badge/Amazon%20Bedrock-foundation%20models-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/bedrock/)
+[![Amazon Cognito](https://img.shields.io/badge/Amazon%20Cognito-user%20authentication-FF9900)](https://aws.amazon.com/cognito/)
+[![Amazon API Gateway](https://img.shields.io/badge/Amazon%20API%20Gateway-REST%20APIs-FF9900)](https://aws.amazon.com/api-gateway/)
+[![AWS WAF](https://img.shields.io/badge/AWS%20WAF-managed%20rule%20groups-FF9900)](https://aws.amazon.com/waf/)
+[![AWS Lambda](https://img.shields.io/badge/AWS%20Lambda-security%20agents-FF9900)](https://aws.amazon.com/lambda/)
+[![Amazon EventBridge](https://img.shields.io/badge/Amazon%20EventBridge-event%20routing-FF9900)](https://aws.amazon.com/eventbridge/)
+[![Amazon DynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-security%20evidence-FF9900)](https://aws.amazon.com/dynamodb/)
+[![Amazon Bedrock](https://img.shields.io/badge/Amazon%20Bedrock-foundation%20models-FF9900)](https://aws.amazon.com/bedrock/)
 
 [![DevSecOps](https://img.shields.io/badge/DevSecOps-cloud%20security%20pipeline-0F766E?logo=securityscorecard&logoColor=white)](internal/CONTRIBUTING.md)
 [![Documentation](https://img.shields.io/badge/Documentation-lab%20guides-2563EB?logo=readthedocs&logoColor=white)](#documentation)
@@ -83,12 +85,11 @@ Deployments use fixed file structures and numeric prefixes to identify infrastru
 | **10 - 19**: Identity & Access Management (IAM) | `10-iam-policies.tf`, `11-iam-roles.tf` |
 | **20 - 29**: Identity (User Management & Authentication) | `20-cognito.tf` |
 | **30 - 39**: API Management | `30-api-gateway.tf` |
-| **40 - 49**: Storage | `40-s3.tf` |
-| **50 - 59**: Data | `50-dynamodb.tf` |
-| **60 - 69**: Compute | `60-lambda.tf` |
-| **70 - 79**: Security | `70-waf.tf` |
-| **80 - 89**: Eventing | `80-eventbridge.tf`, `81-sns.tf` |
-| **90 - 99**: Observability | `90-cloudwatch-logs.tf`, `91-metrics-and-alarms.tf` |
+| **40 - 49**: Storage And Data | `40-s3.tf`, `41-dynamodb.tf` |
+| **50 - 59**: Compute | `50-lambda.tf` |
+| **60 - 69**: Eventing | `60-eventbridge.tf` |
+| **70 - 79**: Security | `72-waf.tf` |
+| **80 - 89**: Observability And Notifications | `80-cloudwatch-logs.tf`, `81-metrics-and-alarms.tf`, `83-sns.tf` |
 
 
 ## Lambda Agents

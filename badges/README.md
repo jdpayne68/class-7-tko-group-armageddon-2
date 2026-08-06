@@ -9,9 +9,10 @@ This page is the front door for the badge system. Use the examples below as bala
 Use blank-line groups instead of visible badge headings at the top of a README:
 
 1. Repository health
-2. Tooling and language requirements
-3. Platform, methodology, or project focus
-4. Documentation or community signals
+2. Cloud providers where applicable
+3. Tooling and language requirements
+4. Platform, methodology, or project focus
+5. Documentation or community signals
 
 ## Badge Block Examples
 
@@ -42,6 +43,8 @@ Security-focused engineering project with cloud, automation, and infrastructure 
 [![Contributors](https://img.shields.io/github/contributors/OWNER/REPO?logo=github&color=181717)](https://github.com/OWNER/REPO/graphs/contributors)
 [![Commit Activity](https://img.shields.io/github/commit-activity/m/OWNER/REPO?logo=github&color=181717)](https://github.com/OWNER/REPO/graphs/commit-activity)
 
+[![AWS](https://img.shields.io/badge/AWS-cloud%20provider-FF9900?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHRleHQgeD0iMiIgeT0iMTQiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjguNSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiPkFXUzwvdGV4dD48cGF0aCBkPSJNNCAxOGM0LjggMi43IDExLjIgMi43IDE2IDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTguNCAxNi44bDIgLjktMS41IDEuNiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg%3D%3D&logoColor=white)](https://aws.amazon.com/)
+
 [![Terraform](https://img.shields.io/badge/Terraform-%E2%89%A5%201.10-844FBA?logo=terraform&logoColor=white)](https://developer.hashicorp.com/terraform)
 [![Python](https://img.shields.io/badge/Python-%E2%89%A5%203.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Shell](https://img.shields.io/badge/Shell-scripts-4EAA25?logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/)
@@ -62,14 +65,18 @@ Cloud-native infrastructure or serverless project with provider service badges.
 [![Last Commit](https://img.shields.io/github/last-commit/OWNER/REPO?logo=github&color=181717)](https://github.com/OWNER/REPO/commits/main)
 [![Contributors](https://img.shields.io/github/contributors/OWNER/REPO?logo=github&color=181717)](https://github.com/OWNER/REPO/graphs/contributors)
 
+[![AWS](https://img.shields.io/badge/AWS-cloud%20provider-FF9900?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHRleHQgeD0iMiIgeT0iMTQiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjguNSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiPkFXUzwvdGV4dD48cGF0aCBkPSJNNCAxOGM0LjggMi43IDExLjIgMi43IDE2IDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTguNCAxNi44bDIgLjktMS41IDEuNiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg%3D%3D&logoColor=white)](https://aws.amazon.com/)
+[![Azure](https://img.shields.io/badge/Azure-cloud%20provider-0078D4?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMy40IDMgNS4yIDE3LjJoNy4zbC0xLjIgMy44TDE5IDkuMmgtNi41TDEzLjQgM3pNMTAuNyA3LjkgOCAxNGgzLjZsMi4zLTQuOGgyLjFsLTIuMyAzLjdoMi41bC0yLjQgMy43LjctMi4yaC0zLjhsLTEuMi0zLjd6Ii8%2BPC9zdmc%2B&logoColor=white)](https://azure.microsoft.com/)
+[![Google Cloud](https://img.shields.io/badge/Google%20Cloud-cloud%20provider-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com/)
+
 [![Terraform](https://img.shields.io/badge/Terraform-%E2%89%A5%201.10-844FBA?logo=terraform&logoColor=white)](https://developer.hashicorp.com/terraform)
 [![Python](https://img.shields.io/badge/Python-%E2%89%A5%203.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 
-[![AWS Lambda](https://img.shields.io/badge/AWS%20Lambda-Serverless%20Compute-FF9900?logo=awslambda&logoColor=white)](https://aws.amazon.com/lambda/)
-[![Amazon EventBridge](https://img.shields.io/badge/Amazon%20EventBridge-Event%20Routing-FF9900?logo=amazoneventbridge&logoColor=white)](https://aws.amazon.com/eventbridge/)
-[![Amazon DynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-NoSQL-FF9900?logo=amazondynamodb&logoColor=white)](https://aws.amazon.com/dynamodb/)
-[![Amazon S3](https://img.shields.io/badge/Amazon%20S3-Object%20Storage-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/s3/)
-[![Amazon CloudWatch](https://img.shields.io/badge/Amazon%20CloudWatch-Observability-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/cloudwatch/)
+[![AWS Lambda](https://img.shields.io/badge/AWS%20Lambda-Serverless%20Compute-FF9900)](https://aws.amazon.com/lambda/)
+[![Amazon EventBridge](https://img.shields.io/badge/Amazon%20EventBridge-Event%20Routing-FF9900)](https://aws.amazon.com/eventbridge/)
+[![Amazon DynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-NoSQL-FF9900)](https://aws.amazon.com/dynamodb/)
+[![Amazon S3](https://img.shields.io/badge/Amazon%20S3-Object%20Storage-FF9900)](https://aws.amazon.com/s3/)
+[![Amazon CloudWatch](https://img.shields.io/badge/Amazon%20CloudWatch-Observability-FF9900)](https://aws.amazon.com/cloudwatch/)
 
 [![Cloud Native](https://img.shields.io/badge/Cloud%20Native-methodology-0F766E?logo=kubernetes&logoColor=white)](https://www.cncf.io/)
 [![Documentation](https://img.shields.io/badge/Documentation-deployment%20guide-2563EB?logo=readthedocs&logoColor=white)](#documentation)

@@ -191,9 +191,9 @@
 
 ### Preview
 
-[![AWS - cloud platform](https://img.shields.io/badge/AWS-cloud%20platform-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/)
-[![Azure - cloud platform](https://img.shields.io/badge/Azure-cloud%20platform-0078D4?logo=microsoftazure&logoColor=white)](https://azure.microsoft.com/)
-[![Google Cloud - cloud platform](https://img.shields.io/badge/Google%20Cloud-cloud%20platform-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com/)
+[![AWS](https://img.shields.io/badge/AWS-cloud%20provider-FF9900?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHRleHQgeD0iMiIgeT0iMTQiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjguNSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiPkFXUzwvdGV4dD48cGF0aCBkPSJNNCAxOGM0LjggMi43IDExLjIgMi43IDE2IDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTguNCAxNi44bDIgLjktMS41IDEuNiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg%3D%3D&logoColor=white)](https://aws.amazon.com/)
+[![Azure](https://img.shields.io/badge/Azure-cloud%20provider-0078D4?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMy40IDMgNS4yIDE3LjJoNy4zbC0xLjIgMy44TDE5IDkuMmgtNi41TDEzLjQgM3pNMTAuNyA3LjkgOCAxNGgzLjZsMi4zLTQuOGgyLjFsLTIuMyAzLjdoMi41bC0yLjQgMy43LjctMi4yaC0zLjhsLTEuMi0zLjd6Ii8%2BPC9zdmc%2B&logoColor=white)](https://azure.microsoft.com/)
+[![Google Cloud](https://img.shields.io/badge/Google%20Cloud-cloud%20provider-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com/)
 [![Oracle Cloud - cloud platform](https://img.shields.io/badge/Oracle%20Cloud-cloud%20platform-F80000?logo=oracle&logoColor=white)](https://www.oracle.com/cloud/)
 [![DigitalOcean - cloud platform](https://img.shields.io/badge/DigitalOcean-cloud%20platform-0080FF?logo=digitalocean&logoColor=white)](https://www.digitalocean.com/)
 [![Linode - cloud platform](https://img.shields.io/badge/Linode-cloud%20platform-00A95C?logo=linode&logoColor=white)](https://www.linode.com/)
@@ -207,9 +207,9 @@
 ### Copy
 
 ```markdown
-[![AWS - cloud platform](https://img.shields.io/badge/AWS-cloud%20platform-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/)
-[![Azure - cloud platform](https://img.shields.io/badge/Azure-cloud%20platform-0078D4?logo=microsoftazure&logoColor=white)](https://azure.microsoft.com/)
-[![Google Cloud - cloud platform](https://img.shields.io/badge/Google%20Cloud-cloud%20platform-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com/)
+[![AWS](https://img.shields.io/badge/AWS-cloud%20provider-FF9900?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHRleHQgeD0iMiIgeT0iMTQiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjguNSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiPkFXUzwvdGV4dD48cGF0aCBkPSJNNCAxOGM0LjggMi43IDExLjIgMi43IDE2IDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTguNCAxNi44bDIgLjktMS41IDEuNiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg%3D%3D&logoColor=white)](https://aws.amazon.com/)
+[![Azure](https://img.shields.io/badge/Azure-cloud%20provider-0078D4?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMy40IDMgNS4yIDE3LjJoNy4zbC0xLjIgMy44TDE5IDkuMmgtNi41TDEzLjQgM3pNMTAuNyA3LjkgOCAxNGgzLjZsMi4zLTQuOGgyLjFsLTIuMyAzLjdoMi41bC0yLjQgMy43LjctMi4yaC0zLjhsLTEuMi0zLjd6Ii8%2BPC9zdmc%2B&logoColor=white)](https://azure.microsoft.com/)
+[![Google Cloud](https://img.shields.io/badge/Google%20Cloud-cloud%20provider-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com/)
 [![Oracle Cloud - cloud platform](https://img.shields.io/badge/Oracle%20Cloud-cloud%20platform-F80000?logo=oracle&logoColor=white)](https://www.oracle.com/cloud/)
 [![DigitalOcean - cloud platform](https://img.shields.io/badge/DigitalOcean-cloud%20platform-0080FF?logo=digitalocean&logoColor=white)](https://www.digitalocean.com/)
 [![Linode - cloud platform](https://img.shields.io/badge/Linode-cloud%20platform-00A95C?logo=linode&logoColor=white)](https://www.linode.com/)
@@ -369,7 +369,7 @@
 [![Redis - in memory database](https://img.shields.io/badge/Redis-in%20memory%20database-DC382D?logo=redis&logoColor=white)](https://redis.io/)
 [![Cassandra - wide column database](https://img.shields.io/badge/Cassandra-wide%20column%20database-1287B1?logo=apachecassandra&logoColor=white)](https://cassandra.apache.org/)
 [![Couchbase - NoSQL database](https://img.shields.io/badge/Couchbase-NoSQL%20database-EA2328?logo=couchbase&logoColor=white)](https://www.couchbase.com/)
-[![DynamoDB - NoSQL database](https://img.shields.io/badge/DynamoDB-NoSQL%20database-4053D6?logo=amazondynamodb&logoColor=white)](https://aws.amazon.com/dynamodb/)
+[![DynamoDB - NoSQL database](https://img.shields.io/badge/DynamoDB-NoSQL%20database-4053D6)](https://aws.amazon.com/dynamodb/)
 [![Elasticsearch - search engine](https://img.shields.io/badge/Elasticsearch-search%20engine-005571?logo=elasticsearch&logoColor=white)](https://www.elastic.co/elasticsearch)
 [![OpenSearch - search analytics](https://img.shields.io/badge/OpenSearch-search%20analytics-005EB8?logo=opensearch&logoColor=white)](https://opensearch.org/)
 [![Neo4j - graph database](https://img.shields.io/badge/Neo4j-graph%20database-4581C3?logo=neo4j&logoColor=white)](https://neo4j.com/)
@@ -390,7 +390,7 @@
 [![Redis - in memory database](https://img.shields.io/badge/Redis-in%20memory%20database-DC382D?logo=redis&logoColor=white)](https://redis.io/)
 [![Cassandra - wide column database](https://img.shields.io/badge/Cassandra-wide%20column%20database-1287B1?logo=apachecassandra&logoColor=white)](https://cassandra.apache.org/)
 [![Couchbase - NoSQL database](https://img.shields.io/badge/Couchbase-NoSQL%20database-EA2328?logo=couchbase&logoColor=white)](https://www.couchbase.com/)
-[![DynamoDB - NoSQL database](https://img.shields.io/badge/DynamoDB-NoSQL%20database-4053D6?logo=amazondynamodb&logoColor=white)](https://aws.amazon.com/dynamodb/)
+[![DynamoDB - NoSQL database](https://img.shields.io/badge/DynamoDB-NoSQL%20database-4053D6)](https://aws.amazon.com/dynamodb/)
 [![Elasticsearch - search engine](https://img.shields.io/badge/Elasticsearch-search%20engine-005571?logo=elasticsearch&logoColor=white)](https://www.elastic.co/elasticsearch)
 [![OpenSearch - search analytics](https://img.shields.io/badge/OpenSearch-search%20analytics-005EB8?logo=opensearch&logoColor=white)](https://opensearch.org/)
 [![Neo4j - graph database](https://img.shields.io/badge/Neo4j-graph%20database-4581C3?logo=neo4j&logoColor=white)](https://neo4j.com/)
@@ -667,10 +667,10 @@
 [![RabbitMQ - message broker](https://img.shields.io/badge/RabbitMQ-message%20broker-FF6600?logo=rabbitmq&logoColor=white)](https://www.rabbitmq.com/)
 [![NATS - messaging](https://img.shields.io/badge/NATS-messaging-27AAE1?logo=natsdotio&logoColor=white)](https://nats.io/)
 [![Redis Streams - event streams](https://img.shields.io/badge/Redis%20Streams-event%20streams-DC382D?logo=redis&logoColor=white)](https://redis.io/docs/latest/develop/data-types/streams/)
-[![Amazon SQS - queues](https://img.shields.io/badge/Amazon%20SQS-queues-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/sqs/)
-[![Amazon SNS - notifications](https://img.shields.io/badge/Amazon%20SNS-notifications-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/sns/)
+[![Amazon SQS - queues](https://img.shields.io/badge/Amazon%20SQS-queues-FF9900)](https://aws.amazon.com/sqs/)
+[![Amazon SNS - notifications](https://img.shields.io/badge/Amazon%20SNS-notifications-FF9900)](https://aws.amazon.com/sns/)
 [![Google Pub/Sub - messaging](https://img.shields.io/badge/Google%20Pub%2FSub-messaging-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com/pubsub)
-[![Azure Service Bus - messaging](https://img.shields.io/badge/Azure%20Service%20Bus-messaging-0078D4?logo=microsoftazure&logoColor=white)](https://azure.microsoft.com/products/service-bus)
+[![Azure Service Bus - messaging](https://img.shields.io/badge/Azure%20Service%20Bus-messaging-0078D4)](https://azure.microsoft.com/products/service-bus)
 
 ### Copy
 
@@ -679,10 +679,10 @@
 [![RabbitMQ - message broker](https://img.shields.io/badge/RabbitMQ-message%20broker-FF6600?logo=rabbitmq&logoColor=white)](https://www.rabbitmq.com/)
 [![NATS - messaging](https://img.shields.io/badge/NATS-messaging-27AAE1?logo=natsdotio&logoColor=white)](https://nats.io/)
 [![Redis Streams - event streams](https://img.shields.io/badge/Redis%20Streams-event%20streams-DC382D?logo=redis&logoColor=white)](https://redis.io/docs/latest/develop/data-types/streams/)
-[![Amazon SQS - queues](https://img.shields.io/badge/Amazon%20SQS-queues-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/sqs/)
-[![Amazon SNS - notifications](https://img.shields.io/badge/Amazon%20SNS-notifications-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/sns/)
+[![Amazon SQS - queues](https://img.shields.io/badge/Amazon%20SQS-queues-FF9900)](https://aws.amazon.com/sqs/)
+[![Amazon SNS - notifications](https://img.shields.io/badge/Amazon%20SNS-notifications-FF9900)](https://aws.amazon.com/sns/)
 [![Google Pub/Sub - messaging](https://img.shields.io/badge/Google%20Pub%2FSub-messaging-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com/pubsub)
-[![Azure Service Bus - messaging](https://img.shields.io/badge/Azure%20Service%20Bus-messaging-0078D4?logo=microsoftazure&logoColor=white)](https://azure.microsoft.com/products/service-bus)
+[![Azure Service Bus - messaging](https://img.shields.io/badge/Azure%20Service%20Bus-messaging-0078D4)](https://azure.microsoft.com/products/service-bus)
 ```
 
 ---
@@ -697,8 +697,8 @@
 [![Auth0 - identity platform](https://img.shields.io/badge/Auth0-identity%20platform-EB5424?logo=auth0&logoColor=white)](https://auth0.com/)
 [![Okta - identity platform](https://img.shields.io/badge/Okta-identity%20platform-00297A?logo=okta&logoColor=white)](https://www.okta.com/)
 [![Keycloak - identity broker](https://img.shields.io/badge/Keycloak-identity%20broker-4D4D4D?logo=keycloak&logoColor=white)](https://www.keycloak.org/)
-[![Microsoft Entra ID - identity platform](https://img.shields.io/badge/Microsoft%20Entra%20ID-identity%20platform-0078D4?logo=microsoftazure&logoColor=white)](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id)
-[![Amazon Cognito - authentication](https://img.shields.io/badge/Amazon%20Cognito-authentication-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/cognito/)
+[![Microsoft Entra ID - identity platform](https://img.shields.io/badge/Microsoft%20Entra%20ID-identity%20platform-0078D4)](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id)
+[![Amazon Cognito - authentication](https://img.shields.io/badge/Amazon%20Cognito-authentication-FF9900)](https://aws.amazon.com/cognito/)
 
 ### Copy
 
@@ -709,8 +709,8 @@
 [![Auth0 - identity platform](https://img.shields.io/badge/Auth0-identity%20platform-EB5424?logo=auth0&logoColor=white)](https://auth0.com/)
 [![Okta - identity platform](https://img.shields.io/badge/Okta-identity%20platform-00297A?logo=okta&logoColor=white)](https://www.okta.com/)
 [![Keycloak - identity broker](https://img.shields.io/badge/Keycloak-identity%20broker-4D4D4D?logo=keycloak&logoColor=white)](https://www.keycloak.org/)
-[![Microsoft Entra ID - identity platform](https://img.shields.io/badge/Microsoft%20Entra%20ID-identity%20platform-0078D4?logo=microsoftazure&logoColor=white)](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id)
-[![Amazon Cognito - authentication](https://img.shields.io/badge/Amazon%20Cognito-authentication-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/cognito/)
+[![Microsoft Entra ID - identity platform](https://img.shields.io/badge/Microsoft%20Entra%20ID-identity%20platform-0078D4)](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id)
+[![Amazon Cognito - authentication](https://img.shields.io/badge/Amazon%20Cognito-authentication-FF9900)](https://aws.amazon.com/cognito/)
 ```
 
 ---
