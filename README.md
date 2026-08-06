@@ -1,5 +1,17 @@
 # Class 7.5 Armageddon - TKO Group Submission
 
+[![Last Commit](https://img.shields.io/github/last-commit/jdpayne68/class-7-tko-group-armageddon-2?logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/commits/main)
+[![Issues](https://img.shields.io/github/issues/jdpayne68/class-7-tko-group-armageddon-2?logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/jdpayne68/class-7-tko-group-armageddon-2?logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/pulls)
+[![Contributors](https://img.shields.io/github/contributors/jdpayne68/class-7-tko-group-armageddon-2?logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/jdpayne68/class-7-tko-group-armageddon-2?style=flat&logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/stargazers)
+[![Forks](https://img.shields.io/github/forks/jdpayne68/class-7-tko-group-armageddon-2?style=flat&logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/forks)
+[![Commit Activity](https://img.shields.io/github/commit-activity/m/jdpayne68/class-7-tko-group-armageddon-2?logo=github)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/graphs/commit-activity)
+
+[![Terraform](https://img.shields.io/badge/Terraform-%3E%3D%201.10-844FBA?logo=terraform&logoColor=white)](https://developer.hashicorp.com/terraform)
+[![AWS](https://img.shields.io/badge/AWS-serverless-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/serverless/)
+[![Documentation](https://img.shields.io/badge/docs-lab_guides-blue?logo=readthedocs&logoColor=white)](#documentation)
+
 Progressive series of production-oriented serverless AWS architectures showcasing secure application development, cloud security automation, advanced threat intelligence, security incident reporting, and AI-powered security response agents. Built with Cognito, API Gateway, Lambda, AWS WAF, Bedrock, DynamoDB, EventBridge, CloudWatch, SNS, and S3.
 
 ---
