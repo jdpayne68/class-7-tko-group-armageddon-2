@@ -1,0 +1,8 @@
+{
+  "headers": {
+    "x-token-id": "sith-token-456"
+  },
+  "queryStringParameters": {
+    "name": "Darth Chewbacca"
+  }
+}

@@ -23,7 +23,7 @@ resource "aws_cloudwatch_log_group" "unused_token_detector" {
 # WAF Bedrock Analyzer
 resource "aws_cloudwatch_log_group" "waf_bedrock_analyzer" {
 
-  name              = "/aws/lambda/waf-bedrock-analyzer"
+  name              = "/aws/lambda/${local.waf_bedrock_analyzer_function_name}"
   retention_in_days = var.log_retention_days
 }
 

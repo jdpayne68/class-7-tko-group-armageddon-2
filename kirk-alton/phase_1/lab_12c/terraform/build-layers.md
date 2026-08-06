@@ -37,8 +37,7 @@ References:
 
 ## Install For Lambda
 
-The packages must be installed for Lambda's operating system, not your laptop's
-operating system. Lambda runs on Amazon Linux, so the pip install command targets
+The packages must be installed for Lambda's operating system, not your work station's operating system. Lambda runs on Amazon Linux, so the pip install command targets
 Linux-compatible package files:
 
 ```text
