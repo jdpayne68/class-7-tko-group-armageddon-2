@@ -13,6 +13,24 @@ Service entries: `315`
 
 ---
 
+## Cloud Provider
+
+### Preview
+
+[![Google Cloud](https://img.shields.io/badge/Google%20Cloud-cloud%20provider-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com/)
+
+### Copy
+
+```markdown
+[![Google Cloud](https://img.shields.io/badge/Google%20Cloud-cloud%20provider-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com/)
+```
+
+**Documentation**
+
+https://cloud.google.com/
+
+---
+
 ## AAA Natural Language Models
 
 ### Preview
