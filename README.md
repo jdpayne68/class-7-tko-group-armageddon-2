@@ -13,7 +13,7 @@ Progressive series of production-oriented serverless AWS architectures showcasin
 
 ## Lab Progression
 
-### Phase 1
+### [Phase 1](phase_1/README.md)
 
 Core security pipeline: detect WAF activity, correlate findings, automate response, and generate reports.
 
@@ -24,7 +24,7 @@ Core security pipeline: detect WAF activity, correlate findings, automate respon
 | [Lab 12b](phase_1/lab_12b/README.md) | Adds executive reporting that converts security incidents into PDF and JSON artifacts stored for review |
 | [Lab 12c](phase_1/lab_12c/README.md) | Adds compliance reporting that maps security activity to controls and produces evidence-ready report artifacts |
 
-### Phase 2
+### [Phase 2](phase_2/README.md)
 
 Threat-intelligence expansion: add provider context, fused risk scoring, and enrichment artifacts.
 
