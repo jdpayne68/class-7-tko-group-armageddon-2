@@ -66,9 +66,9 @@ Threat-intelligence expansion: add provider context, fused risk scoring, and enr
 | [Repository Structure](repository-structure.md) | Repository map and intended lab progression |
 | [Internal Contributing Guide](internal/CONTRIBUTING.md) | Contribution, validation, and safety expectations |
 | [Security Intelligence Foundations](internal/security-intelligence-foundations.md) | Background reference for AbuseIPDB, CISA KEV, CVEs, MITRE ATT&CK, and threat-intelligence concepts |
-| [Lab 12 Build Layers](phase_1/lab_12b/terraform/build-layers.md) | Manual ReportLab layer build steps for Lab 12b |
-| [Lab 12c Build Layers](phase_1/lab_12c/terraform/build-layers.md) | Manual ReportLab layer build steps for Lab 12c |
-| [Lab 12d Build Layers](phase_2/lab_12d/terraform/build-layers.md) | Manual ReportLab layer build steps for Lab 12d |
+| [Lab 12 Build Layers](phase_1/lab_12b/terraform/docs/build-layers.md) | Manual ReportLab layer build steps for Lab 12b |
+| [Lab 12c Build Layers](phase_1/lab_12c/terraform/docs/build-layers.md) | Manual ReportLab layer build steps for Lab 12c |
+| [Lab 12d Build Layers](phase_2/lab_12d/terraform/docs/build-layers.md) | Manual ReportLab layer build steps for Lab 12d |
 
 Each phase lab also contains a `docs/` directory with architecture, deployment, security, cleanup, and troubleshooting placeholders for lab-specific notes.
 
@@ -134,9 +134,9 @@ Labs with PDF reporting functions require the ReportLab Lambda layer before depl
 
 | Lab | Layer Instructions |
 | --- | --- |
-| Lab 12b | [phase_1/lab_12b/terraform/build-layers.md](phase_1/lab_12b/terraform/build-layers.md) |
-| Lab 12c | [phase_1/lab_12c/terraform/build-layers.md](phase_1/lab_12c/terraform/build-layers.md) |
-| Lab 12d | [phase_2/lab_12d/terraform/build-layers.md](phase_2/lab_12d/terraform/build-layers.md) |
+| Lab 12b | [phase_1/lab_12b/terraform/docs/build-layers.md](phase_1/lab_12b/terraform/docs/build-layers.md) |
+| Lab 12c | [phase_1/lab_12c/terraform/docs/build-layers.md](phase_1/lab_12c/terraform/docs/build-layers.md) |
+| Lab 12d | [phase_2/lab_12d/terraform/docs/build-layers.md](phase_2/lab_12d/terraform/docs/build-layers.md) |
 
 ## Prerequisites
 

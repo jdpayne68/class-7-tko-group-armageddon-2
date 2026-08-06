@@ -36,7 +36,7 @@ lab_12c/
 ├── sample_output/
 ├── requirements.txt
 └── terraform/
-    ├── build-layers.md
+    ├── docs/build-layers.md
     ├── lambda/src/compliance_agent/
     ├── lambda/src/executive_dashboard_agent/
     ├── scripts/build-layers.sh
@@ -70,7 +70,7 @@ cd ..
 > [!IMPORTANT]
 > The compliance and executive reporting Lambdas depend on the layer files created by `scripts/build-layers.sh`. Build the layer before `terraform plan` or `terraform apply`.
 
-For manual layer details, see [terraform/build-layers.md](terraform/build-layers.md).
+For manual layer details, see [terraform/docs/build-layers.md](terraform/docs/build-layers.md).
 
 ## Deployment Runbook
 
@@ -142,7 +142,7 @@ terraform apply destroy.tfplan
 - [Repository README](../../README.md)
 - [Previous Lab: Executive Reporting](../lab_12b/README.md)
 - [Next Lab: Threat Intelligence](../../phase_2/lab_12d/README.md)
-- [ReportLab Layer Build Notes](terraform/build-layers.md)
+- [ReportLab Layer Build Notes](terraform/docs/build-layers.md)
 - [Lab Architecture Notes](docs/architecture.md)
 - [Deployment Guide Notes](docs/deployment-guide.md)
 - [Security Design Notes](docs/security-design.md)

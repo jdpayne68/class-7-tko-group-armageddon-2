@@ -50,8 +50,8 @@ Labs with PDF reporting functions require the ReportLab Lambda layer before depl
 
 | Lab | Layer Instructions |
 | --- | --- |
-| Lab 12b | [lab_12b/terraform/build-layers.md](lab_12b/terraform/build-layers.md) |
-| Lab 12c | [lab_12c/terraform/build-layers.md](lab_12c/terraform/build-layers.md) |
+| Lab 12b | [lab_12b/terraform/docs/build-layers.md](lab_12b/terraform/docs/build-layers.md) |
+| Lab 12c | [lab_12c/terraform/docs/build-layers.md](lab_12c/terraform/docs/build-layers.md) |
 
 ## Prerequisites
 
@@ -71,8 +71,8 @@ Labs with PDF reporting functions require the ReportLab Lambda layer before depl
 | [Repository README](../README.md) | Main repository navigation and shared deployment notes |
 | [Repository Structure](../repository-structure.md) | Repository map and intended lab progression |
 | [Internal Contributing Guide](../internal/CONTRIBUTING.md) | Contribution, validation, and safety expectations |
-| [Lab 12 Build Layers](lab_12b/terraform/build-layers.md) | Manual ReportLab layer build steps for Lab 12b |
-| [Lab 12c Build Layers](lab_12c/terraform/build-layers.md) | Manual ReportLab layer build steps for Lab 12c |
+| [Lab 12 Build Layers](lab_12b/terraform/docs/build-layers.md) | Manual ReportLab layer build steps for Lab 12b |
+| [Lab 12c Build Layers](lab_12c/terraform/docs/build-layers.md) | Manual ReportLab layer build steps for Lab 12c |
 
 ## Operating Notes
 

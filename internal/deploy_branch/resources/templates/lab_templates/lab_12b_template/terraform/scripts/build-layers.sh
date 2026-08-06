@@ -74,6 +74,31 @@ log_reminder() { printf "\n%s🔔 %s%s\n" "$BOLD_CYAN" "$*" "$RESET"; }
 
 
 # ===================================================================
+# INPUT HELPERS
+# ===================================================================
+
+confirm_replace() {
+    local path="$1"
+    local answer
+
+    if [ ! -t 0 ]; then
+        log_error "Existing layer content requires replacement: $path"
+        log_error "Run again with --force in automation, or run interactively and confirm replacement."
+        return 1
+    fi
+
+    log_warn "Existing layer content will be replaced: $path"
+    printf "Continue and rebuild the layer? [y/N] "
+    read -r answer
+
+    case "$answer" in
+        y|Y|yes|YES) return 0 ;;
+        *) return 1 ;;
+    esac
+}
+
+
+# ===================================================================
 # BUILD FUNCTIONS
 # ===================================================================
 
@@ -85,21 +110,27 @@ build_layer() {
 
     log_step "Building Lambda layer..."
 
-    if [ "$force" = "true" ] && [ -d "$layer_path" ]; then
-        log_info "Force rebuild requested, removing existing layer..."
-        rm -rf "$layer_path"
-    fi
-
-    if [ "$force" != "true" ] && [ -d "$layer_path" ]; then
+    if [ -e "$layer_path" ]; then
         local site_packages="${layer_path}/python/lib/${LAYER_PYTHON_VERSION}/site-packages"
-        if [ -d "$site_packages/boto3/docs" ] && [ -d "$site_packages/botocore/docs" ] && [ -d "$site_packages/reportlab" ]; then
+        if [ "$force" != "true" ] && [ -d "$layer_path" ] && [ -d "$site_packages/boto3/docs" ] && [ -d "$site_packages/botocore/docs" ] && [ -d "$site_packages/reportlab" ]; then
             log_success "Layer already exists and is valid"
             return 0
         fi
+
+        if [ "$force" != "true" ]; then
+            if ! confirm_replace "$layer_path"; then
+                log_warn "Layer rebuild cancelled. Existing content was preserved."
+                return 1
+            fi
+        else
+            log_info "Force rebuild requested."
+        fi
+
+        log_info "Replacing existing layer content..."
+        rm -rf "$layer_path"
     fi
 
     local layer_site_packages="${layer_path}/python/lib/${LAYER_PYTHON_VERSION}/site-packages"
-    rm -rf "$layer_path"
     mkdir -p "$layer_site_packages"
 
     log_info "Installing Lambda-compatible packages..."
@@ -112,21 +143,6 @@ build_layer() {
         --only-binary=:all: \
         --target "$layer_site_packages" \
         "${REQUIREMENTS[@]}"
-
-    log_info "Cleaning up unnecessary files (preserving boto3/docs and botocore/docs)..."
-
-    find "$layer_path" -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
-    find "$layer_path" -type f -name "*.pyc" -delete 2>/dev/null || true
-    find "$layer_path" -type f -name ".DS_Store" -delete 2>/dev/null || true
-    find "$layer_path" -type d -name "test" -not -path "*/botocore/*" -exec rm -rf {} + 2>/dev/null || true
-    find "$layer_path" -type d -name "tests" -not -path "*/botocore/*" -exec rm -rf {} + 2>/dev/null || true
-    find "$layer_path" -type d -name "docs" \
-        -not -path "*/boto3/docs*" \
-        -not -path "*/boto3/*" \
-        -not -path "*/botocore/docs*" \
-        -not -path "*/botocore/*" \
-        -exec rm -rf {} + 2>/dev/null || true
-    find "$layer_path" -type d -name "examples" -not -path "*/botocore/*" -exec rm -rf {} + 2>/dev/null || true
 
     if [ ! -d "${layer_site_packages}/boto3/docs" ]; then
         log_error "boto3/docs not found in layer"

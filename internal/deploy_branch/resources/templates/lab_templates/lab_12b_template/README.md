@@ -36,7 +36,7 @@ lab_12b/
 ├── sample_output/
 ├── requirements.txt
 └── terraform/
-    ├── build-layers.md
+    ├── docs/build-layers.md
     ├── lambda/src/executive_dashboard_agent/
     ├── scripts/build-layers.sh
     ├── scripts/get-token.py
@@ -71,7 +71,7 @@ cd ..
 > [!IMPORTANT]
 > Terraform deploys the Lambda layer, but the local layer files must exist first. If the layer is missing, reporting Lambdas can deploy incorrectly or fail at import time.
 
-For manual layer details, see [terraform/build-layers.md](terraform/build-layers.md).
+For manual layer details, see [terraform/docs/build-layers.md](terraform/docs/build-layers.md).
 
 ## Deployment Runbook
 
@@ -145,7 +145,7 @@ terraform apply destroy.tfplan
 - [Repository README](../../README.md)
 - [Previous Lab: SOAR Response](../lab_12a/README.md)
 - [Next Lab: Compliance Reporting](../lab_12c/README.md)
-- [ReportLab Layer Build Notes](terraform/build-layers.md)
+- [ReportLab Layer Build Notes](terraform/docs/build-layers.md)
 - [Lab Architecture Notes](docs/architecture.md)
 - [Deployment Guide Notes](docs/deployment-guide.md)
 - [Security Design Notes](docs/security-design.md)

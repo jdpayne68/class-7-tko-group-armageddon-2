@@ -10,7 +10,7 @@ Phase 2 extends the Phase 1 security pipeline with threat-intelligence enrichmen
 
 - [Lab 12d - Threat Intelligence Enrichment](lab_12d/README.md)
 - [Security Intelligence Foundations](../internal/security-intelligence-foundations.md)
-- [Lab 12d Build Layers](lab_12d/terraform/build-layers.md)
+- [Lab 12d Build Layers](lab_12d/terraform/docs/build-layers.md)
 - [Lab 12d Terraform Change Notes](lab_12d/terraform/terraform-changes.md)
 
 ## Lab Progression
@@ -60,7 +60,7 @@ terraform apply
 | [Phase 1 README](../phase_1/README.md) | Prior security pipeline stages that Lab 12d builds on |
 | [Security Intelligence Foundations](../internal/security-intelligence-foundations.md) | Background reference for AbuseIPDB, CISA KEV, CVEs, MITRE ATT&CK, and intelligence concepts |
 | [Lab 12d README](lab_12d/README.md) | Lab-specific deployment, validation, cleanup, and troubleshooting notes |
-| [Lab 12d Build Layers](lab_12d/terraform/build-layers.md) | Manual ReportLab layer build steps for Lab 12d |
+| [Lab 12d Build Layers](lab_12d/terraform/docs/build-layers.md) | Manual ReportLab layer build steps for Lab 12d |
 | [Lab 12d Terraform Change Notes](lab_12d/terraform/terraform-changes.md) | Implementation notes for current Lab 12d Terraform additions |
 
 ## Operating Notes

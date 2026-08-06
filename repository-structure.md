@@ -88,7 +88,7 @@ terraform/
 └── terraform-tfvars.example # Example Terraform variable values
 ```
 
-Labs 12b, 12c, and 12d also include `build-layers.md` and `scripts/build-layers.sh` because the executive/compliance/reporting agents require a Lambda layer build step before Terraform deployment.
+Labs 12b, 12c, and 12d also include `docs/build-layers.md` and `scripts/build-layers.sh` because the executive/compliance/reporting agents require a Lambda layer build step before Terraform deployment.
 
 ## Lambda Source Layout
 

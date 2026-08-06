@@ -38,7 +38,7 @@ This lab builds on Lab 12c and adds a threat-intelligence event contract, provid
 lab_12d/
 ├── requirements.txt
 └── terraform/
-    ├── build-layers.md
+    ├── docs/build-layers.md
     ├── new-code.tf
     ├── terraform-changes.md
     ├── lambda/src/threat_intelligence_agent/
@@ -75,7 +75,7 @@ cd ..
 > [!IMPORTANT]
 > Build the reporting layer before Terraform so the executive, compliance, and threat-intelligence reporting paths have the expected package structure available at deploy time.
 
-For manual layer details, see [terraform/build-layers.md](terraform/build-layers.md).
+For manual layer details, see [terraform/docs/build-layers.md](terraform/docs/build-layers.md).
 
 ## Deployment Runbook
 
@@ -148,7 +148,7 @@ terraform apply destroy.tfplan
 - [Repository README](../../README.md)
 - [Previous Lab: Compliance Reporting](../../phase_1/lab_12c/README.md)
 - [Security Intelligence Foundations](../../internal/security-intelligence-foundations.md)
-- [ReportLab Layer Build Notes](terraform/build-layers.md)
+- [ReportLab Layer Build Notes](terraform/docs/build-layers.md)
 - [Terraform Change Notes](terraform/terraform-changes.md)
 - [Threat Intelligence Agent Notes](terraform/lambda/src/threat_intelligence_agent/agent-changes.md)
 - [Threat Intelligence Event Contract](terraform/lambda/src/threat_intelligence_agent/event-contract.md)
