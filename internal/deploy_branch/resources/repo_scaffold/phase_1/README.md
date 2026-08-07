@@ -39,12 +39,14 @@ Choose the lab you want to deploy, then run Terraform from that lab's `terraform
 cd lab_12/terraform
 terraform init
 terraform validate
-terraform plan
-terraform apply
+terraform plan -var-file=chewbacca.tfvars -out=chewbacca.tfplan
+terraform apply chewbacca.tfplan
 ```
 
 > [!IMPORTANT]
 > `terraform apply` creates AWS resources. Confirm your AWS profile, Region, variables, and expected cost before applying a lab.
+
+Each Terraform lab includes `terraform-tfvars.example` as a deployment template. Copy it to the `.tfvars` filename you want to use, fill in your values, and keep the populated file out of version control.
 
 Labs with PDF reporting functions require the ReportLab Lambda layer before deployment:
 

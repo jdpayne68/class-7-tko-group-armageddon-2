@@ -6,23 +6,25 @@
 [![Forks](https://img.shields.io/github/forks/jdpayne68/class-7-tko-group-armageddon-2?style=flat&logo=github&color=181717)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/forks)
 [![Commit Activity](https://img.shields.io/github/commit-activity/m/jdpayne68/class-7-tko-group-armageddon-2?logo=github&color=181717)](https://github.com/jdpayne68/class-7-tko-group-armageddon-2/graphs/commit-activity)
 
+[![AWS](https://img.shields.io/badge/AWS-cloud%20provider-FF9900?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHRleHQgeD0iMiIgeT0iMTQiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjguNSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiPkFXUzwvdGV4dD48cGF0aCBkPSJNNCAxOGM0LjggMi43IDExLjIgMi43IDE2IDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTguNCAxNi44bDIgLjktMS41IDEuNiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg%3D%3D&logoColor=white)](https://aws.amazon.com/)
+
 [![Terraform](https://img.shields.io/badge/Terraform-%E2%89%A5%201.10-844FBA?logo=terraform&logoColor=white)](https://developer.hashicorp.com/terraform)
 [![Python](https://img.shields.io/badge/Python-%E2%89%A5%203.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A5%2024-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![Shell](https://img.shields.io/badge/Shell-scripts-4EAA25?logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/)
 
-[![Amazon Cognito](https://img.shields.io/badge/Amazon%20Cognito-user%20authentication-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/cognito/)
-[![Amazon API Gateway](https://img.shields.io/badge/Amazon%20API%20Gateway-REST%20APIs-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/api-gateway/)
-[![AWS WAF](https://img.shields.io/badge/AWS%20WAF-managed%20rule%20groups-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/waf/)
-[![AWS Lambda](https://img.shields.io/badge/AWS%20Lambda-security%20agents-FF9900?logo=awslambda&logoColor=white)](https://aws.amazon.com/lambda/)
-[![Amazon EventBridge](https://img.shields.io/badge/Amazon%20EventBridge-event%20routing-FF9900?logo=amazoneventbridge&logoColor=white)](https://aws.amazon.com/eventbridge/)
-[![Amazon DynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-security%20evidence-FF9900?logo=amazondynamodb&logoColor=white)](https://aws.amazon.com/dynamodb/)
-[![Amazon Bedrock](https://img.shields.io/badge/Amazon%20Bedrock-foundation%20models-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/bedrock/)
+[![Amazon Cognito](https://img.shields.io/badge/Amazon%20Cognito-user%20authentication-FF9900)](https://aws.amazon.com/cognito/)
+[![Amazon API Gateway](https://img.shields.io/badge/Amazon%20API%20Gateway-REST%20APIs-FF9900)](https://aws.amazon.com/api-gateway/)
+[![AWS WAF](https://img.shields.io/badge/AWS%20WAF-managed%20rule%20groups-FF9900)](https://aws.amazon.com/waf/)
+[![AWS Lambda](https://img.shields.io/badge/AWS%20Lambda-security%20agents-FF9900)](https://aws.amazon.com/lambda/)
+[![Amazon EventBridge](https://img.shields.io/badge/Amazon%20EventBridge-event%20routing-FF9900)](https://aws.amazon.com/eventbridge/)
+[![Amazon DynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-security%20evidence-FF9900)](https://aws.amazon.com/dynamodb/)
+[![Amazon Bedrock](https://img.shields.io/badge/Amazon%20Bedrock-foundation%20models-FF9900)](https://aws.amazon.com/bedrock/)
 
 [![DevSecOps](https://img.shields.io/badge/DevSecOps-cloud%20security%20pipeline-0F766E?logo=securityscorecard&logoColor=white)](internal/CONTRIBUTING.md)
 [![Documentation](https://img.shields.io/badge/Documentation-lab%20guides-2563EB?logo=readthedocs&logoColor=white)](#documentation)
 
-Progressive series of production-oriented serverless AWS architectures showcasing secure application development, cloud security automation, advanced threat intelligence, security incident reporting, and AI-powered security response agents. Built with Cognito, API Gateway, Lambda, AWS WAF, Bedrock, DynamoDB, EventBridge, CloudWatch, SNS, and S3.
+This repository contains a progressive series of production-oriented serverless AWS architectures showcasing secure application development, cloud security automation, advanced threat intelligence, security incident reporting, and AI-powered security response agents. Built with Cognito, API Gateway, Lambda, AWS WAF, Bedrock, DynamoDB, EventBridge, CloudWatch, SNS, and S3.
 
 ---
 
@@ -37,7 +39,7 @@ Progressive series of production-oriented serverless AWS architectures showcasin
 
 ### [Phase 1](phase_1/README.md)
 
-Core security pipeline: detect WAF activity, correlate findings, automate response, and generate reports.
+Core security pipeline that detects WAF activity, correlates security findings, automates responses, and generate reports.
 
 | Path | Description |
 | --- | --- |
@@ -48,7 +50,7 @@ Core security pipeline: detect WAF activity, correlate findings, automate respon
 
 ### [Phase 2](phase_2/README.md)
 
-Threat-intelligence expansion: add provider context, fused risk scoring, and enrichment artifacts.
+Threat-intelligence expansions that adds provider context, fused risk scoring, and enrichment artifacts.
 
 | Path | Description |
 | --- | --- |
@@ -67,6 +69,7 @@ Threat-intelligence expansion: add provider context, fused risk scoring, and enr
 | [Lab 12 Build Layers](phase_1/lab_12b/terraform/docs/build-layers.md) | Manual ReportLab layer build steps for Lab 12b |
 | [Lab 12c Build Layers](phase_1/lab_12c/terraform/docs/build-layers.md) | Manual ReportLab layer build steps for Lab 12c |
 | [Lab 12d Build Layers](phase_2/lab_12d/terraform/docs/build-layers.md) | Manual ReportLab layer build steps for Lab 12d |
+| [Imposter Syndrome Defense](phase_1/lab_12/terraform/scripts/imposter_syndrome/README.md) | Skill-scanning and guided Terraform helper workflow |
 
 Each phase lab also contains a `docs/` directory with architecture, deployment, security, cleanup, and troubleshooting placeholders for lab-specific notes.
 
@@ -83,12 +86,11 @@ Deployments use fixed file structures and numeric prefixes to identify infrastru
 | **10 - 19**: Identity & Access Management (IAM) | `10-iam-policies.tf`, `11-iam-roles.tf` |
 | **20 - 29**: Identity (User Management & Authentication) | `20-cognito.tf` |
 | **30 - 39**: API Management | `30-api-gateway.tf` |
-| **40 - 49**: Storage | `40-s3.tf` |
-| **50 - 59**: Data | `50-dynamodb.tf` |
-| **60 - 69**: Compute | `60-lambda.tf` |
-| **70 - 79**: Security | `70-waf.tf` |
-| **80 - 89**: Eventing | `80-eventbridge.tf`, `81-sns.tf` |
-| **90 - 99**: Observability | `90-cloudwatch-logs.tf`, `91-metrics-and-alarms.tf` |
+| **40 - 49**: Storage And Data | `40-s3.tf`, `41-dynamodb.tf` |
+| **50 - 59**: Compute | `50-lambda.tf` |
+| **60 - 69**: Eventing | `60-eventbridge.tf` |
+| **70 - 79**: Security | `72-waf.tf` |
+| **80 - 89**: Observability And Notifications | `80-cloudwatch-logs.tf`, `81-metrics-and-alarms.tf`, `83-sns.tf` |
 
 
 ## Lambda Agents
@@ -116,15 +118,19 @@ Choose the lab you want to deploy, then run Terraform from that lab's `terraform
 > [!IMPORTANT]
 > `terraform apply` creates AWS resources. Confirm your AWS profile, Region, variables, and expected cost before applying a lab.
 
+Example:
 ```bash
 cd phase_1/lab_12/terraform
 terraform init
 terraform validate
-terraform plan
-terraform apply
+terraform plan -var-file="chewbacca.tfvars" -out=chewbacca.tfplan
+
+terraform apply chewbacca.tfplan
 ```
 
-Review the lab's `terraform-tfvars.example` and variable definitions before applying. Do not commit real passwords, account IDs, secrets, state files, or environment files.
+Each lab includes `terraform-tfvars.example` as a deployment template. Copy or rename it to the `.tfvars` file you want to use, fill in your values, and pass that file to Terraform with `-var-file`. The Imposter Syndrome workflow expects `chewbacca.tfvars` by default.
+
+Do not commit real passwords, account IDs, secrets, state files, or environment files.
 
 > [!TIP]
 > Build the ReportLab layer before `terraform plan` or `terraform apply` for reporting labs so Terraform can package the layer artifact.
@@ -146,8 +152,7 @@ Labs with PDF reporting functions require the ReportLab Lambda layer before depl
 - An email address if SNS alert subscriptions are enabled
 
 > [!NOTE]
-> Bedrock model access must be enabled in the target AWS account and Region before Bedrock-backed agents can invoke Anthropic models. Use [enable_model/aws-enable-anthropic-model.sh](enable_model/aws-enable-anthropic-model.sh) when you need the repository helper for Anthropic model access setup.
-
+> Bedrock model access must be enabled in the target AWS account and Region before agents can invoke Anthropic models. For a streamlined setup to request Anthropic model access, use [enable_model/aws-enable-anthropic-model.sh](enable_model/aws-enable-anthropic-model.sh).
 
 ## Operating Notes
 

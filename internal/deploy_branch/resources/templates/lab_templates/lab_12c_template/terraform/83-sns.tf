@@ -22,7 +22,7 @@ resource "aws_sns_topic_subscription" "token_alert_emails" {
 # SNS Alert and Subscription - WAF Security Incidents
 # -------------------------------------------------------------------------------
 resource "aws_sns_topic" "waf_security_incidents_alert" {
-  name              = "waf-security-incidents-alert"
+  name              = "${local.name_prefix}-waf-security-incidents-alert-${local.name_suffix}"
   kms_master_key_id = "alias/aws/sns"
 
 }

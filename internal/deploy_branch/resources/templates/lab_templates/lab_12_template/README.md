@@ -66,7 +66,7 @@ pip install -r requirements.txt
 > [!IMPORTANT]
 > No Lambda layer is required for Lab 12. The ReportLab layer starts in Lab 12b when PDF report generation is introduced.
 
-`terraform/terraform-tfvars.example` is the deployment template. Copy or rename it to a local `.tfvars` file, fill in your values, and pass that file to Terraform.
+`terraform/terraform-tfvars.example` is the deployment template. Copy or rename it to a local `.tfvars` file, fill in your values, and pass that file to Terraform. The Imposter Syndrome workflow expects `terraform/chewbacca.tfvars` by default.
 
 ## Deployment Runbook
 
@@ -96,6 +96,8 @@ scripts/test-malicious-waf-traffic.sh
 ```
 
 `get-token.py` retrieves Cognito tokens for API testing. `test-malicious-waf-traffic.sh` sends controlled WAF-triggering requests so the analysis and correlation pipeline has events to process.
+
+For the skill scanner and guided Terraform workflow, see [Imposter Syndrome Defense](terraform/scripts/imposter_syndrome/README.md).
 
 > [!TIP]
 > Use `terraform output test_commands` for generated commands that match the deployed API Gateway URL and CloudWatch log group names.
@@ -145,6 +147,7 @@ terraform apply destroy.tfplan
 
 - [Repository README](../../README.md)
 - [Repository Structure](../../repository-structure.md)
+- [Imposter Syndrome Defense](terraform/scripts/imposter_syndrome/README.md)
 - [Lab Architecture Notes](docs/architecture.md)
 - [Deployment Guide Notes](docs/deployment-guide.md)
 - [Security Design Notes](docs/security-design.md)
