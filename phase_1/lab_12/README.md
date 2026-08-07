@@ -66,7 +66,7 @@ pip install -r requirements.txt
 > [!IMPORTANT]
 > No Lambda layer is required for Lab 12. The ReportLab layer starts in Lab 12b when PDF report generation is introduced.
 
-Review `terraform/terraform-tfvars.example` before deployment. If your environment needs different values, create a local `terraform/terraform.tfvars` file or pass variables through your normal Terraform workflow.
+Review `terraform/terraform-tfvars.example` before deployment. If your environment needs different values, create a local `terraform/chewbacca.tfvars` file or pass variables through your normal Terraform workflow.
 
 ## Deployment Runbook
 

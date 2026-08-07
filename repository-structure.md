@@ -225,7 +225,7 @@ The following paths should not be treated as source-controlled deployable source
 | `*.zip` | Generated Lambda or layer package artifacts |
 | `.DS_Store` | macOS filesystem metadata |
 | `__pycache__/`, `*.pyc` | Python bytecode/cache files |
-| `.env`, `.env.lambda`, `terraform.tfvars` | Local environment and secret-bearing configuration |
+| `.env`, `.env.lambda`, `chewbacca.tfvars` | Local environment and secret-bearing configuration |
 
 ## Naming Conventions
 

@@ -1,12 +1,24 @@
-# Copy this file to terraform.tfvars and keep the copy out of version control.
-aws_region        = "us-east-1"
-aws_profile       = "default"
-app               = "chewbacca-auth-rest"
-env               = "dev"
-test_user_password = "REPLACE_WITH_A_STRONG_LAB_PASSWORD"
+# Copy this file to chewbacca.tfvars and keep the copy out of version control.
+
+aws_region  = "us-east-1"
+aws_profile = "default"
+app         = "chewbacca-auth-rest"
+env         = "dev"
+
+test_username          = "chewbacca"
+test_user_email        = "chewbacca@example.com"
+test_user_phone_number = "+15555555555"
+test_user_birthdate    = "1977-05-25"
+test_user_password     = "REPLACE_WITH_A_STRONG_LAB_PASSWORD"
 
 # Replace this before testing Cognito managed login in a browser.
 callback_url = "https://example.com/callback"
 
-# Optional: Terraform creates an unconfirmed SNS email subscription when set.
-# alert_email = "you@example.com"
+log_retention_days     = 7
+token_unused_minutes   = 10
+token_scan_schedule    = "rate(5 minutes)"
+bedrock_lambda_timeout = 600
+
+# Terraform creates unconfirmed SNS email subscriptions for these recipients.
+# Example: alert_emails = ["you@example.com"]
+alert_emails = []
