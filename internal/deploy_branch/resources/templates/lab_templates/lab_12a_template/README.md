@@ -62,7 +62,7 @@ pip install -r requirements.txt
 > [!IMPORTANT]
 > No Lambda layer is required for Lab 12a. The SOAR agent uses the runtime and AWS SDK available to the deployed Lambda environment.
 
-Review `terraform/terraform-tfvars.example` before deployment. Keep passwords, account identifiers, and alert addresses out of version control.
+`terraform/terraform-tfvars.example` is the deployment template. Copy or rename it to a local `.tfvars` file, fill in your values, and pass that file to Terraform. Keep passwords, account identifiers, and alert addresses out of version control.
 
 ## Deployment Runbook
 
@@ -73,8 +73,8 @@ cd terraform
 terraform init
 terraform fmt -check -recursive
 terraform validate
-terraform plan -out=tfplan
-terraform apply tfplan
+terraform plan -var-file=chewbacca.tfvars -out=chewbacca.tfplan
+terraform apply chewbacca.tfplan
 ```
 
 Terraform deploys the base API and WAF pipeline, then adds the SOAR resources that listen for correlated findings. Reviewing the plan is important because this lab introduces additional IAM permissions, DynamoDB tables, EventBridge rules, and SNS notifications.

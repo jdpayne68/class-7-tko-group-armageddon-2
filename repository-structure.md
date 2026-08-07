@@ -85,7 +85,7 @@ terraform/
 ├── locals.tf                # Shared naming, tags, ARNs, and derived local values
 ├── outputs.tf               # Terraform outputs used for deployment and testing
 ├── variables.tf             # Input variables
-└── terraform-tfvars.example # Example Terraform variable values
+└── terraform-tfvars.example # Deployment template for local .tfvars files
 ```
 
 Labs 12b, 12c, and 12d also include `docs/build-layers.md` and `scripts/build-layers.sh` because the executive/compliance/reporting agents require a Lambda layer build step before Terraform deployment.
@@ -136,7 +136,7 @@ Each lab stores operational helper scripts under `terraform/scripts/`.
 | `test-malicious-waf-traffic.sh` | Generates controlled WAF-triggering traffic for lab validation |
 | `build-layers.sh` | Builds required Lambda layer assets for report-generation agents |
 | `parser.py` | Helper parsing utility retained where needed by the lab |
-| `imposter-syndrome-defense.py` | Local support/encouragement helper script used in later labs |
+| `imposter-syndrome-defense.py` | Skill-scanning and guided Terraform helper workflow |
 
 ## Badge Library
 

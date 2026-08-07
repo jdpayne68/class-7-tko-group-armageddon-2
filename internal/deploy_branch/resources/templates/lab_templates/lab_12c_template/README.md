@@ -72,6 +72,8 @@ cd ..
 
 For manual layer details, see [terraform/docs/build-layers.md](terraform/docs/build-layers.md).
 
+`terraform/terraform-tfvars.example` is the deployment template. Copy or rename it to a local `.tfvars` file, fill in your values, and keep the populated file out of version control.
+
 ## Deployment Runbook
 
 ### Manual Deployment
@@ -81,8 +83,8 @@ cd terraform
 terraform init
 terraform fmt -check -recursive
 terraform validate
-terraform plan -out=tfplan
-terraform apply tfplan
+terraform plan -var-file=chewbacca.tfvars -out=chewbacca.tfplan
+terraform apply chewbacca.tfplan
 ```
 
 Terraform deploys the detection, SOAR, executive reporting, and compliance reporting resources as one lab stack. The generated suffixes help keep AWS resource names unique across multiple deployments.

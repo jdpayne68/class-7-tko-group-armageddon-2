@@ -69,6 +69,7 @@ Threat-intelligence expansions that adds provider context, fused risk scoring, a
 | [Lab 12 Build Layers](phase_1/lab_12b/terraform/docs/build-layers.md) | Manual ReportLab layer build steps for Lab 12b |
 | [Lab 12c Build Layers](phase_1/lab_12c/terraform/docs/build-layers.md) | Manual ReportLab layer build steps for Lab 12c |
 | [Lab 12d Build Layers](phase_2/lab_12d/terraform/docs/build-layers.md) | Manual ReportLab layer build steps for Lab 12d |
+| [Imposter Syndrome Defense](phase_1/lab_12/terraform/scripts/imposter_syndrome/README.md) | Skill-scanning and guided Terraform helper workflow |
 
 Each phase lab also contains a `docs/` directory with architecture, deployment, security, cleanup, and troubleshooting placeholders for lab-specific notes.
 
@@ -122,12 +123,14 @@ Example:
 cd phase_1/lab_12/terraform
 terraform init
 terraform validate
-terraform plan -var-file="<VAR-FILE>.tfvars" -out=<PLAN-FILE>.plan
+terraform plan -var-file="chewbacca.tfvars" -out=chewbacca.tfplan
 
-terraform apply <VAR-FILE>.tfvars
+terraform apply chewbacca.tfplan
 ```
 
-Review the lab's `terraform-tfvars.example` and variable definitions before applying. Do not commit real passwords, account IDs, secrets, state files, or environment files.
+Each lab includes `terraform-tfvars.example` as a deployment template. Copy or rename it to the `.tfvars` file you want to use, fill in your values, and pass that file to Terraform with `-var-file`. The Imposter Syndrome workflow expects `chewbacca.tfvars` by default.
+
+Do not commit real passwords, account IDs, secrets, state files, or environment files.
 
 > [!TIP]
 > Build the ReportLab layer before `terraform plan` or `terraform apply` for reporting labs so Terraform can package the layer artifact.

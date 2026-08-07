@@ -37,12 +37,14 @@ cd lab_12d/terraform
 scripts/build-layers.sh
 terraform init
 terraform validate
-terraform plan
-terraform apply
+terraform plan -var-file=chewbacca.tfvars -out=chewbacca.tfplan
+terraform apply chewbacca.tfplan
 ```
 
 > [!IMPORTANT]
 > Because Lab 12d is in progress, inspect [lab_12d/terraform/new-code.tf](lab_12d/terraform/new-code.tf) and [lab_12d/terraform/terraform-changes.md](lab_12d/terraform/terraform-changes.md) before applying.
+
+`terraform-tfvars.example` is the deployment template. Copy it to the `.tfvars` filename you want to use, fill in your values, and keep the populated file out of version control.
 
 ## Prerequisites
 

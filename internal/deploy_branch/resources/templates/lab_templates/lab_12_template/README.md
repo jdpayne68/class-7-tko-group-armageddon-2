@@ -66,7 +66,7 @@ pip install -r requirements.txt
 > [!IMPORTANT]
 > No Lambda layer is required for Lab 12. The ReportLab layer starts in Lab 12b when PDF report generation is introduced.
 
-Review `terraform/terraform-tfvars.example` before deployment. If your environment needs different values, create a local `terraform/chewbacca.tfvars` file or pass variables through your normal Terraform workflow.
+`terraform/terraform-tfvars.example` is the deployment template. Copy or rename it to a local `.tfvars` file, fill in your values, and pass that file to Terraform.
 
 ## Deployment Runbook
 
@@ -79,8 +79,8 @@ cd terraform
 terraform init
 terraform fmt -check -recursive
 terraform validate
-terraform plan -out=tfplan
-terraform apply tfplan
+terraform plan -var-file=chewbacca.tfvars -out=chewbacca.tfplan
+terraform apply chewbacca.tfplan
 ```
 
 `terraform init` prepares the backend and providers. `terraform validate` catches configuration issues before AWS API calls. `terraform plan` shows exactly what will be created before `terraform apply` deploys the lab.

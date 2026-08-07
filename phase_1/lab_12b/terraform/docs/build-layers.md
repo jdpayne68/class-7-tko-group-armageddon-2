@@ -122,8 +122,8 @@ directory. Lambda expects the ZIP file to contain `python/` at the top level.
 
 ```bash
 terraform fmt -check -recursive
-terraform plan
-terraform apply
+terraform plan -var-file=chewbacca.tfvars -out=chewbacca.tfplan
+terraform apply chewbacca.tfplan
 ```
 
 ## Script Equivalent
@@ -132,12 +132,14 @@ From this lab's `terraform/` directory:
 
 ```bash
 ./scripts/build-layers.sh
-terraform apply
+terraform plan -var-file=chewbacca.tfvars -out=chewbacca.tfplan
+terraform apply chewbacca.tfplan
 ```
 
 If an existing layer is invalid and you intentionally want to replace it:
 
 ```bash
 ./scripts/build-layers.sh --force
-terraform apply
+terraform plan -var-file=chewbacca.tfvars -out=chewbacca.tfplan
+terraform apply chewbacca.tfplan
 ```
