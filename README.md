@@ -24,7 +24,7 @@
 [![DevSecOps](https://img.shields.io/badge/DevSecOps-cloud%20security%20pipeline-0F766E?logo=securityscorecard&logoColor=white)](internal/CONTRIBUTING.md)
 [![Documentation](https://img.shields.io/badge/Documentation-lab%20guides-2563EB?logo=readthedocs&logoColor=white)](#documentation)
 
-Progressive series of production-oriented serverless AWS architectures showcasing secure application development, cloud security automation, advanced threat intelligence, security incident reporting, and AI-powered security response agents. Built with Cognito, API Gateway, Lambda, AWS WAF, Bedrock, DynamoDB, EventBridge, CloudWatch, SNS, and S3.
+This repository contains a progressive series of production-oriented serverless AWS architectures showcasing secure application development, cloud security automation, advanced threat intelligence, security incident reporting, and AI-powered security response agents. Built with Cognito, API Gateway, Lambda, AWS WAF, Bedrock, DynamoDB, EventBridge, CloudWatch, SNS, and S3.
 
 ---
 
@@ -39,7 +39,7 @@ Progressive series of production-oriented serverless AWS architectures showcasin
 
 ### [Phase 1](phase_1/README.md)
 
-Core security pipeline: detect WAF activity, correlate findings, automate response, and generate reports.
+Core security pipeline that detects WAF activity, correlates security findings, automates responses, and generate reports.
 
 | Path | Description |
 | --- | --- |
@@ -50,7 +50,7 @@ Core security pipeline: detect WAF activity, correlate findings, automate respon
 
 ### [Phase 2](phase_2/README.md)
 
-Threat-intelligence expansion: add provider context, fused risk scoring, and enrichment artifacts.
+Threat-intelligence expansions that adds provider context, fused risk scoring, and enrichment artifacts.
 
 | Path | Description |
 | --- | --- |
@@ -117,12 +117,14 @@ Choose the lab you want to deploy, then run Terraform from that lab's `terraform
 > [!IMPORTANT]
 > `terraform apply` creates AWS resources. Confirm your AWS profile, Region, variables, and expected cost before applying a lab.
 
+Example:
 ```bash
 cd phase_1/lab_12/terraform
 terraform init
 terraform validate
-terraform plan
-terraform apply
+terraform plan -var-file="<VAR-FILE>.tfvars" -out=<PLAN-FILE>.plan
+
+terraform apply <VAR-FILE>.tfvars
 ```
 
 Review the lab's `terraform-tfvars.example` and variable definitions before applying. Do not commit real passwords, account IDs, secrets, state files, or environment files.
@@ -147,8 +149,7 @@ Labs with PDF reporting functions require the ReportLab Lambda layer before depl
 - An email address if SNS alert subscriptions are enabled
 
 > [!NOTE]
-> Bedrock model access must be enabled in the target AWS account and Region before Bedrock-backed agents can invoke Anthropic models. Use [enable_model/aws-enable-anthropic-model.sh](enable_model/aws-enable-anthropic-model.sh) when you need the repository helper for Anthropic model access setup.
-
+> Bedrock model access must be enabled in the target AWS account and Region before agents can invoke Anthropic models. For a streamlined setup to request Anthropic model access, use [enable_model/aws-enable-anthropic-model.sh](enable_model/aws-enable-anthropic-model.sh).
 
 ## Operating Notes
 
