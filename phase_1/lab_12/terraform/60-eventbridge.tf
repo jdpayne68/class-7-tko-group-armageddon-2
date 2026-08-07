@@ -35,7 +35,7 @@
 # -------------------------------------------------------------------------------
 # EventBridge Scheduler is best for scheduled tasks (cron/rate).
 resource "aws_scheduler_schedule" "unused_token_check" {
-  name        = "${local.name_prefix}-unused-token-check${local.name_suffix}"
+  name        = "${local.name_prefix}-unused-token-check-${local.name_suffix}"
   description = "Checks for unused Cognito tokens every 5 minutes"
 
   schedule_expression = var.token_scan_schedule
@@ -58,7 +58,7 @@ resource "aws_scheduler_schedule" "unused_token_check" {
 # EventBridge Scheduler - WAF Bedrock Analyzer
 # -------------------------------------------------------------------------------
 resource "aws_scheduler_schedule" "waf_bedrock_analyzer" {
-  name        = "${local.name_prefix}-waf-bedrock-analyzer${local.name_suffix}"
+  name        = "${local.name_prefix}-waf-bedrock-analyzer-${local.name_suffix}"
   description = "Runs WAF log analysis every 5 minutes"
 
   schedule_expression = "rate(5 minutes)"
@@ -81,7 +81,7 @@ resource "aws_scheduler_schedule" "waf_bedrock_analyzer" {
 # EventBridge Scheduler - Threat Correlation
 # -------------------------------------------------------------------------------
 resource "aws_scheduler_schedule" "threat_correlation" {
-  name        = "${local.name_prefix}-threat-correlation${local.name_suffix}"
+  name        = "${local.name_prefix}-threat-correlation-${local.name_suffix}"
   description = "Runs WAF threat correlation every 5 minutes"
 
   schedule_expression = "rate(5 minutes)"

@@ -254,7 +254,7 @@ data "aws_iam_policy_document" "scheduler_invoke_correlation" {
 # EventBridge Permissions - Invoke SOAR Response
 # -------------------------------------------------------------------------------
 resource "aws_lambda_permission" "soar_response_medium_high" {
-  statement_id  = "AllowEventBridgeMediumHigh"
+  statement_id  = "AllowEventBridgeMediumHigh-${local.name_suffix}"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.soar_response_agent.function_name
   principal     = "events.amazonaws.com"
@@ -262,7 +262,7 @@ resource "aws_lambda_permission" "soar_response_medium_high" {
 }
 
 resource "aws_lambda_permission" "soar_response_critical" {
-  statement_id  = "AllowEventBridgeCritical"
+  statement_id  = "AllowEventBridgeCritical-${local.name_suffix}"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.soar_response_agent.function_name
   principal     = "events.amazonaws.com"

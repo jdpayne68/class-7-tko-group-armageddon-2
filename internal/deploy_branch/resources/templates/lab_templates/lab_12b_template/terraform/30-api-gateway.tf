@@ -50,7 +50,7 @@ resource "aws_api_gateway_integration" "jedi_lambda" {
 }
 
 resource "aws_lambda_permission" "api_gateway_invoke_jedi" {
-  statement_id  = "AllowAPIGatewayInvokeJedi"
+  statement_id  = "AllowAPIGatewayInvokeJedi-${local.name_suffix}"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.jedi_python.function_name
   principal     = "apigateway.amazonaws.com"
@@ -85,7 +85,7 @@ resource "aws_api_gateway_integration" "sith_lambda" {
 }
 
 resource "aws_lambda_permission" "api_gateway_invoke_sith" {
-  statement_id  = "AllowAPIGatewayInvokeSith"
+  statement_id  = "AllowAPIGatewayInvokeSith-${local.name_suffix}"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.sith_node.function_name
   principal     = "apigateway.amazonaws.com"
@@ -123,7 +123,7 @@ resource "aws_api_gateway_integration" "waf_bedrock_analyzer_lambda" {
 }
 
 resource "aws_lambda_permission" "apigateway" {
-  statement_id  = "AllowExecutionFromAPIGateway"
+  statement_id  = "AllowExecutionFromAPIGateway-${local.name_suffix}"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.waf_bedrock_analyzer.function_name
   principal     = "apigateway.amazonaws.com"

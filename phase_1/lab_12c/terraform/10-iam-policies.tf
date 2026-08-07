@@ -409,7 +409,7 @@ data "aws_iam_policy_document" "scheduler_invoke_correlation" {
 # -------------------------------------------------------------------------------
 
 resource "aws_lambda_permission" "soar_response_medium_high" {
-  statement_id  = "AllowEventBridgeMediumHigh"
+  statement_id  = "AllowEventBridgeMediumHigh-${local.name_suffix}"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.soar_response_agent.function_name
   principal     = "events.amazonaws.com"
@@ -417,7 +417,7 @@ resource "aws_lambda_permission" "soar_response_medium_high" {
 }
 
 resource "aws_lambda_permission" "soar_response_critical" {
-  statement_id  = "AllowEventBridgeCritical"
+  statement_id  = "AllowEventBridgeCritical-${local.name_suffix}"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.soar_response_agent.function_name
   principal     = "events.amazonaws.com"
@@ -442,7 +442,7 @@ data "aws_iam_policy_document" "scheduler_invoke_executive_dashboard" {
 }
 
 resource "aws_lambda_permission" "executive_dashboard_scheduler" {
-  statement_id  = "AllowSchedulerInvoke"
+  statement_id  = "AllowSchedulerInvoke-${local.name_suffix}"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.executive_dashboard.function_name
   principal     = "scheduler.amazonaws.com"
