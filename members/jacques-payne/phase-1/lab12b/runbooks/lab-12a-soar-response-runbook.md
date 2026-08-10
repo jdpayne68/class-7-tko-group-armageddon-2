@@ -30,10 +30,10 @@ CRITICAL findings request urgent human review rather than automatically blocking
 
 ## Architecture diagram
 
-![Lab 12A event-driven SOAR architecture](../architecture/lab-12a-soar-architecture.svg)
+![Lab 12A SOAR architecture](../../lab12a/architecture/lab-12a-soar-architecture.png)
 
 The editable source is stored at
-`../architecture/lab-12a-soar-architecture.excalidraw`.
+`../../lab12a/architecture/lab-12a-soar-architecture.excalidraw`.
 
 ## Architecture flow
 

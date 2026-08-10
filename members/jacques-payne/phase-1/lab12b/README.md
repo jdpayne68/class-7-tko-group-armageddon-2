@@ -12,7 +12,7 @@ boundary for containment decisions.
 
 ## Architecture
 
-![Lab 12B executive reporting architecture](architecture/lab-12b-executive-reporting-architecture.svg)
+![Lab 12B executive reporting architecture](architecture/lab-12b-executive-reporting-architecture.png)
 
 PNG preview:
 
@@ -22,10 +22,7 @@ Editable diagram source:
 
 - [`architecture/lab-12b-executive-reporting-architecture.excalidraw`](architecture/lab-12b-executive-reporting-architecture.excalidraw)
 
-Inherited Lab 12A SOAR architecture:
 
-- [`architecture/lab-12a-soar-architecture.svg`](architecture/lab-12a-soar-architecture.svg)
-- [`architecture/lab-12a-soar-architecture.excalidraw`](architecture/lab-12a-soar-architecture.excalidraw)
 
 Primary workflow:
 
@@ -170,12 +167,11 @@ ENABLE_BEDROCK
 ```text
 lab-12b/
 ├── architecture/
-│   ├── lab-12a-soar-architecture.excalidraw
-│   ├── lab-12a-soar-architecture.png
-│   ├── lab-12a-soar-architecture.svg
+│   ├── archived/
+│   │   ├── lab-12b-executive-reporting-reference-architecture.excalidraw
+│   │   └── lab-12b-executive-reporting-reference-architecture.png
 │   ├── lab-12b-executive-reporting-architecture.excalidraw
-│   ├── lab-12b-executive-reporting-architecture.png
-│   └── lab-12b-executive-reporting-architecture.svg
+│   └── lab-12b-executive-reporting-architecture.png
 ├── evidence/
 │   ├── README.md
 │   ├── redactions.example.json

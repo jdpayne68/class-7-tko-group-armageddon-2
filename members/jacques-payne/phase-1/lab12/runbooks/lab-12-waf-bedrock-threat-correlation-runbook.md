@@ -87,7 +87,7 @@ The correlation Lambda:
 ## 3. Repository Layout
 
 ```text
-phase-1/lab-12/
+members/jacques-payne/phase-1/lab12/
 ├── evidence/
 ├── runbooks/
 ├── scripts/
@@ -164,7 +164,7 @@ Type:   SYSTEM_DEFINED
 Create a local Terraform variables file at:
 
 ```text
-phase-1/lab-12/terraform/terraform.tfvars
+members/jacques-payne/phase-1/lab12/terraform/terraform.tfvars
 ```
 
 This file is ignored by Git and must not be committed.
@@ -202,27 +202,27 @@ The local state file is also required for the eventual controlled Terraform dest
 Initialize Terraform:
 
 ```bash
-terraform -chdir=phase-1/lab-12/terraform init
+terraform -chdir=members/jacques-payne/phase-1/lab12/terraform init
 ```
 
 Check Terraform formatting:
 
 ```bash
-terraform -chdir=phase-1/lab-12/terraform \
+terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
   fmt -check -recursive
 ```
 
 Validate the configuration:
 
 ```bash
-terraform -chdir=phase-1/lab-12/terraform \
+terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
   validate
 ```
 
 Create a saved deployment plan:
 
 ```bash
-terraform -chdir=phase-1/lab-12/terraform \
+terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
   plan \
   -out=lab12.tfplan
 ```
@@ -236,7 +236,7 @@ Plan: 30 to add, 0 to change, 0 to destroy.
 Apply only the reviewed saved plan:
 
 ```bash
-terraform -chdir=phase-1/lab-12/terraform \
+terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
   apply lab12.tfplan
 ```
 
@@ -252,12 +252,12 @@ Confirm the deployed Bedrock model configuration:
 
 ```bash
 ANALYZER_NAME="$(
-  terraform -chdir=phase-1/lab-12/terraform \
+  terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
     output -raw analyzer_lambda_name
 )"
 
 CORRELATION_NAME="$(
-  terraform -chdir=phase-1/lab-12/terraform \
+  terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
     output -raw correlation_lambda_name
 )"
 
@@ -284,7 +284,7 @@ Confirm that both EventBridge Scheduler schedules remain disabled:
 
 ```bash
 SCHEDULE_GROUP="$(
-  terraform -chdir=phase-1/lab-12/terraform \
+  terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
     output -raw scheduler_schedule_group_name
 )"
 
@@ -314,7 +314,7 @@ Retrieve the API URL from Terraform:
 
 ```bash
 API_URL="$(
-  terraform -chdir=phase-1/lab-12/terraform \
+  terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
     output -raw api_invoke_url
 )"
 ```
@@ -358,7 +358,7 @@ Retrieve the WAF log-group name:
 
 ```bash
 WAF_LOG_GROUP="$(
-  terraform -chdir=phase-1/lab-12/terraform \
+  terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
     output -raw waf_log_group_name
 )"
 ```
@@ -583,7 +583,7 @@ aws lambda invoke \
   --function-name "$CORRELATION_NAME" \
   --cli-binary-format raw-in-base64-out \
   --payload \
-    fileb://phase-1/lab-12/test-events/lab12-correlation.json \
+    fileb://members/jacques-payne/phase-1/lab12/test-events/lab12-correlation.json \
   "$CORRELATION_RESPONSE"
 ```
 
@@ -640,7 +640,7 @@ Retrieve the findings-table name:
 
 ```bash
 FINDINGS_TABLE="$(
-  terraform -chdir=phase-1/lab-12/terraform \
+  terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
     output -raw correlation_findings_table_name
 )"
 ```
@@ -883,7 +883,7 @@ Resource names, model IDs, timestamps, HTTP status codes, finding UUIDs, and Ter
 Run Terraform formatting and validation:
 
 ```bash
-TF_DIR="phase-1/lab-12/terraform"
+TF_DIR="members/jacques-payne/phase-1/lab12/terraform"
 
 terraform -chdir="$TF_DIR" \
   fmt -check -recursive
@@ -898,7 +898,7 @@ Validate Python syntax without generating bytecode:
 python3 <<'PY'
 from pathlib import Path
 
-source_directory = Path("phase-1/lab-12/src")
+source_directory = Path("members/jacques-payne/phase-1/lab12/src")
 
 for path in sorted(source_directory.glob("*.py")):
     compile(
@@ -974,9 +974,9 @@ No changes. Your infrastructure matches the configuration.
 Lab 12 uses two architecture files:
 
 ```text
-phase-1/lab-12/diagrams/
+members/jacques-payne/phase-1/lab12/architecture/
 ├── lab-12-waf-bedrock-threat-correlation-architecture.excalidraw
-└── lab-12-waf-bedrock-threat-correlation-architecture.svg
+└── lab-12-waf-bedrock-threat-correlation-architecture.png
 ```
 
 The `.excalidraw` file is the editable source of truth.
@@ -1020,7 +1020,7 @@ Do not destroy the environment until:
 Create a saved destroy plan:
 
 ```bash
-terraform -chdir=phase-1/lab-12/terraform \
+terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
   plan \
   -destroy \
   -out=lab12-destroy.tfplan
@@ -1031,7 +1031,7 @@ Review the plan summary and every resource marked for destruction.
 Apply only the reviewed saved plan:
 
 ```bash
-terraform -chdir=phase-1/lab-12/terraform \
+terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
   apply lab12-destroy.tfplan
 ```
 
@@ -1052,7 +1052,7 @@ Capture the privacy-safe completion summary as:
 After the destroy, confirm Terraform manages no remaining resources:
 
 ```bash
-terraform -chdir=phase-1/lab-12/terraform \
+terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
   state list
 ```
 
@@ -1061,7 +1061,7 @@ No managed-resource addresses should be returned.
 Run a final plan:
 
 ```bash
-terraform -chdir=phase-1/lab-12/terraform \
+terraform -chdir=members/jacques-payne/phase-1/lab12/terraform \
   plan
 ```
 

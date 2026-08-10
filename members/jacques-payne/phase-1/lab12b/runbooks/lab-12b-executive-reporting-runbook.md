@@ -45,7 +45,7 @@ human_review_required = true
 
 ## Architecture diagram
 
-![Lab 12B executive reporting architecture](../architecture/lab-12b-executive-reporting-architecture.svg)
+![Lab 12B executive reporting architecture](../architecture/lab-12b-executive-reporting-architecture.png)
 
 PNG preview:
 
@@ -55,9 +55,7 @@ Editable source:
 
 - [`../architecture/lab-12b-executive-reporting-architecture.excalidraw`](../architecture/lab-12b-executive-reporting-architecture.excalidraw)
 
-Inherited SOAR architecture:
 
-- [`../architecture/lab-12a-soar-architecture.svg`](../architecture/lab-12a-soar-architecture.svg)
 
 ## Architecture flow
 
@@ -301,7 +299,7 @@ It performs the following workflow:
 Run it from the repository root:
 
 ```bash
-python3 phase-1/lab-12b/scripts/seed-and-run-lab12b-report-test.py
+python3 members/jacques-payne/phase-1/lab12b/scripts/seed-and-run-lab12b-report-test.py
 ```
 
 Expected significant output:

@@ -10,7 +10,7 @@ and preserves a human-approval boundary for containment decisions.
 
 ## Architecture
 
-![Lab 12A event-driven SOAR architecture](architecture/lab-12a-soar-architecture.svg)
+![Lab 12A event-driven SOAR architecture](architecture/lab-12a-soar-architecture.png)
 
 Editable diagram source:
 
@@ -109,7 +109,7 @@ EventBridge event bus with `events:PutEvents`.
 lab-12a/
 ├── architecture/
 │   ├── lab-12a-soar-architecture.excalidraw
-│   └── lab-12a-soar-architecture.svg
+│   └── lab-12a-soar-architecture.png
 ├── evidence/
 │   ├── README.md
 │   ├── redactions.example.json

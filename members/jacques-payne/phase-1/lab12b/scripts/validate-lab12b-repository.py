@@ -4,7 +4,7 @@ from urllib.parse import unquote
 import re
 import sys
 
-LAB = Path("phase-1/lab-12b")
+LAB = Path(__file__).resolve().parents[1]
 FAILURES: list[str] = []
 
 ALLOWED_PLACEHOLDER_ACCOUNT_IDS = {"111122223333"}
@@ -154,11 +154,7 @@ required = [
     LAB / "evidence" / "README.md",
     LAB / "runbooks" / "lab-12a-soar-response-runbook.md",
     LAB / "runbooks" / "lab-12b-executive-reporting-runbook.md",
-    LAB / "architecture" / "lab-12a-soar-architecture.excalidraw",
-    LAB / "architecture" / "lab-12a-soar-architecture.svg",
-    LAB / "architecture" / "lab-12a-soar-architecture.png",
     LAB / "architecture" / "lab-12b-executive-reporting-architecture.excalidraw",
-    LAB / "architecture" / "lab-12b-executive-reporting-architecture.svg",
     LAB / "architecture" / "lab-12b-executive-reporting-architecture.png",
     LAB / "evidence" / "20-populated-executive-security-report.pdf",
     LAB / "evidence" / "20-populated-executive-security-report.json",
