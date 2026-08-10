@@ -1,0 +1,2 @@
+# Copy this file to terraform.tfvars and replace the placeholder.
+notification_email = "your-email@example.com"
