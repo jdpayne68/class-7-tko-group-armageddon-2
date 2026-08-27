@@ -176,6 +176,19 @@ data "aws_iam_policy_document" "application" {
       "${aws_cloudwatch_log_group.application.arn}:*",
     ]
   }
+
+  statement {
+    sid = "UpdateTokenUsage"
+
+    actions = [
+      "dynamodb:GetItem",
+      "dynamodb:UpdateItem",
+    ]
+
+    resources = [
+      aws_dynamodb_table.token_tracking.arn,
+    ]
+  }
 }
 
 resource "aws_iam_role_policy" "application" {
@@ -215,6 +228,7 @@ data "aws_iam_policy_document" "scheduler" {
     resources = [
       aws_lambda_function.analyzer.arn,
       aws_lambda_function.correlation.arn,
+      aws_lambda_function.unused_token_detector.arn,
     ]
   }
 }

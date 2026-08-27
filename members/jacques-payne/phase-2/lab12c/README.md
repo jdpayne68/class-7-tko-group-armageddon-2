@@ -86,6 +86,104 @@ Compliance Agent Lambda
             compliance-reports/
 ```
 
+### Post-Submission Security Enhancement: Authentication, RBAC, and Token-Use Telemetry
+
+After completing the original Lab 12C Compliance Evidence Agent, the environment was extended with an additional identity, authorization, and security-telemetry layer.
+
+This enhancement adds:
+
+- Amazon Cognito authentication
+- TOTP multifactor authentication
+- API Gateway Cognito authorization
+- Cognito group-based role-based access control
+- application-level authorization in Lambda
+- DynamoDB token-use telemetry
+- token ownership verification
+- unused-token detection
+- EventBridge Scheduler integration
+- structured CloudWatch logging
+
+The enhancement preserves the original Lab 12C compliance workflow and extends the existing protected API rather than replacing it.
+
+The resulting protected request path is:
+
+```text
+                         Amazon Cognito
+                     User Pool + MFA + Groups
+                              |
+                              | JWT
+                              v
+Client -> AWS WAF -> API Gateway
+                         |
+                  Cognito Authorizer
+                         |
+                         v
+                 Protected Lambda
+                    /          \
+                   /            \
+            RBAC decision    Token telemetry
+           cognito:groups      x-token-id
+                  |                |
+                  |                v
+                  |          DynamoDB
+                  |       token-tracking
+                  |                |
+                  |         used = true/false
+                  |                |
+                  |                v
+                  |       EventBridge Scheduler
+                  |                |
+                  |                v
+                  |       Unused Token Detector
+                  |                |
+                  +------------> CloudWatch Logs
+```
+
+The authorization model deliberately separates authentication from authorization:
+
+| Request | Validated Result | Enforcement Point |
+|---|---:|---|
+| No valid Cognito token | `401` | API Gateway / Cognito |
+| `security-viewers` | `403` | Protected Lambda |
+| `security-analysts` | `200` | Protected Lambda |
+| `security-admins` | `200` | Protected Lambda |
+
+Additional live validation confirmed:
+
+| Control | Validated Result |
+|---|---|
+| Missing `x-token-id` | `400` |
+| Valid analyst-owned token | `200` |
+| Valid admin-owned token | `200` |
+| Wrong-owner token | `403` |
+| Successful token-use update | `used=false -> used=true` |
+| Unused-token detector | `UNUSED_TOKEN` |
+| CloudWatch alert logging | Validated |
+
+The token-use telemetry layer does not replace JWT validation and does not determine whether a JWT is expired. It records whether an issued token/session identifier is subsequently used and detects unused records that remain outstanding beyond the configured threshold.
+
+Detailed deployment, IAM, RBAC, token-ownership, detector, validation, and teardown procedures are documented in:
+
+```text
+runbooks/lab-12c-authentication-rbac-token-telemetry-runbook.md
+```
+
+Current enhancement status:
+
+```text
+Infrastructure deployment: COMPLETE
+Cognito infrastructure: VALIDATED
+Cognito MFA: VALIDATED
+Live Cognito authentication: VALIDATED
+Live RBAC authorization: VALIDATED
+Token-use telemetry: VALIDATED
+Token ownership validation: VALIDATED
+Unused-token detection: VALIDATED
+CloudWatch alert logging: VALIDATED
+EventBridge unused-token schedule: DISABLED DURING CONTROLLED TESTING
+Final Terraform no-drift validation: VALIDATED
+```
+
 ### Compliance Boundary
 
 The Compliance Agent may:

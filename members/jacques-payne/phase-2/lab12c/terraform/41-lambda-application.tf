@@ -12,6 +12,12 @@ resource "aws_lambda_function" "application" {
   memory_size = 128
   timeout     = 10
 
+  environment {
+    variables = {
+      TOKEN_TABLE_NAME = aws_dynamodb_table.token_tracking.name
+    }
+  }
+
   depends_on = [
     aws_cloudwatch_log_group.application,
     aws_iam_role_policy.application,
