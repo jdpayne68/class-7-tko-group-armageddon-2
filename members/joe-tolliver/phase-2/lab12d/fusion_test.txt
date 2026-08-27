@@ -1,0 +1,589 @@
+
+=== PROVIDER RESULT ===
+{'provider': 'cisa_kev', 'indicator_id': 'CVE:CVE-2021-44228', 'indicator': 'CVE-2021-44228', 'indicator_type': 'CVE', 'status': 'SUCCESS', 'retrieved_at': '2026-08-27T00:53:09.564843Z', 'expires_at': 1787878389, 'data': {'known_exploited': True, 'cve_id': 'CVE-2021-44228', 'vendor_project': 'Apache', 'product': 'Log4j2', 'vulnerability_name': 'Apache Log4j2 Remote Code Execution Vulnerability', 'date_added': '2021-12-10', 'short_description': 'Apache Log4j2 contains a vulnerability where JNDI features do not protect against attacker-controlled JNDI-related endpoints, allowing for remote code execution.', 'required_action': 'For all affected software assets for which updates exist, the only acceptable remediation actions are: 1) Apply updates; OR 2) remove affected assets from agency networks. Temporary mitigations using one of the measures provided at https://www.cisa.gov/uscert/ed-22-02-apache-log4j-recommended-mitigation-measures are only acceptable until updates are available.', 'due_date': '2021-12-24', 'known_ransomware_campaign_use': 'Known', 'notes': 'https://nvd.nist.gov/vuln/detail/CVE-2021-44228', 'cwes': ['CWE-20', 'CWE-400', 'CWE-502'], 'catalog_version': '2026.08.26', 'catalog_released': '2026-08-26T17:00:09.8976Z'}, 'error': None}
+
+=== FUSION EVIDENCE ===
+{'evidence_id': '46ca3582-328a-44e3-985a-cf425c370485', 'provider_name': 'cisa_kev', 'provider_status': 'SUCCESS', 'provider_trust': 'HIGH', 'indicator_value': 'CVE-2021-44228', 'indicator_type': 'CVE', 'indicator_source': 'EXTERNAL_API', 'condition': 'OTHER', 'severity': 'UNKNOWN', 'confidence': 'OBSERVED', 'summary': 'CISA KEV reports this CVE as a known exploited vulnerability.', 'observed_at': '2026-08-27T00:53:09.564843+00:00', 'expires_at': '2026-08-28T00:53:09+00:00', 'metadata': {'provider_data': {'known_exploited': True, 'cve_id': 'CVE-2021-44228', 'vendor_project': 'Apache', 'product': 'Log4j2', 'vulnerability_name': 'Apache Log4j2 Remote Code Execution Vulnerability', 'date_added': '2021-12-10', 'short_description': 'Apache Log4j2 contains a vulnerability where JNDI features do not protect against attacker-controlled JNDI-related endpoints, allowing for remote code execution.', 'required_action': 'For all affected software assets for which updates exist, the only acceptable remediation actions are: 1) Apply updates; OR 2) remove affected assets from agency networks. Temporary mitigations using one of the measures provided at https://www.cisa.gov/uscert/ed-22-02-apache-log4j-recommended-mitigation-measures are only acceptable until updates are available.', 'due_date': '2021-12-24', 'known_ransomware_campaign_use': 'Known', 'notes': 'https://nvd.nist.gov/vuln/detail/CVE-2021-44228', 'cwes': ['CWE-20', 'CWE-400', 'CWE-502'], 'catalog_version': '2026.08.26', 'catalog_released': '2026-08-26T17:00:09.8976Z'}}, 'raw_reference': None}
+
+=== EVIDENCE COUNT ===
+2
+
+=== EVIDENCE INVENTORY ===
+{'investigation_id': 'd6560229-c943-429f-96a9-e29d7fa08aac', 'created_at': '2026-08-27T00:53:09.565315+00:00', 'updated_at': '2026-08-27T00:53:09.565508+00:00', 'total_records': 2, 'usable_records': 2, 'expired_records': 0, 'provider_count': 2, 'providers': {'cisa_kev': 1, 'simulated_aws_inspector': 1}, 'conditions': {'OTHER': 1, 'VULNERABLE_LIBRARY': 1}, 'reported_severities': {'UNKNOWN': 1, 'HIGH': 1}, 'reported_confidences': {'OBSERVED': 1, 'VALIDATED': 1}}
+
+=== SERIALIZED AGGREGATOR ===
+{'inventory': {'investigation_id': 'd6560229-c943-429f-96a9-e29d7fa08aac', 'created_at': '2026-08-27T00:53:09.565315+00:00', 'updated_at': '2026-08-27T00:53:09.565508+00:00', 'total_records': 2, 'usable_records': 2, 'expired_records': 0, 'provider_count': 2, 'providers': {'cisa_kev': 1, 'simulated_aws_inspector': 1}, 'conditions': {'OTHER': 1, 'VULNERABLE_LIBRARY': 1}, 'reported_severities': {'UNKNOWN': 1, 'HIGH': 1}, 'reported_confidences': {'OBSERVED': 1, 'VALIDATED': 1}}, 'provenance': {'provider_count': 2, 'providers': ['cisa_kev', 'simulated_aws_inspector'], 'provider_status': {'SUCCESS': 2}, 'provider_trust': {'HIGH': 2}, 'indicator_sources': {'EXTERNAL_API': 1, 'INSPECTOR': 1}}, 'evidence': [{'evidence_id': '46ca3582-328a-44e3-985a-cf425c370485', 'provider_name': 'cisa_kev', 'provider_status': 'SUCCESS', 'provider_trust': 'HIGH', 'indicator_value': 'CVE-2021-44228', 'indicator_type': 'CVE', 'indicator_source': 'EXTERNAL_API', 'condition': 'OTHER', 'severity': 'UNKNOWN', 'confidence': 'OBSERVED', 'summary': 'CISA KEV reports this CVE as a known exploited vulnerability.', 'observed_at': '2026-08-27T00:53:09.564843+00:00', 'expires_at': '2026-08-28T00:53:09+00:00', 'metadata': {'provider_data': {'known_exploited': True, 'cve_id': 'CVE-2021-44228', 'vendor_project': 'Apache', 'product': 'Log4j2', 'vulnerability_name': 'Apache Log4j2 Remote Code Execution Vulnerability', 'date_added': '2021-12-10', 'short_description': 'Apache Log4j2 contains a vulnerability where JNDI features do not protect against attacker-controlled JNDI-related endpoints, allowing for remote code execution.', 'required_action': 'For all affected software assets for which updates exist, the only acceptable remediation actions are: 1) Apply updates; OR 2) remove affected assets from agency networks. Temporary mitigations using one of the measures provided at https://www.cisa.gov/uscert/ed-22-02-apache-log4j-recommended-mitigation-measures are only acceptable until updates are available.', 'due_date': '2021-12-24', 'known_ransomware_campaign_use': 'Known', 'notes': 'https://nvd.nist.gov/vuln/detail/CVE-2021-44228', 'cwes': ['CWE-20', 'CWE-400', 'CWE-502'], 'catalog_version': '2026.08.26', 'catalog_released': '2026-08-26T17:00:09.8976Z'}}, 'raw_reference': None}, {'evidence_id': '0a9de32f-505d-412c-b30c-cc180a64fe62', 'provider_name': 'simulated_aws_inspector', 'provider_status': 'SUCCESS', 'provider_trust': 'HIGH', 'indicator_value': 'CVE-2021-44228', 'indicator_type': 'CVE', 'indicator_source': 'INSPECTOR', 'condition': 'VULNERABLE_LIBRARY', 'severity': 'HIGH', 'confidence': 'VALIDATED', 'summary': 'Simulated AWS Inspector evidence indicates that an application asset contains a library affected by CVE-2021-44228.', 'observed_at': '2026-08-27T00:53:09.565350+00:00', 'expires_at': None, 'metadata': {'simulation': True, 'resource_id': 'i-0123456789example', 'package': 'log4j'}, 'raw_reference': None}]}
+
+=== SELECTED EVIDENCE ===
+Selected count: 2
+cisa_kev CVE-2021-44228 OTHER HIGH
+simulated_aws_inspector CVE-2021-44228 VULNERABLE_LIBRARY HIGH
+
+=== CORRELATION GROUPS ===
+Group count: 1
+[CorrelationGroup(correlation_id='c57d5009-ecda-4d32-a246-f17d8c6db1ab', evidence=[ThreatEvidence(evidence_id='46ca3582-328a-44e3-985a-cf425c370485', provider_name='cisa_kev', provider_status=ProviderStatus.SUCCESS, provider_trust=ProviderTrustLevel.HIGH, indicator_value='CVE-2021-44228', indicator_type=IndicatorType.CVE, indicator_source=IndicatorSource.EXTERNAL_API, condition=ThreatCondition.OTHER, severity=ThreatSeverity.UNKNOWN, confidence=ThreatConfidence.OBSERVED, summary='CISA KEV reports this CVE as a known exploited vulnerability.', observed_at=datetime.datetime(2026, 8, 27, 0, 53, 9, 564843, tzinfo=datetime.timezone.utc), expires_at=datetime.datetime(2026, 8, 28, 0, 53, 9, tzinfo=datetime.timezone.utc), metadata={'provider_data': {'known_exploited': True, 'cve_id': 'CVE-2021-44228', 'vendor_project': 'Apache', 'product': 'Log4j2', 'vulnerability_name': 'Apache Log4j2 Remote Code Execution Vulnerability', 'date_added': '2021-12-10', 'short_description': 'Apache Log4j2 contains a vulnerability where JNDI features do not protect against attacker-controlled JNDI-related endpoints, allowing for remote code execution.', 'required_action': 'For all affected software assets for which updates exist, the only acceptable remediation actions are: 1) Apply updates; OR 2) remove affected assets from agency networks. Temporary mitigations using one of the measures provided at https://www.cisa.gov/uscert/ed-22-02-apache-log4j-recommended-mitigation-measures are only acceptable until updates are available.', 'due_date': '2021-12-24', 'known_ransomware_campaign_use': 'Known', 'notes': 'https://nvd.nist.gov/vuln/detail/CVE-2021-44228', 'cwes': ['CWE-20', 'CWE-400', 'CWE-502'], 'catalog_version': '2026.08.26', 'catalog_released': '2026-08-26T17:00:09.8976Z'}}, raw_reference=None), ThreatEvidence(evidence_id='0a9de32f-505d-412c-b30c-cc180a64fe62', provider_name='simulated_aws_inspector', provider_status=ProviderStatus.SUCCESS, provider_trust=ProviderTrustLevel.HIGH, indicator_value='CVE-2021-44228', indicator_type=IndicatorType.CVE, indicator_source=IndicatorSource.INSPECTOR, condition=ThreatCondition.VULNERABLE_LIBRARY, severity=ThreatSeverity.HIGH, confidence=ThreatConfidence.VALIDATED, summary='Simulated AWS Inspector evidence indicates that an application asset contains a library affected by CVE-2021-44228.', observed_at=datetime.datetime(2026, 8, 27, 0, 53, 9, 565350, tzinfo=datetime.timezone.utc), expires_at=None, metadata={'simulation': True, 'resource_id': 'i-0123456789example', 'package': 'log4j'}, raw_reference=None)], rationale=['Evidence grouped because all observations reference the same CVE indicator: cve-2021-44228'])]
+
+=== THREAT CLASSIFICATION ===
+Threat Type: VULNERABILITY_EXPOSURE
+Threat Domain: APPLICATION
+
+=== THREAT ASSESSMENT ===
+Threat Type: VULNERABILITY_EXPOSURE
+Threat Domain: APPLICATION
+Severity: CRITICAL
+Confidence: VALIDATED
+Assessment: REMEDIATION_RECOMMENDED
+Evidence Count: 2
+
+Rationale:
+- The vulnerability is listed as known exploited.
+- Evidence indicates that an affected library exists in the environment.
+- Remediation is recommended because external exploitation intelligence and internal exposure evidence are correlated.
+
+Metadata:
+{'known_exploited': True, 'vulnerable_asset': True, 'high_trust_providers': 2, 'correlation_id': 'c57d5009-ecda-4d32-a246-f17d8c6db1ab'}
+
+=== THREAT SUMMARY ===
+Title: VULNERABILITY_EXPOSURE Investigation
+Executive Summary: Deterministic threat assessment completed.
+Evidence Count: 2
+Provider Count: 2
+
+Findings:
+- The vulnerability is listed as known exploited.
+- Evidence indicates that an affected library exists in the environment.
+- Remediation is recommended because external exploitation intelligence and internal exposure evidence are correlated.
+
+Recommendations:
+- Evidence supports corrective action.
+
+=== AI NARRATIVE PROMPT ===
+
+Explain the following engineering assessment.
+
+Threat Type:
+    VULNERABILITY_EXPOSURE
+
+Threat Domain:
+    APPLICATION
+
+Severity:
+    CRITICAL
+
+Confidence:
+    VALIDATED
+
+Assessment:
+    REMEDIATION_RECOMMENDED
+
+Key Findings:
+
+- The vulnerability is listed as known exploited.
+- Evidence indicates that an affected library exists in the environment.
+- Remediation is recommended because external exploitation intelligence and internal exposure evidence are correlated.
+
+Produce an executive summary suitable for a security manager.
+
+Do not modify the engineering conclusions.
+
+
+=== SIMULATED PROVIDER RESULT ===
+{'provider': 'simulated_aws_inspector', 'indicator_id': 'CVE:CVE-2021-44228', 'indicator': 'CVE-2021-44228', 'indicator_type': 'CVE', 'status': 'SUCCESS', 'retrieved_at': '2026-08-27T00:53:09.565350+00:00', 'expires_at': 1787878389, 'data': {'simulation': True, 'condition': 'VULNERABLE_LIBRARY', 'resource_id': 'i-0123456789example', 'package': 'log4j'}, 'error': None}
+
+Invoking Bedrock model: us.anthropic.claude-haiku-4-5-20251001-v1:0
+
+=== BEDROCK NARRATIVE ===
+# Security Investigation Summary: CVE-2021-44228
+
+## Overview
+This investigation assessed **CVE-2021-44228** (Apache Log4j Remote Code Execution) and identified it as a **CRITICAL risk** with 80% confidence. The vulnerability is **actively exploited in the wild** and **associated with ransomware campaigns**.
+
+## Key Findings
+
+**1. Known Active Exploitation**
+- Threat intelligence confirms this vulnerability is being exploited by real-world threat actors
+- CISA maintains this CVE on its Known Exploited Vulnerabilities catalog
+- Confidence: 80%
+
+**2. Ransomware Association**
+- Intelligence sources link this vulnerability to ransomware deployment
+- This elevates potential business impact beyond data breach to operational disruption
+- Confidence: 80%
+
+**3. Vulnerability Scope**
+- One CVE identified in this investigation
+- Affects systems running vulnerable Apache Log4j library versions
+
+## Critical Actions Required
+
+1. **Immediate Patching** – Identify all affected assets and apply vendor patches or compensating controls under emergency procedures
+2. **Threat Hunt** – Search logs and telemetry for signs of active exploitation, persistence, lateral movement, or command-and-control activity
+3. **Incident Response Escalation** – Engage IR team to validate whether compromise has already occurred, particularly focusing on backup integrity and lateral movement
+
+## Important Limitation
+External threat intelligence findings are based on public vulnerability data. **Internal validation against your environment's telemetry is required** before determining if this environment has been compromised.
+
+**Recommendation:** Treat as CRITICAL priority. Patching alone is insufficient—concurrent investigation is essential to determine if exploitation has already occurred.
+
+=== STRUCTURED THREAT REPORT ===
+================================================================
+THREAT INTELLIGENCE REPORT
+================================================================
+Report ID:   tir-cc03b306-9416-4ae1-ba78-4ebc92291d03
+Status:      COMPLETE
+Indicator:   CVE-2021-44228
+Type:        CVE
+Risk:        CRITICAL
+Confidence:  80%
+Priority:    CRITICAL
+Findings:    3
+Actions:     4
+----------------------------------------------------------------
+The indicator is assessed as CRITICAL risk with 80% confidence and is associated with known exploitation.
+================================================================
+
+=== JSON REPORT ===
+{
+  "analyzed_at": "2026-08-27T00:53:09.566901+00:00",
+  "evidence_summary": {
+    "abuse_scores": [],
+    "confidence_scores": [
+      25,
+      80
+    ],
+    "cves": [
+      "CVE-2021-44228"
+    ],
+    "distinct_reporting_users": 0,
+    "failed_providers": [],
+    "known_exploited": true,
+    "not_found_providers": [],
+    "provider_evidence": {
+      "cisa_kev": {
+        "condition": "OTHER",
+        "confidence": "OBSERVED",
+        "evidence_id": "46ca3582-328a-44e3-985a-cf425c370485",
+        "expires_at": "2026-08-28T00:53:09+00:00",
+        "indicator_source": "EXTERNAL_API",
+        "indicator_type": "CVE",
+        "indicator_value": "CVE-2021-44228",
+        "metadata": {
+          "provider_data": {
+            "catalog_released": "2026-08-26T17:00:09.8976Z",
+            "catalog_version": "2026.08.26",
+            "cve_id": "CVE-2021-44228",
+            "cwes": [
+              "CWE-20",
+              "CWE-400",
+              "CWE-502"
+            ],
+            "date_added": "2021-12-10",
+            "due_date": "2021-12-24",
+            "known_exploited": true,
+            "known_ransomware_campaign_use": "Known",
+            "notes": "https://nvd.nist.gov/vuln/detail/CVE-2021-44228",
+            "product": "Log4j2",
+            "required_action": "For all affected software assets for which updates exist, the only acceptable remediation actions are: 1) Apply updates; OR 2) remove affected assets from agency networks. Temporary mitigations using one of the measures provided at https://www.cisa.gov/uscert/ed-22-02-apache-log4j-recommended-mitigation-measures are only acceptable until updates are available.",
+            "short_description": "Apache Log4j2 contains a vulnerability where JNDI features do not protect against attacker-controlled JNDI-related endpoints, allowing for remote code execution.",
+            "vendor_project": "Apache",
+            "vulnerability_name": "Apache Log4j2 Remote Code Execution Vulnerability"
+          }
+        },
+        "observed_at": "2026-08-27T00:53:09.564843+00:00",
+        "provider_name": "cisa_kev",
+        "provider_status": "SUCCESS",
+        "provider_trust": "HIGH",
+        "raw_reference": null,
+        "severity": "UNKNOWN",
+        "summary": "CISA KEV reports this CVE as a known exploited vulnerability."
+      },
+      "simulated_aws_inspector": {
+        "condition": "VULNERABLE_LIBRARY",
+        "confidence": "VALIDATED",
+        "evidence_id": "0a9de32f-505d-412c-b30c-cc180a64fe62",
+        "expires_at": null,
+        "indicator_source": "INSPECTOR",
+        "indicator_type": "CVE",
+        "indicator_value": "CVE-2021-44228",
+        "metadata": {
+          "package": "log4j",
+          "resource_id": "i-0123456789example",
+          "simulation": true
+        },
+        "observed_at": "2026-08-27T00:53:09.565350+00:00",
+        "provider_name": "simulated_aws_inspector",
+        "provider_status": "SUCCESS",
+        "provider_trust": "HIGH",
+        "raw_reference": null,
+        "severity": "HIGH",
+        "summary": "Simulated AWS Inspector evidence indicates that an application asset contains a library affected by CVE-2021-44228."
+      }
+    },
+    "provider_risks": [
+      "UNKNOWN",
+      "HIGH"
+    ],
+    "providers_consulted": [
+      "simulated_aws_inspector",
+      "cisa_kev"
+    ],
+    "ransomware_associated": true,
+    "successful_providers": [
+      "simulated_aws_inspector",
+      "cisa_kev"
+    ],
+    "techniques": [],
+    "tor_observed": false,
+    "total_reports": 0,
+    "warnings": [
+      "AWS Inspector evidence is simulated and does not represent a real AWS finding."
+    ],
+    "whitelisted": false
+  },
+  "executive_summary": {
+    "cve_count": 1,
+    "failed_sources": 0,
+    "known_exploited": true,
+    "overall_confidence": 80,
+    "overall_risk": "CRITICAL",
+    "primary_assessment": "The indicator is assessed as CRITICAL risk with 80% confidence and is associated with known exploitation.",
+    "ransomware_associated": true,
+    "recommended_priority": "CRITICAL",
+    "sources_consulted": 2,
+    "successful_sources": 2,
+    "technique_count": 0
+  },
+  "findings": [
+    {
+      "confidence": 80,
+      "cve_ids": [
+        "CVE-2021-44228"
+      ],
+      "description": "Threat-intelligence evidence indicates that the associated vulnerability is known to be exploited in real-world attacks.",
+      "evidence": {
+        "cves": [
+          "CVE-2021-44228"
+        ],
+        "known_exploited": true
+      },
+      "finding_id": "finding-known-exploitation",
+      "severity": "CRITICAL",
+      "source": "cisa_kev",
+      "technique_ids": [],
+      "title": "Known Exploitation Identified"
+    },
+    {
+      "confidence": 80,
+      "cve_ids": [
+        "CVE-2021-44228"
+      ],
+      "description": "Threat-intelligence evidence associates the indicator or vulnerability with ransomware activity.",
+      "evidence": {
+        "cves": [
+          "CVE-2021-44228"
+        ],
+        "ransomware_associated": true
+      },
+      "finding_id": "finding-ransomware-association",
+      "severity": "CRITICAL",
+      "source": "cisa_kev",
+      "technique_ids": [],
+      "title": "Ransomware Association Identified"
+    },
+    {
+      "confidence": 80,
+      "cve_ids": [
+        "CVE-2021-44228"
+      ],
+      "description": "The investigation identified one or more CVEs associated with the indicator or threat context.",
+      "evidence": {
+        "cve_count": 1,
+        "cves": [
+          "CVE-2021-44228"
+        ]
+      },
+      "finding_id": "finding-associated-cves",
+      "severity": "HIGH",
+      "source": "Threat Intelligence Fusion",
+      "technique_ids": [],
+      "title": "Associated Vulnerabilities Identified"
+    }
+  ],
+  "generated_at": "2026-08-27T00:53:14.434508Z",
+  "indicator": {
+    "indicator_id": "CVE:CVE-2021-44228",
+    "indicator_type": "CVE",
+    "value": "CVE-2021-44228"
+  },
+  "limitations": [
+    "AWS Inspector evidence is simulated for Lab12d testing.",
+    "AWS Inspector evidence is simulated and does not represent a real AWS finding.",
+    "External threat intelligence should be validated against internal telemetry before automated containment or remediation."
+  ],
+  "metadata": {
+    "lab": "lab12d",
+    "policy_version": "lab12d-custom-policy-1.0",
+    "provider_result_count": 2,
+    "simulation_used": true
+  },
+  "narrative": "# Security Investigation Summary: CVE-2021-44228\n\n## Overview\nThis investigation assessed **CVE-2021-44228** (Apache Log4j Remote Code Execution) and identified it as a **CRITICAL risk** with 80% confidence. The vulnerability is **actively exploited in the wild** and **associated with ransomware campaigns**.\n\n## Key Findings\n\n**1. Known Active Exploitation**\n- Threat intelligence confirms this vulnerability is being exploited by real-world threat actors\n- CISA maintains this CVE on its Known Exploited Vulnerabilities catalog\n- Confidence: 80%\n\n**2. Ransomware Association**\n- Intelligence sources link this vulnerability to ransomware deployment\n- This elevates potential business impact beyond data breach to operational disruption\n- Confidence: 80%\n\n**3. Vulnerability Scope**\n- One CVE identified in this investigation\n- Affects systems running vulnerable Apache Log4j library versions\n\n## Critical Actions Required\n\n1. **Immediate Patching** – Identify all affected assets and apply vendor patches or compensating controls under emergency procedures\n2. **Threat Hunt** – Search logs and telemetry for signs of active exploitation, persistence, lateral movement, or command-and-control activity\n3. **Incident Response Escalation** – Engage IR team to validate whether compromise has already occurred, particularly focusing on backup integrity and lateral movement\n\n## Important Limitation\nExternal threat intelligence findings are based on public vulnerability data. **Internal validation against your environment's telemetry is required** before determining if this environment has been compromised.\n\n**Recommendation:** Treat as CRITICAL priority. Patching alone is insufficient—concurrent investigation is essential to determine if exploitation has already occurred.",
+  "provider_appendix": [
+    {
+      "data": {
+        "catalog_released": "2026-08-26T17:00:09.8976Z",
+        "catalog_version": "2026.08.26",
+        "cve_id": "CVE-2021-44228",
+        "cwes": [
+          "CWE-20",
+          "CWE-400",
+          "CWE-502"
+        ],
+        "date_added": "2021-12-10",
+        "due_date": "2021-12-24",
+        "known_exploited": true,
+        "known_ransomware_campaign_use": "Known",
+        "notes": "https://nvd.nist.gov/vuln/detail/CVE-2021-44228",
+        "product": "Log4j2",
+        "required_action": "For all affected software assets for which updates exist, the only acceptable remediation actions are: 1) Apply updates; OR 2) remove affected assets from agency networks. Temporary mitigations using one of the measures provided at https://www.cisa.gov/uscert/ed-22-02-apache-log4j-recommended-mitigation-measures are only acceptable until updates are available.",
+        "short_description": "Apache Log4j2 contains a vulnerability where JNDI features do not protect against attacker-controlled JNDI-related endpoints, allowing for remote code execution.",
+        "vendor_project": "Apache",
+        "vulnerability_name": "Apache Log4j2 Remote Code Execution Vulnerability"
+      },
+      "error": null,
+      "expires_at": 1787878389,
+      "provider": "cisa_kev",
+      "retrieved_at": "2026-08-27T00:53:09.564843Z",
+      "status": "SUCCESS"
+    },
+    {
+      "data": {
+        "condition": "VULNERABLE_LIBRARY",
+        "package": "log4j",
+        "resource_id": "i-0123456789example",
+        "simulation": true
+      },
+      "error": null,
+      "expires_at": 1787878389,
+      "provider": "simulated_aws_inspector",
+      "retrieved_at": "2026-08-27T00:53:09.565350+00:00",
+      "status": "SUCCESS"
+    }
+  ],
+  "recommendations": [
+    {
+      "action": "Identify assets affected by CVE-2021-44228 and apply vendor remediation, compensating controls, or workload isolation according to emergency change procedures.",
+      "category": "REMEDIATE",
+      "priority": "CRITICAL",
+      "rationale": "Known exploitation materially increases the likelihood of active adversary use.",
+      "recommendation_id": "recommendation-known-exploited-patch",
+      "related_findings": [
+        "finding-known-exploitation",
+        "finding-associated-cves"
+      ],
+      "requires_human_approval": true,
+      "title": "Prioritize Vulnerability Remediation"
+    },
+    {
+      "action": "Search historical and current telemetry for signs of exploitation, persistence, credential access, lateral movement, and command-and-control activity.",
+      "category": "INVESTIGATE",
+      "priority": "CRITICAL",
+      "rationale": "Patching prevents future exploitation but does not determine whether compromise already occurred.",
+      "recommendation_id": "recommendation-known-exploited-hunt",
+      "related_findings": [
+        "finding-known-exploitation",
+        "finding-associated-cves"
+      ],
+      "requires_human_approval": false,
+      "title": "Conduct Targeted Threat Hunt"
+    },
+    {
+      "action": "Escalate the investigation to the incident response team and validate endpoint, identity, backup, and lateral-movement telemetry.",
+      "category": "INVESTIGATE",
+      "priority": "CRITICAL",
+      "rationale": "Ransomware association increases potential impact and requires rapid validation.",
+      "recommendation_id": "recommendation-ransomware-escalation",
+      "related_findings": [
+        "finding-ransomware-association"
+      ],
+      "requires_human_approval": false,
+      "title": "Escalate to Incident Response"
+    },
+    {
+      "action": "Retain the provider observations, normalized evidence, fusion summary, and report identifier for audit and future correlation.",
+      "category": "DOCUMENT",
+      "priority": "LOW",
+      "rationale": "Preserved evidence supports repeatable analysis, auditability, and comparison with future events.",
+      "recommendation_id": "recommendation-preserve-evidence",
+      "related_findings": [],
+      "requires_human_approval": false,
+      "title": "Preserve Investigation Evidence"
+    }
+  ],
+  "report_id": "tir-cc03b306-9416-4ae1-ba78-4ebc92291d03",
+  "report_type": "THREAT_INTELLIGENCE",
+  "report_version": "1.0",
+  "status": "COMPLETE",
+  "threat_summary": {
+    "analyzed_at": "2026-08-27T00:53:09.566901+00:00",
+    "cves": [
+      "CVE-2021-44228"
+    ],
+    "failed_sources": 0,
+    "known_exploited": true,
+    "limitations": [
+      "AWS Inspector evidence is simulated for Lab12d testing."
+    ],
+    "not_found_sources": 0,
+    "overall_confidence": 80,
+    "overall_risk": "CRITICAL",
+    "policy_version": "lab12d-custom-policy-1.0",
+    "ransomware_associated": true,
+    "recommended_priority": "CRITICAL",
+    "sources_consulted": 2,
+    "successful_sources": 2,
+    "supporting_reasons": [
+      "The vulnerability is listed as known exploited.",
+      "Evidence indicates that an affected library exists in the environment.",
+      "Remediation is recommended because external exploitation intelligence and internal exposure evidence are correlated."
+    ],
+    "techniques": []
+  }
+}
+
+=== MARKDOWN REPORT ===
+# Threat Intelligence Investigation
+
+**Report ID:** `tir-cc03b306-9416-4ae1-ba78-4ebc92291d03`
+**Status:** COMPLETE
+**Generated:** 2026-08-27T00:53:14.434508Z
+
+## Indicator
+
+- **Value:** `CVE-2021-44228`
+- **Type:** CVE
+- **Identifier:** `CVE:CVE-2021-44228`
+
+## Executive Summary
+
+- **Overall risk:** CRITICAL
+- **Confidence:** 80%
+- **Recommended priority:** CRITICAL
+- **Known exploited:** Yes
+- **Ransomware associated:** Yes
+
+The indicator is assessed as CRITICAL risk with 80% confidence and is associated with known exploitation.
+
+## Investigation Narrative
+
+# Security Investigation Summary: CVE-2021-44228
+
+## Overview
+This investigation assessed **CVE-2021-44228** (Apache Log4j Remote Code Execution) and identified it as a **CRITICAL risk** with 80% confidence. The vulnerability is **actively exploited in the wild** and **associated with ransomware campaigns**.
+
+## Key Findings
+
+**1. Known Active Exploitation**
+- Threat intelligence confirms this vulnerability is being exploited by real-world threat actors
+- CISA maintains this CVE on its Known Exploited Vulnerabilities catalog
+- Confidence: 80%
+
+**2. Ransomware Association**
+- Intelligence sources link this vulnerability to ransomware deployment
+- This elevates potential business impact beyond data breach to operational disruption
+- Confidence: 80%
+
+**3. Vulnerability Scope**
+- One CVE identified in this investigation
+- Affects systems running vulnerable Apache Log4j library versions
+
+## Critical Actions Required
+
+1. **Immediate Patching** – Identify all affected assets and apply vendor patches or compensating controls under emergency procedures
+2. **Threat Hunt** – Search logs and telemetry for signs of active exploitation, persistence, lateral movement, or command-and-control activity
+3. **Incident Response Escalation** – Engage IR team to validate whether compromise has already occurred, particularly focusing on backup integrity and lateral movement
+
+## Important Limitation
+External threat intelligence findings are based on public vulnerability data. **Internal validation against your environment's telemetry is required** before determining if this environment has been compromised.
+
+**Recommendation:** Treat as CRITICAL priority. Patching alone is insufficient—concurrent investigation is essential to determine if exploitation has already occurred.
+
+## Findings
+
+### 1. Known Exploitation Identified
+
+- **Severity:** CRITICAL
+- **Source:** cisa_kev
+- **Confidence:** 80%
+
+Threat-intelligence evidence indicates that the associated vulnerability is known to be exploited in real-world attacks.
+
+- **CVEs:** `CVE-2021-44228`
+
+### 2. Ransomware Association Identified
+
+- **Severity:** CRITICAL
+- **Source:** cisa_kev
+- **Confidence:** 80%
+
+Threat-intelligence evidence associates the indicator or vulnerability with ransomware activity.
+
+- **CVEs:** `CVE-2021-44228`
+
+### 3. Associated Vulnerabilities Identified
+
+- **Severity:** HIGH
+- **Source:** Threat Intelligence Fusion
+- **Confidence:** 80%
+
+The investigation identified one or more CVEs associated with the indicator or threat context.
+
+- **CVEs:** `CVE-2021-44228`
+
+## Recommendations
+
+### 1. Prioritize Vulnerability Remediation
+
+- **Priority:** CRITICAL
+- **Category:** REMEDIATE
+- **Human approval required:** Yes
+
+**Action:** Identify assets affected by CVE-2021-44228 and apply vendor remediation, compensating controls, or workload isolation according to emergency change procedures.
+
+**Rationale:** Known exploitation materially increases the likelihood of active adversary use.
+
+### 2. Conduct Targeted Threat Hunt
+
+- **Priority:** CRITICAL
+- **Category:** INVESTIGATE
+- **Human approval required:** No
+
+**Action:** Search historical and current telemetry for signs of exploitation, persistence, credential access, lateral movement, and command-and-control activity.
+
+**Rationale:** Patching prevents future exploitation but does not determine whether compromise already occurred.
+
+### 3. Escalate to Incident Response
+
+- **Priority:** CRITICAL
+- **Category:** INVESTIGATE
+- **Human approval required:** No
+
+**Action:** Escalate the investigation to the incident response team and validate endpoint, identity, backup, and lateral-movement telemetry.
+
+**Rationale:** Ransomware association increases potential impact and requires rapid validation.
+
+### 4. Preserve Investigation Evidence
+
+- **Priority:** LOW
+- **Category:** DOCUMENT
+- **Human approval required:** No
+
+**Action:** Retain the provider observations, normalized evidence, fusion summary, and report identifier for audit and future correlation.
+
+**Rationale:** Preserved evidence supports repeatable analysis, auditability, and comparison with future events.
+
+## Limitations
+
+- AWS Inspector evidence is simulated for Lab12d testing.
+- AWS Inspector evidence is simulated and does not represent a real AWS finding.
+- External threat intelligence should be validated against internal telemetry before automated containment or remediation.
+
