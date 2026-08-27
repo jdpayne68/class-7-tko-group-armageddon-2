@@ -515,8 +515,7 @@ aws cognito-idp initiate-auth \
 
 ## 13. Author & Contributors
 
-- **Author:** ⚠️ Joe Tolliver
-- **Group Leader:** _[add name]_
-- **Group Name:** _[add group name]_
-- **Contributors:** _[add anyone who helped]_
-- **Date / Version:** _[add date — e.g., 2026-07-31, v1.0]_
+- **Author:** Joe Tolliver
+- **Group Leader:** Jaqcues Payne
+- **Group Name:** TKO
+- **Date / Version:** 8-11-2026 (Lab 12a)
