@@ -19,7 +19,8 @@ resource "aws_api_gateway_method" "analyze_get" {
   rest_api_id   = aws_api_gateway_rest_api.application.id
   resource_id   = aws_api_gateway_resource.analyze.id
   http_method   = "GET"
-  authorization = "NONE"
+  authorization = "COGNITO_USER_POOLS"
+  authorizer_id = aws_api_gateway_authorizer.cognito.id
 }
 
 resource "aws_api_gateway_integration" "analyze_get" {
@@ -39,6 +40,7 @@ resource "aws_api_gateway_deployment" "application" {
   triggers = {
     redeployment = sha1(jsonencode([
       aws_api_gateway_resource.analyze.id,
+      aws_api_gateway_authorizer.cognito.id,
       aws_api_gateway_method.analyze_get.id,
       aws_api_gateway_integration.analyze_get.id,
     ]))
