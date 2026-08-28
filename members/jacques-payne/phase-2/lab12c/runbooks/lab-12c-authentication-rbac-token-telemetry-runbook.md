@@ -1090,6 +1090,10 @@ lab12c-39-auth-24-admin-token-marked-used.png
 lab12c-40-auth-25-unused-token-detector-alert.png
 lab12c-41-auth-26-cloudwatch-unused-token-alert.png
 lab12c-42-auth-27-terraform-no-drift.png
+lab12c-43-auth-28-destroy-plan.png
+lab12c-44-auth-29-destroy-complete.png
+lab12c-45-auth-30-post-destroy-state-empty.png
+lab12c-46-auth-31-post-destroy-aws-verify.png
 ```
 
 Evidence must not contain:
@@ -1330,49 +1334,105 @@ VALIDATED
 
 ## 28. Teardown
 
-Teardown should occur only after:
+Teardown was performed only after authentication, RBAC, token-use telemetry, unused-token detection, CloudWatch observability, evidence capture, and final no-drift validation were complete.
 
-1. Authentication testing is complete.
-2. RBAC testing is complete.
-3. Token telemetry is validated.
-4. The unused-token detector is validated.
-5. Required evidence has been captured.
-6. Final no-drift validation is complete.
+### Reviewed Destroy Plan
 
-Create and review a destroy plan before applying it.
+A saved Terraform destroy plan was created and reviewed before any destructive action was taken.
 
-Example:
+Validated destroy-plan summary:
 
-```bash
-terraform -chdir=terraform plan \
-  -destroy \
-  -out=/tmp/lab12c-auth-destroy.plan
+```text
+Plan: 0 to add, 0 to change, 75 to destroy.
 ```
 
-Review:
+A JSON inspection of the saved plan independently confirmed:
 
-```bash
-terraform -chdir=terraform show \
-  -no-color \
-  /tmp/lab12c-auth-destroy.plan
+```text
+Resources marked for destroy: 75
 ```
 
-Apply only after review:
+Evidence:
 
-```bash
-terraform -chdir=terraform apply \
-  /tmp/lab12c-auth-destroy.plan
+```text
+evidence/lab12c-43-auth-28-destroy-plan.png
 ```
 
-After destruction:
+### Destroy Execution
 
-```bash
-terraform -chdir=terraform state list
+The reviewed saved destroy plan was applied.
+
+Validated result:
+
+```text
+Destroy complete! Resources: 75 destroyed.
 ```
 
-Then verify that the corresponding Cognito, DynamoDB, Lambda, API Gateway, Scheduler, WAF, S3, SNS, and CloudWatch resources no longer remain.
+Evidence:
 
----
+```text
+evidence/lab12c-44-auth-29-destroy-complete.png
+```
+
+### Post-Destroy Terraform State
+
+Terraform state was inspected after teardown.
+
+Validated result:
+
+```text
+STATE COUNT
+0
+```
+
+This confirms that no Lab 12C resources remained in Terraform state.
+
+Evidence:
+
+```text
+evidence/lab12c-45-auth-30-post-destroy-state-empty.png
+```
+
+### AWS-Side Cleanup Verification
+
+AWS was independently queried after Terraform teardown.
+
+The following Lab 12C resources were verified absent:
+
+```text
+Cognito user pool
+token-tracking DynamoDB table
+unused-token detector Lambda
+EventBridge Scheduler schedule group
+Lab 12 API Gateway
+Lab 12 report bucket
+```
+
+Each AWS query returned no matching resource.
+
+Evidence:
+
+```text
+evidence/lab12c-46-auth-31-post-destroy-aws-verify.png
+```
+
+The teardown lifecycle is therefore:
+
+```text
+Reviewed destroy plan
+    ->
+75 managed resources destroyed
+    ->
+Terraform state count = 0
+    ->
+AWS-side resources independently verified absent
+```
+
+Status:
+
+```text
+COMPLETE
+```
 
 ## 29. Troubleshooting Notes
 
@@ -1517,18 +1577,19 @@ before infrastructure changes occur.
 
 ## 31. Current Status
 
-### Infrastructure
+### Infrastructure Lifecycle
 
 ```text
-DEPLOYED
+COMPLETE
 ```
 
-Deployment result:
+### Deployment
 
 ```text
 75 added
 0 changed
 0 destroyed
+VALIDATED
 ```
 
 ### Cognito Infrastructure
@@ -1643,15 +1704,45 @@ VALIDATED
 ### EventBridge Scheduler Infrastructure
 
 ```text
-VALIDATED
+VALIDATED DURING TESTING
 ```
-
-The unused-token schedule remains disabled during controlled validation.
 
 ### Final Terraform No-Drift Validation
 
 ```text
 VALIDATED
+```
+
+### Teardown
+
+```text
+75 resources destroyed
+COMPLETE
+```
+
+### Post-Destroy Terraform State
+
+```text
+0 resources
+VALIDATED
+```
+
+### AWS Post-Destroy Verification
+
+```text
+Cognito user pool: absent
+Token-tracking DynamoDB table: absent
+Unused-token detector Lambda: absent
+EventBridge Scheduler schedule group: absent
+Lab 12 API Gateway: absent
+Lab 12 report bucket: absent
+VALIDATED
+```
+
+### Final Status
+
+```text
+COMPLETE
 ```
 
 ## 32. References
