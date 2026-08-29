@@ -1,0 +1,11 @@
+aws lambda invoke \
+  --function-name armageddon-summer-2026-dev-soar \
+  --payload fileb://test-finding.json \
+  response.json
+
+
+  cat response.json
+
+
+
+  start compliance-20260825T033941Z.pdf

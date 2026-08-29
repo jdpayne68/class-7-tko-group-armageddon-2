@@ -1,0 +1,3278 @@
+{
+  "entries": [
+    {
+      "examples": [
+        "Alpine Linux - container OS"
+      ],
+      "local_path": "assets/logos/simple-icons/alpinelinux.svg",
+      "logo_parameter": "alpinelinux",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=alpinelinux&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Grype - vulnerability scanning",
+        "Syft - SBOM generation"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/anchore.svg",
+      "logo_parameter": "anchore",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Angular - frontend framework"
+      ],
+      "local_path": "assets/logos/simple-icons/angular.svg",
+      "logo_parameter": "angular",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=angular&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Ansible - automation"
+      ],
+      "local_path": "assets/logos/simple-icons/ansible.svg",
+      "logo_parameter": "ansible",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=ansible&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Anthropic - AI platform"
+      ],
+      "local_path": "assets/logos/simple-icons/anthropic.svg",
+      "logo_parameter": "anthropic",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=anthropic&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Apache HTTP Server - web server",
+        "Zipkin - tracing"
+      ],
+      "local_path": "assets/logos/simple-icons/apache.svg",
+      "logo_parameter": "apache",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=apache&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Analytics - professional skill",
+        "Batch Processing - professional skill",
+        "Dashboard Design - professional skill",
+        "Data Engineering - professional skill",
+        "Data Governance - professional skill",
+        "Data Modeling - professional skill",
+        "Data Pipelines - professional skill",
+        "Data Quality - professional skill"
+      ],
+      "local_path": "assets/logos/simple-icons/apacheairflow.svg",
+      "logo_parameter": "apacheairflow",
+      "referenced_by": [
+        "library/skill-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=apacheairflow&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Cassandra - wide column database"
+      ],
+      "local_path": "assets/logos/simple-icons/apachecassandra.svg",
+      "logo_parameter": "apachecassandra",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=apachecassandra&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Kafka - event streaming"
+      ],
+      "local_path": "assets/logos/simple-icons/apachekafka.svg",
+      "logo_parameter": "apachekafka",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=apachekafka&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Maven - build tool"
+      ],
+      "local_path": "assets/logos/simple-icons/apachemaven.svg",
+      "logo_parameter": "apachemaven",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=apachemaven&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Apache Spark - data processing"
+      ],
+      "local_path": "assets/logos/simple-icons/apachespark.svg",
+      "logo_parameter": "apachespark",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=apachespark&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "macOS - operating system"
+      ],
+      "local_path": "assets/logos/simple-icons/apple.svg",
+      "logo_parameter": "apple",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=apple&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Argo CD - gitops delivery",
+        "GitOps",
+        "GitOps - declarative delivery",
+        "GitOps - methodology"
+      ],
+      "local_path": "assets/logos/simple-icons/argo.svg",
+      "logo_parameter": "argo",
+      "referenced_by": [
+        "README.md",
+        "library/core-badges.md",
+        "library/git-badges.md",
+        "library/methodology-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=argo&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Assembly - low level language"
+      ],
+      "local_path": "assets/logos/simple-icons/assemblyscript.svg",
+      "logo_parameter": "assemblyscript",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=assemblyscript&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Astro - web framework"
+      ],
+      "local_path": "assets/logos/simple-icons/astro.svg",
+      "logo_parameter": "astro",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=astro&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Auth0 - identity platform",
+        "SAML - federation"
+      ],
+      "local_path": "assets/logos/simple-icons/auth0.svg",
+      "logo_parameter": "auth0",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=auth0&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Azure Repos - repository hosting"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/azuredevops.svg",
+      "logo_parameter": "azuredevops",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Azure Pipelines - automation"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/azurepipelines.svg",
+      "logo_parameter": "azurepipelines",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Bamboo - automation"
+      ],
+      "local_path": "assets/logos/simple-icons/bamboo.svg",
+      "logo_parameter": "bamboo",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=bamboo&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Bitbucket - repository hosting"
+      ],
+      "local_path": "assets/logos/simple-icons/bitbucket.svg",
+      "logo_parameter": "bitbucket",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=bitbucket&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Bootstrap - CSS framework"
+      ],
+      "local_path": "assets/logos/simple-icons/bootstrap.svg",
+      "logo_parameter": "bootstrap",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=bootstrap&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Buildkite - automation"
+      ],
+      "local_path": "assets/logos/simple-icons/buildkite.svg",
+      "logo_parameter": "buildkite",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=buildkite&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Burp Suite - web security"
+      ],
+      "local_path": "assets/logos/simple-icons/burpsuite.svg",
+      "logo_parameter": "burpsuite",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=burpsuite&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "C - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/c.svg",
+      "logo_parameter": "c",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=c&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Changesets - version planning"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/changesets.svg",
+      "logo_parameter": "changesets",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Checkov - IaC scanning"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/checkov.svg",
+      "logo_parameter": "checkov",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "CircleCI - automation"
+      ],
+      "local_path": "assets/logos/simple-icons/circleci.svg",
+      "logo_parameter": "circleci",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=circleci&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Cloudflare - edge platform"
+      ],
+      "local_path": "assets/logos/simple-icons/cloudflare.svg",
+      "logo_parameter": "cloudflare",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=cloudflare&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Commitizen - commit workflow"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/commitizen.svg",
+      "logo_parameter": "commitizen",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Composer - package manager"
+      ],
+      "local_path": "assets/logos/simple-icons/composer.svg",
+      "logo_parameter": "composer",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=composer&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Consul - service networking"
+      ],
+      "local_path": "assets/logos/simple-icons/consul.svg",
+      "logo_parameter": "consul",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=consul&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Conventional Commits - commit standard"
+      ],
+      "local_path": "assets/logos/simple-icons/conventionalcommits.svg",
+      "logo_parameter": "conventionalcommits",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=conventionalcommits&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Clair - container scanning"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/coreos.svg",
+      "logo_parameter": "coreos",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Couchbase - NoSQL database"
+      ],
+      "local_path": "assets/logos/simple-icons/couchbase.svg",
+      "logo_parameter": "couchbase",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=couchbase&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "C++ - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/cplusplus.svg",
+      "logo_parameter": "cplusplus",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=cplusplus&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "C# - programming language"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/csharp.svg",
+      "logo_parameter": "csharp",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "CSS3 - stylesheets"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/css3.svg",
+      "logo_parameter": "css3",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Cypress - browser testing"
+      ],
+      "local_path": "assets/logos/simple-icons/cypress.svg",
+      "logo_parameter": "cypress",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=cypress&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Dart - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/dart.svg",
+      "logo_parameter": "dart",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=dart&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Azure"
+      ],
+      "local_path": "assets/logos/custom/azure.svg",
+      "logo_parameter": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMy40IDMgNS4yIDE3LjJoNy4zbC0xLjIgMy44TDE5IDkuMmgtNi41TDEzLjQgM3pNMTAuNyA3LjkgOCAxNGgzLjZsMi4zLTQuOGgyLjFsLTIuMyAzLjdoMi41bC0yLjQgMy43LjctMi4yaC0zLjhsLTEuMi0zLjd6Ii8+PC9zdmc+",
+      "referenced_by": [
+        "README.md",
+        "library/az-badges.md",
+        "library/core-badges.md"
+      ],
+      "status": "saved",
+      "type": "custom-data-uri"
+    },
+    {
+      "examples": [
+        "AWS"
+      ],
+      "local_path": "assets/logos/custom/aws.svg",
+      "logo_parameter": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHRleHQgeD0iMiIgeT0iMTQiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjguNSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiPkFXUzwvdGV4dD48cGF0aCBkPSJNNCAxOGM0LjggMi43IDExLjIgMi43IDE2IDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTguNCAxNi44bDIgLjktMS41IDEuNiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+      "referenced_by": [
+        "README.md",
+        "library/aws-badges.md",
+        "library/core-badges.md"
+      ],
+      "status": "saved",
+      "type": "custom-data-uri"
+    },
+    {
+      "examples": [
+        "Datadog - observability"
+      ],
+      "local_path": "assets/logos/simple-icons/datadog.svg",
+      "logo_parameter": "datadog",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=datadog&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "dbt - data transformation"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/dbt.svg",
+      "logo_parameter": "dbt",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Debian - operating system"
+      ],
+      "local_path": "assets/logos/simple-icons/debian.svg",
+      "logo_parameter": "debian",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=debian&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Dependabot - dependency updates"
+      ],
+      "local_path": "assets/logos/simple-icons/dependabot.svg",
+      "logo_parameter": "dependabot",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=dependabot&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "API Design - professional skill",
+        "Architecture Reviews - professional skill",
+        "Cloud Architecture - professional skill",
+        "Data Architecture - professional skill",
+        "Enterprise Architecture - professional skill",
+        "Event Architecture - professional skill",
+        "Integration Architecture - professional skill",
+        "Reliability Design - professional skill"
+      ],
+      "local_path": "assets/logos/simple-icons/diagramsdotnet.svg",
+      "logo_parameter": "diagramsdotnet",
+      "referenced_by": [
+        "library/skill-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=diagramsdotnet&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "DigitalOcean - cloud platform"
+      ],
+      "local_path": "assets/logos/simple-icons/digitalocean.svg",
+      "logo_parameter": "digitalocean",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=digitalocean&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Django - web framework"
+      ],
+      "local_path": "assets/logos/simple-icons/django.svg",
+      "logo_parameter": "django",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=django&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Docker - containers"
+      ],
+      "local_path": "assets/logos/simple-icons/docker.svg",
+      "logo_parameter": "docker",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=docker&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Docusaurus - documentation site"
+      ],
+      "local_path": "assets/logos/simple-icons/docusaurus.svg",
+      "logo_parameter": "docusaurus",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=docusaurus&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "ASP.NET - web framework"
+      ],
+      "local_path": "assets/logos/simple-icons/dotnet.svg",
+      "logo_parameter": "dotnet",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=dotnet&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Drone - automation"
+      ],
+      "local_path": "assets/logos/simple-icons/drone.svg",
+      "logo_parameter": "drone",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=drone&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Elastic Stack - search observability"
+      ],
+      "local_path": "assets/logos/simple-icons/elastic.svg",
+      "logo_parameter": "elastic",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=elastic&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Elasticsearch - search engine"
+      ],
+      "local_path": "assets/logos/simple-icons/elasticsearch.svg",
+      "logo_parameter": "elasticsearch",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=elasticsearch&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Electron - desktop apps"
+      ],
+      "local_path": "assets/logos/simple-icons/electron.svg",
+      "logo_parameter": "electron",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=electron&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Elixir - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/elixir.svg",
+      "logo_parameter": "elixir",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=elixir&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Envoy - proxy"
+      ],
+      "local_path": "assets/logos/simple-icons/envoyproxy.svg",
+      "logo_parameter": "envoyproxy",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=envoyproxy&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "ESLint - JavaScript linting"
+      ],
+      "local_path": "assets/logos/simple-icons/eslint.svg",
+      "logo_parameter": "eslint",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=eslint&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Express - web framework"
+      ],
+      "local_path": "assets/logos/simple-icons/express.svg",
+      "logo_parameter": "express",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=express&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Falco - runtime security"
+      ],
+      "local_path": "assets/logos/simple-icons/falco.svg",
+      "logo_parameter": "falco",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=falco&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "FastAPI",
+        "FastAPI - API framework"
+      ],
+      "local_path": "assets/logos/simple-icons/fastapi.svg",
+      "logo_parameter": "fastapi",
+      "referenced_by": [
+        "README.md",
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=fastapi&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Firebase - app platform"
+      ],
+      "local_path": "assets/logos/simple-icons/firebase.svg",
+      "logo_parameter": "firebase",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=firebase&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Flask - web framework"
+      ],
+      "local_path": "assets/logos/simple-icons/flask.svg",
+      "logo_parameter": "flask",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=flask&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Flux - gitops delivery"
+      ],
+      "local_path": "assets/logos/simple-icons/flux.svg",
+      "logo_parameter": "flux",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=flux&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Forgejo - self hosted git"
+      ],
+      "local_path": "assets/logos/simple-icons/forgejo.svg",
+      "logo_parameter": "forgejo",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=forgejo&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "FreeBSD - operating system"
+      ],
+      "local_path": "assets/logos/simple-icons/freebsd.svg",
+      "logo_parameter": "freebsd",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=freebsd&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Blame - line history",
+        "Branch - parallel work",
+        "Cherry Pick - selective replay",
+        "Clone - repository copy",
+        "Commit - change snapshot",
+        "Diff - change review",
+        "Git - version control",
+        "Git Flow - branching model"
+      ],
+      "local_path": "assets/logos/simple-icons/git.svg",
+      "logo_parameter": "git",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=git&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "GitBook - documentation"
+      ],
+      "local_path": "assets/logos/simple-icons/gitbook.svg",
+      "logo_parameter": "gitbook",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=gitbook&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Gitea - self hosted git"
+      ],
+      "local_path": "assets/logos/simple-icons/gitea.svg",
+      "logo_parameter": "gitea",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=gitea&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "API Engineering - professional skill",
+        "Backend Engineering - professional skill",
+        "Branch Protection - repository rules",
+        "Branch Rulesets - policy controls",
+        "Build Engineering - professional skill",
+        "CODEOWNERS - ownership rules",
+        "Cloud Engineering",
+        "Cloud Engineering - professional skill"
+      ],
+      "local_path": "assets/logos/simple-icons/github.svg",
+      "logo_parameter": "github",
+      "referenced_by": [
+        "README.md",
+        "library/git-badges.md",
+        "library/skill-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=github&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Actions - automation",
+        "Artifact Management - professional skill",
+        "Automation - professional skill",
+        "Blue Green Deployment - methodology",
+        "CI/CD - methodology",
+        "CI/CD - professional skill",
+        "CIS Controls - methodology",
+        "Canary Deployment - methodology"
+      ],
+      "local_path": "assets/logos/simple-icons/githubactions.svg",
+      "logo_parameter": "githubactions",
+      "referenced_by": [
+        "library/core-badges.md",
+        "library/git-badges.md",
+        "library/methodology-badges.md",
+        "library/skill-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=githubactions&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "GitLab - repository hosting",
+        "GitLab CI - automation"
+      ],
+      "local_path": "assets/logos/simple-icons/gitlab.svg",
+      "logo_parameter": "gitlab",
+      "referenced_by": [
+        "library/core-badges.md",
+        "library/git-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=gitlab&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Git LFS - large files"
+      ],
+      "local_path": "assets/logos/simple-icons/gitlfs.svg",
+      "logo_parameter": "gitlfs",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=gitlfs&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Bash - shell scripting",
+        "Just - command runner",
+        "Make - build automation",
+        "Shell"
+      ],
+      "local_path": "assets/logos/simple-icons/gnubash.svg",
+      "logo_parameter": "gnubash",
+      "referenced_by": [
+        "README.md",
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=gnubash&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Emacs - editor"
+      ],
+      "local_path": "assets/logos/simple-icons/gnuemacs.svg",
+      "logo_parameter": "gnuemacs",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=gnuemacs&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Signed Commit - cryptographic identity"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/gnupg.svg",
+      "logo_parameter": "gnupg",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Fiber - web framework",
+        "Gin - web framework",
+        "Go - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/go.svg",
+      "logo_parameter": "go",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=go&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "BigQuery - data warehouse"
+      ],
+      "local_path": "assets/logos/simple-icons/googlebigquery.svg",
+      "logo_parameter": "googlebigquery",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=googlebigquery&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "AAA Natural Language Models - AI And ML",
+        "AAA SDK - Developer Tools",
+        "ABAP SDK for Google Cloud - Developer Tools",
+        "AI Commerce Search on Gemini Enterprise for Customer Experience (formerly Vertex AI Search for Commerce) - AI And ML",
+        "API Gateway - API Gateway",
+        "Access Approval - Access Governance",
+        "Access Context Manager - Context Aware Access",
+        "Access Transparency - Access Auditability"
+      ],
+      "local_path": "assets/logos/simple-icons/googlecloud.svg",
+      "logo_parameter": "googlecloud",
+      "referenced_by": [
+        "README.md",
+        "library/core-badges.md",
+        "library/gcp-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=googlecloud&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Decision Records - professional skill",
+        "Design Facilitation - professional skill",
+        "Engineering Planning - professional skill",
+        "Mentoring - professional skill",
+        "Operational Readiness - professional skill",
+        "Roadmapping - professional skill",
+        "Stakeholder Communication - professional skill",
+        "Standards Development - professional skill"
+      ],
+      "local_path": "assets/logos/simple-icons/googledocs.svg",
+      "logo_parameter": "googledocs",
+      "referenced_by": [
+        "library/skill-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=googledocs&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Gradle - build tool"
+      ],
+      "local_path": "assets/logos/simple-icons/gradle.svg",
+      "logo_parameter": "gradle",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=gradle&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Grafana - dashboards",
+        "Loki - logs",
+        "Tempo - traces"
+      ],
+      "local_path": "assets/logos/simple-icons/grafana.svg",
+      "logo_parameter": "grafana",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=grafana&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "GraphQL - API query language"
+      ],
+      "local_path": "assets/logos/simple-icons/graphql.svg",
+      "logo_parameter": "graphql",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=graphql&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "gRPC - RPC framework"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/grpc.svg",
+      "logo_parameter": "grpc",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "HAProxy - load balancer"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/haproxy.svg",
+      "logo_parameter": "haproxy",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Haskell - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/haskell.svg",
+      "logo_parameter": "haskell",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=haskell&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Helm - package manager"
+      ],
+      "local_path": "assets/logos/simple-icons/helm.svg",
+      "logo_parameter": "helm",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=helm&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Heroku - app platform"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/heroku.svg",
+      "logo_parameter": "heroku",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Homebrew - package manager"
+      ],
+      "local_path": "assets/logos/simple-icons/homebrew.svg",
+      "logo_parameter": "homebrew",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=homebrew&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "HTML5 - markup"
+      ],
+      "local_path": "assets/logos/simple-icons/html5.svg",
+      "logo_parameter": "html5",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=html5&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Hugging Face - model hub"
+      ],
+      "local_path": "assets/logos/simple-icons/huggingface.svg",
+      "logo_parameter": "huggingface",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=huggingface&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "InfluxDB - time series database"
+      ],
+      "local_path": "assets/logos/simple-icons/influxdb.svg",
+      "logo_parameter": "influxdb",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=influxdb&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "IntelliJ IDEA - IDE"
+      ],
+      "local_path": "assets/logos/simple-icons/intellijidea.svg",
+      "logo_parameter": "intellijidea",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=intellijidea&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Istio - service mesh"
+      ],
+      "local_path": "assets/logos/simple-icons/istio.svg",
+      "logo_parameter": "istio",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=istio&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Jaeger - tracing"
+      ],
+      "local_path": "assets/logos/simple-icons/jaeger.svg",
+      "logo_parameter": "jaeger",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=jaeger&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "JavaScript - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/javascript.svg",
+      "logo_parameter": "javascript",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=javascript&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Jekyll - static site"
+      ],
+      "local_path": "assets/logos/simple-icons/jekyll.svg",
+      "logo_parameter": "jekyll",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=jekyll&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Jenkins - automation server"
+      ],
+      "local_path": "assets/logos/simple-icons/jenkins.svg",
+      "logo_parameter": "jenkins",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=jenkins&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Jest - JavaScript testing"
+      ],
+      "local_path": "assets/logos/simple-icons/jest.svg",
+      "logo_parameter": "jest",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=jest&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "JSON - data format"
+      ],
+      "local_path": "assets/logos/simple-icons/json.svg",
+      "logo_parameter": "json",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=json&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Julia - scientific computing"
+      ],
+      "local_path": "assets/logos/simple-icons/julia.svg",
+      "logo_parameter": "julia",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=julia&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "JUnit - Java testing"
+      ],
+      "local_path": "assets/logos/simple-icons/junit5.svg",
+      "logo_parameter": "junit5",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=junit5&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Kali Linux - security testing"
+      ],
+      "local_path": "assets/logos/simple-icons/kalilinux.svg",
+      "logo_parameter": "kalilinux",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=kalilinux&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Keycloak - identity broker"
+      ],
+      "local_path": "assets/logos/simple-icons/keycloak.svg",
+      "logo_parameter": "keycloak",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=keycloak&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Kong - API gateway"
+      ],
+      "local_path": "assets/logos/simple-icons/kong.svg",
+      "logo_parameter": "kong",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=kong&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Kotlin - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/kotlin.svg",
+      "logo_parameter": "kotlin",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=kotlin&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Cloud Native",
+        "Cloud Native - methodology",
+        "Kubernetes - orchestration",
+        "Kyverno - Kubernetes policy",
+        "Service Mesh - methodology"
+      ],
+      "local_path": "assets/logos/simple-icons/kubernetes.svg",
+      "logo_parameter": "kubernetes",
+      "referenced_by": [
+        "README.md",
+        "library/core-badges.md",
+        "library/methodology-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=kubernetes&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "LangChain",
+        "LangChain - LLM framework"
+      ],
+      "local_path": "assets/logos/simple-icons/langchain.svg",
+      "logo_parameter": "langchain",
+      "referenced_by": [
+        "README.md",
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=langchain&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Laravel - web framework"
+      ],
+      "local_path": "assets/logos/simple-icons/laravel.svg",
+      "logo_parameter": "laravel",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=laravel&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Linkerd - service mesh"
+      ],
+      "local_path": "assets/logos/simple-icons/linkerd.svg",
+      "logo_parameter": "linkerd",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=linkerd&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Linode - cloud platform"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/linode.svg",
+      "logo_parameter": "linode",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Cron - job scheduling",
+        "Linux - operating system"
+      ],
+      "local_path": "assets/logos/simple-icons/linux.svg",
+      "logo_parameter": "linux",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=linux&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "DCO - developer certificate"
+      ],
+      "local_path": "assets/logos/simple-icons/linuxfoundation.svg",
+      "logo_parameter": "linuxfoundation",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=linuxfoundation&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "LlamaIndex - data framework"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/llamaindex.svg",
+      "logo_parameter": "llamaindex",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Lua - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/lua.svg",
+      "logo_parameter": "lua",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=lua&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "MariaDB - relational database"
+      ],
+      "local_path": "assets/logos/simple-icons/mariadb.svg",
+      "logo_parameter": "mariadb",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=mariadb&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Markdown - documentation"
+      ],
+      "local_path": "assets/logos/simple-icons/markdown.svg",
+      "logo_parameter": "markdown",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=markdown&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "MkDocs - documentation site"
+      ],
+      "local_path": "assets/logos/simple-icons/materialformkdocs.svg",
+      "logo_parameter": "materialformkdocs",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=materialformkdocs&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Mermaid - diagrams"
+      ],
+      "local_path": "assets/logos/simple-icons/mermaid.svg",
+      "logo_parameter": "mermaid",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=mermaid&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "SQL Server - relational database"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/microsoftsqlserver.svg",
+      "logo_parameter": "microsoftsqlserver",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Mocha - JavaScript testing"
+      ],
+      "local_path": "assets/logos/simple-icons/mocha.svg",
+      "logo_parameter": "mocha",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=mocha&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "MongoDB - document database"
+      ],
+      "local_path": "assets/logos/simple-icons/mongodb.svg",
+      "logo_parameter": "mongodb",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=mongodb&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Material UI - component library"
+      ],
+      "local_path": "assets/logos/simple-icons/mui.svg",
+      "logo_parameter": "mui",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=mui&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "MySQL - relational database"
+      ],
+      "local_path": "assets/logos/simple-icons/mysql.svg",
+      "logo_parameter": "mysql",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=mysql&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "NATS - messaging"
+      ],
+      "local_path": "assets/logos/simple-icons/natsdotio.svg",
+      "logo_parameter": "natsdotio",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=natsdotio&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Neo4j - graph database"
+      ],
+      "local_path": "assets/logos/simple-icons/neo4j.svg",
+      "logo_parameter": "neo4j",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=neo4j&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Neovim - editor"
+      ],
+      "local_path": "assets/logos/simple-icons/neovim.svg",
+      "logo_parameter": "neovim",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=neovim&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "NestJS - application framework"
+      ],
+      "local_path": "assets/logos/simple-icons/nestjs.svg",
+      "logo_parameter": "nestjs",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=nestjs&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Netlify - frontend cloud"
+      ],
+      "local_path": "assets/logos/simple-icons/netlify.svg",
+      "logo_parameter": "netlify",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=netlify&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "New Relic - observability"
+      ],
+      "local_path": "assets/logos/simple-icons/newrelic.svg",
+      "logo_parameter": "newrelic",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=newrelic&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Next.js - web framework"
+      ],
+      "local_path": "assets/logos/simple-icons/nextdotjs.svg",
+      "logo_parameter": "nextdotjs",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=nextdotjs&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "NGINX - web server"
+      ],
+      "local_path": "assets/logos/simple-icons/nginx.svg",
+      "logo_parameter": "nginx",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=nginx&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Nmap - network scanning"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/nmap.svg",
+      "logo_parameter": "nmap",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Node.js"
+      ],
+      "local_path": "assets/logos/simple-icons/nodedotjs.svg",
+      "logo_parameter": "nodedotjs",
+      "referenced_by": [
+        "README.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=nodedotjs&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Nomad - scheduler"
+      ],
+      "local_path": "assets/logos/simple-icons/nomad.svg",
+      "logo_parameter": "nomad",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=nomad&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "npm - package manager"
+      ],
+      "local_path": "assets/logos/simple-icons/npm.svg",
+      "logo_parameter": "npm",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=npm&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "NumPy - numerical computing"
+      ],
+      "local_path": "assets/logos/simple-icons/numpy.svg",
+      "logo_parameter": "numpy",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=numpy&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Nuxt - web framework"
+      ],
+      "local_path": "assets/logos/simple-icons/nuxt.svg",
+      "logo_parameter": "nuxt",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=nuxt&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "OAuth 2.0 - authorization"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/oauth.svg",
+      "logo_parameter": "oauth",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "OCaml - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/ocaml.svg",
+      "logo_parameter": "ocaml",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=ocaml&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Okta - identity platform"
+      ],
+      "local_path": "assets/logos/simple-icons/okta.svg",
+      "logo_parameter": "okta",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=okta&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "AI Automation - professional skill",
+        "AI Engineering",
+        "AI Engineering - professional skill",
+        "AI Governance - professional skill",
+        "AI Safety - professional skill",
+        "Agent Design - professional skill",
+        "Embeddings - professional skill",
+        "Knowledge Retrieval - professional skill"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/openai.svg",
+      "logo_parameter": "openai",
+      "referenced_by": [
+        "README.md",
+        "library/core-badges.md",
+        "library/skill-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "OpenAPI - API specification"
+      ],
+      "local_path": "assets/logos/simple-icons/openapiinitiative.svg",
+      "logo_parameter": "openapiinitiative",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=openapiinitiative&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "OpenID Connect - identity layer"
+      ],
+      "local_path": "assets/logos/simple-icons/openid.svg",
+      "logo_parameter": "openid",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=openid&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Java - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/openjdk.svg",
+      "logo_parameter": "openjdk",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=openjdk&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Open Policy Agent - policy engine"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/openpolicyagent.svg",
+      "logo_parameter": "openpolicyagent",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "OpenSearch - search analytics"
+      ],
+      "local_path": "assets/logos/simple-icons/opensearch.svg",
+      "logo_parameter": "opensearch",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=opensearch&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "OpenTelemetry - telemetry"
+      ],
+      "local_path": "assets/logos/simple-icons/opentelemetry.svg",
+      "logo_parameter": "opentelemetry",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=opentelemetry&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "OpenTofu - infrastructure as code"
+      ],
+      "local_path": "assets/logos/simple-icons/opentofu.svg",
+      "logo_parameter": "opentofu",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=opentofu&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "OpenVAS - vulnerability scanning"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/openvas.svg",
+      "logo_parameter": "openvas",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Oracle Cloud - cloud platform",
+        "Oracle Database - relational database"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/oracle.svg",
+      "logo_parameter": "oracle",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "OWASP",
+        "OWASP - app security"
+      ],
+      "local_path": "assets/logos/simple-icons/owasp.svg",
+      "logo_parameter": "owasp",
+      "referenced_by": [
+        "README.md",
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=owasp&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Packer - image automation"
+      ],
+      "local_path": "assets/logos/simple-icons/packer.svg",
+      "logo_parameter": "packer",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=packer&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "PagerDuty - incident response"
+      ],
+      "local_path": "assets/logos/simple-icons/pagerduty.svg",
+      "logo_parameter": "pagerduty",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=pagerduty&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Pandas - data analysis"
+      ],
+      "local_path": "assets/logos/simple-icons/pandas.svg",
+      "logo_parameter": "pandas",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=pandas&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Perl - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/perl.svg",
+      "logo_parameter": "perl",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=perl&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Phoenix - web framework"
+      ],
+      "local_path": "assets/logos/simple-icons/phoenixframework.svg",
+      "logo_parameter": "phoenixframework",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=phoenixframework&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "PHP - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/php.svg",
+      "logo_parameter": "php",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=php&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Playwright - browser testing"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/playwright.svg",
+      "logo_parameter": "playwright",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "pnpm - package manager"
+      ],
+      "local_path": "assets/logos/simple-icons/pnpm.svg",
+      "logo_parameter": "pnpm",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=pnpm&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Poetry - dependency manager"
+      ],
+      "local_path": "assets/logos/simple-icons/poetry.svg",
+      "logo_parameter": "poetry",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=poetry&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "PostgreSQL",
+        "PostgreSQL - relational database",
+        "SQL - query language"
+      ],
+      "local_path": "assets/logos/simple-icons/postgresql.svg",
+      "logo_parameter": "postgresql",
+      "referenced_by": [
+        "README.md",
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=postgresql&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Postman - API testing"
+      ],
+      "local_path": "assets/logos/simple-icons/postman.svg",
+      "logo_parameter": "postman",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=postman&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "PowerShell - automation shell"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/powershell.svg",
+      "logo_parameter": "powershell",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Pre Commit - quality gates"
+      ],
+      "local_path": "assets/logos/simple-icons/precommit.svg",
+      "logo_parameter": "precommit",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=precommit&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Prettier - code formatting"
+      ],
+      "local_path": "assets/logos/simple-icons/prettier.svg",
+      "logo_parameter": "prettier",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=prettier&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Capacity Planning - professional skill",
+        "Cost Optimization - professional skill",
+        "Disaster Recovery - professional skill",
+        "High Availability - professional skill",
+        "Incident Management - professional skill",
+        "Monitoring - professional skill",
+        "Observability - professional skill",
+        "On Call Readiness - professional skill"
+      ],
+      "local_path": "assets/logos/simple-icons/prometheus.svg",
+      "logo_parameter": "prometheus",
+      "referenced_by": [
+        "library/core-badges.md",
+        "library/skill-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=prometheus&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Pulumi - infrastructure as code"
+      ],
+      "local_path": "assets/logos/simple-icons/pulumi.svg",
+      "logo_parameter": "pulumi",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=pulumi&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "PyCharm - IDE"
+      ],
+      "local_path": "assets/logos/simple-icons/pycharm.svg",
+      "logo_parameter": "pycharm",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=pycharm&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "pytest - Python testing"
+      ],
+      "local_path": "assets/logos/simple-icons/pytest.svg",
+      "logo_parameter": "pytest",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=pytest&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Black - Python formatting",
+        "Python",
+        "Python - programming language",
+        "pip - package manager"
+      ],
+      "local_path": "assets/logos/simple-icons/python.svg",
+      "logo_parameter": "python",
+      "referenced_by": [
+        "README.md",
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=python&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "PyTorch - ML framework"
+      ],
+      "local_path": "assets/logos/simple-icons/pytorch.svg",
+      "logo_parameter": "pytorch",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=pytorch&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "QEMU - emulation"
+      ],
+      "local_path": "assets/logos/simple-icons/qemu.svg",
+      "logo_parameter": "qemu",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=qemu&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "R - statistical computing"
+      ],
+      "local_path": "assets/logos/simple-icons/r.svg",
+      "logo_parameter": "r",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=r&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "RabbitMQ - message broker"
+      ],
+      "local_path": "assets/logos/simple-icons/rabbitmq.svg",
+      "logo_parameter": "rabbitmq",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=rabbitmq&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "React - frontend framework"
+      ],
+      "local_path": "assets/logos/simple-icons/react.svg",
+      "logo_parameter": "react",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=react&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Documentation",
+        "Read the Docs - documentation"
+      ],
+      "local_path": "assets/logos/simple-icons/readthedocs.svg",
+      "logo_parameter": "readthedocs",
+      "referenced_by": [
+        "README.md",
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=readthedocs&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Red Hat - enterprise Linux"
+      ],
+      "local_path": "assets/logos/simple-icons/redhat.svg",
+      "logo_parameter": "redhat",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=redhat&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Redis - in memory database",
+        "Redis Streams - event streams"
+      ],
+      "local_path": "assets/logos/simple-icons/redis.svg",
+      "logo_parameter": "redis",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=redis&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Remix - web framework"
+      ],
+      "local_path": "assets/logos/simple-icons/remix.svg",
+      "logo_parameter": "remix",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=remix&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Renovate - dependency updates"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/renovatebot.svg",
+      "logo_parameter": "renovatebot",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Rocket - web framework"
+      ],
+      "local_path": "assets/logos/simple-icons/rocket.svg",
+      "logo_parameter": "rocket",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=rocket&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Ruby - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/ruby.svg",
+      "logo_parameter": "ruby",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=ruby&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "RubyGems - package manager"
+      ],
+      "local_path": "assets/logos/simple-icons/rubygems.svg",
+      "logo_parameter": "rubygems",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=rubygems&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Rails - web framework"
+      ],
+      "local_path": "assets/logos/simple-icons/rubyonrails.svg",
+      "logo_parameter": "rubyonrails",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=rubyonrails&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Ruff - Python linting"
+      ],
+      "local_path": "assets/logos/simple-icons/ruff.svg",
+      "logo_parameter": "ruff",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=ruff&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Actix - web framework",
+        "Cargo - package manager",
+        "Rust - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/rust.svg",
+      "logo_parameter": "rust",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=rust&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Scala - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/scala.svg",
+      "logo_parameter": "scala",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=scala&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "scikit-learn - machine learning"
+      ],
+      "local_path": "assets/logos/simple-icons/scikitlearn.svg",
+      "logo_parameter": "scikitlearn",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=scikitlearn&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "AIOps - methodology",
+        "API First - methodology",
+        "Agile - methodology",
+        "Application Security - professional skill",
+        "Behavior Driven Development - methodology",
+        "Blameless Culture - methodology",
+        "CQRS - methodology",
+        "Chaos Engineering - methodology"
+      ],
+      "local_path": "assets/logos/simple-icons/securityscorecard.svg",
+      "logo_parameter": "securityscorecard",
+      "referenced_by": [
+        "README.md",
+        "library/methodology-badges.md",
+        "library/skill-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=securityscorecard&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Selenium - browser automation"
+      ],
+      "local_path": "assets/logos/simple-icons/selenium.svg",
+      "logo_parameter": "selenium",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=selenium&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Semantic Release - automated releases"
+      ],
+      "local_path": "assets/logos/simple-icons/semanticrelease.svg",
+      "logo_parameter": "semanticrelease",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=semanticrelease&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Semgrep - static analysis"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/semgrep.svg",
+      "logo_parameter": "semgrep",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Semantic Versioning - release versioning"
+      ],
+      "local_path": "assets/logos/simple-icons/semver.svg",
+      "logo_parameter": "semver",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=semver&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Sentry - error tracking"
+      ],
+      "local_path": "assets/logos/simple-icons/sentry.svg",
+      "logo_parameter": "sentry",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=sentry&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Cosign - artifact signing",
+        "Sigstore - software signing"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/sigstore.svg",
+      "logo_parameter": "sigstore",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Snowflake - data cloud"
+      ],
+      "local_path": "assets/logos/simple-icons/snowflake.svg",
+      "logo_parameter": "snowflake",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=snowflake&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Snyk - dependency security"
+      ],
+      "local_path": "assets/logos/simple-icons/snyk.svg",
+      "logo_parameter": "snyk",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=snyk&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "SonarQube - code quality"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/sonarqube.svg",
+      "logo_parameter": "sonarqube",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "SourceHut - git forge"
+      ],
+      "local_path": "assets/logos/simple-icons/sourcehut.svg",
+      "logo_parameter": "sourcehut",
+      "referenced_by": [
+        "library/git-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=sourcehut&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Sphinx - documentation"
+      ],
+      "local_path": "assets/logos/simple-icons/sphinx.svg",
+      "logo_parameter": "sphinx",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=sphinx&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Spinnaker - continuous delivery"
+      ],
+      "local_path": "assets/logos/simple-icons/spinnaker.svg",
+      "logo_parameter": "spinnaker",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=spinnaker&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Splunk - observability"
+      ],
+      "local_path": "assets/logos/simple-icons/splunk.svg",
+      "logo_parameter": "splunk",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=splunk&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Spring - application framework"
+      ],
+      "local_path": "assets/logos/simple-icons/spring.svg",
+      "logo_parameter": "spring",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=spring&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "SQLite - embedded database"
+      ],
+      "local_path": "assets/logos/simple-icons/sqlite.svg",
+      "logo_parameter": "sqlite",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=sqlite&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Svelte - frontend compiler",
+        "SvelteKit - web framework"
+      ],
+      "local_path": "assets/logos/simple-icons/svelte.svg",
+      "logo_parameter": "svelte",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=svelte&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "REST - API style",
+        "Swagger - API docs"
+      ],
+      "local_path": "assets/logos/simple-icons/swagger.svg",
+      "logo_parameter": "swagger",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=swagger&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Swift - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/swift.svg",
+      "logo_parameter": "swift",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=swift&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Tailwind CSS - utility CSS"
+      ],
+      "local_path": "assets/logos/simple-icons/tailwindcss.svg",
+      "logo_parameter": "tailwindcss",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=tailwindcss&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Task - task runner"
+      ],
+      "local_path": "assets/logos/simple-icons/task.svg",
+      "logo_parameter": "task",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=task&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "TeamCity - automation"
+      ],
+      "local_path": "assets/logos/simple-icons/teamcity.svg",
+      "logo_parameter": "teamcity",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=teamcity&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Tekton - cloud native CI/CD"
+      ],
+      "local_path": "assets/logos/simple-icons/tekton.svg",
+      "logo_parameter": "tekton",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=tekton&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Nessus - vulnerability scanning"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/tenable.svg",
+      "logo_parameter": "tenable",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "TensorFlow - ML framework"
+      ],
+      "local_path": "assets/logos/simple-icons/tensorflow.svg",
+      "logo_parameter": "tensorflow",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=tensorflow&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Compliance as Code - methodology",
+        "Continuous Compliance - methodology",
+        "Everything as Code - methodology",
+        "Infrastructure as Code",
+        "Infrastructure as Code - methodology",
+        "Policy as Code - methodology",
+        "Terraform",
+        "Terraform - infrastructure as code"
+      ],
+      "local_path": "assets/logos/simple-icons/terraform.svg",
+      "logo_parameter": "terraform",
+      "referenced_by": [
+        "README.md",
+        "library/core-badges.md",
+        "library/methodology-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=terraform&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Traefik - edge router"
+      ],
+      "local_path": "assets/logos/simple-icons/traefikproxy.svg",
+      "logo_parameter": "traefikproxy",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=traefikproxy&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Travis CI - automation"
+      ],
+      "local_path": "assets/logos/simple-icons/travisci.svg",
+      "logo_parameter": "travisci",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=travisci&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Trivy - security scanner"
+      ],
+      "local_path": "assets/logos/simple-icons/trivy.svg",
+      "logo_parameter": "trivy",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=trivy&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "TypeScript - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/typescript.svg",
+      "logo_parameter": "typescript",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=typescript&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Ubuntu - operating system"
+      ],
+      "local_path": "assets/logos/simple-icons/ubuntu.svg",
+      "logo_parameter": "ubuntu",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=ubuntu&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Vagrant - dev environments"
+      ],
+      "local_path": "assets/logos/simple-icons/vagrant.svg",
+      "logo_parameter": "vagrant",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=vagrant&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Vault - secrets management"
+      ],
+      "local_path": "assets/logos/simple-icons/vault.svg",
+      "logo_parameter": "vault",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=vault&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Vercel - frontend cloud"
+      ],
+      "local_path": "assets/logos/simple-icons/vercel.svg",
+      "logo_parameter": "vercel",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=vercel&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Vim - editor"
+      ],
+      "local_path": "assets/logos/simple-icons/vim.svg",
+      "logo_parameter": "vim",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=vim&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "VirtualBox - virtualization"
+      ],
+      "local_path": "assets/logos/simple-icons/virtualbox.svg",
+      "logo_parameter": "virtualbox",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=virtualbox&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Visual Studio - IDE"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/visualstudio.svg",
+      "logo_parameter": "visualstudio",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "VS Code - editor"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/visualstudiocode.svg",
+      "logo_parameter": "visualstudiocode",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Vite - frontend tooling"
+      ],
+      "local_path": "assets/logos/simple-icons/vite.svg",
+      "logo_parameter": "vite",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=vite&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Vitest - JavaScript testing"
+      ],
+      "local_path": "assets/logos/simple-icons/vitest.svg",
+      "logo_parameter": "vitest",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=vitest&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "VMware - virtualization"
+      ],
+      "local_path": "assets/logos/simple-icons/vmware.svg",
+      "logo_parameter": "vmware",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=vmware&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Vue - frontend framework"
+      ],
+      "local_path": "assets/logos/simple-icons/vuedotjs.svg",
+      "logo_parameter": "vuedotjs",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=vuedotjs&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Vultr - cloud platform"
+      ],
+      "local_path": "assets/logos/simple-icons/vultr.svg",
+      "logo_parameter": "vultr",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=vultr&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "WebStorm - IDE"
+      ],
+      "local_path": "assets/logos/simple-icons/webstorm.svg",
+      "logo_parameter": "webstorm",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=webstorm&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "error": "Shields SVG did not contain embedded logo image; CDN fallback failed: HTTP Error 404: Not Found",
+      "examples": [
+        "Windows - operating system"
+      ],
+      "fallback_note": "Generated placeholder because Shields/Simple Icons did not return a logo SVG. Not an official brand logo.",
+      "local_path": "assets/logos/fallback/windows.svg",
+      "logo_parameter": "windows",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "status": "fallback",
+      "type": "local-fallback-not-official"
+    },
+    {
+      "examples": [
+        "Xcode - IDE"
+      ],
+      "local_path": "assets/logos/simple-icons/xcode.svg",
+      "logo_parameter": "xcode",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=xcode&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "YAML - configuration"
+      ],
+      "local_path": "assets/logos/simple-icons/yaml.svg",
+      "logo_parameter": "yaml",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=yaml&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Yarn - package manager"
+      ],
+      "local_path": "assets/logos/simple-icons/yarn.svg",
+      "logo_parameter": "yarn",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=yarn&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    },
+    {
+      "examples": [
+        "Zig - programming language"
+      ],
+      "local_path": "assets/logos/simple-icons/zig.svg",
+      "logo_parameter": "zig",
+      "referenced_by": [
+        "library/core-badges.md"
+      ],
+      "shields_test_url": "https://img.shields.io/badge/logo-source-555?logo=zig&logoColor=white",
+      "status": "saved",
+      "type": "shields-simple-icons-export"
+    }
+  ],
+  "generated_from": "Markdown badge logo parameters in this badge library",
+  "logos_failed": 0,
+  "logos_fallback": 33,
+  "logos_saved": 205,
+  "logos_total": 238,
+  "source_root": "/Users/kirk/workstation/git/git_init/badges"
+}

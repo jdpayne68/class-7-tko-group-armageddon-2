@@ -1,0 +1,15 @@
+{
+  "source": "armageddon.threat-correlation",
+  "detail-type": "FindingCreated",
+  "detail": {
+    "findingId": "TEST-001",
+    "summary": "Repeated suspicious requests detected from a single source IP",
+    "timestamp": "2026-08-18T23:55:00Z",
+    "newImage": {
+      "severity": "HIGH",
+      "source_ip": "203.0.113.25",
+      "request_count": 150,
+      "attack_type": "credential-probing"
+    }
+  }
+}

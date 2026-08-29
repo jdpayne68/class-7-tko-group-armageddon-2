@@ -1,0 +1,19 @@
+when using a model with Cross-region inference the resource for the IAM needs 2 the foundational-model and the inference-profile and for the inference-profile the model need to have the us. prefix.  And when using the Environmental Variable and BEDROCK_MODEL_ID point it to the us. prefix model. ex:BEDROCK_MODEL_ID = "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+The prefix also depends on the region you are using if it not in the US the us. prefix is incorrect. AWS group-level geographic prefixes are restricted to major multi-region zones like us (United States), eu (Europe), and apac (Asia-Pacific). 
+
+
+{
+        "Effect" : "Allow"
+        "Action" : [
+          "bedrock:InvokeModel"
+        ],
+        "Resource" : [ 
+          "arn:aws:bedrock:*::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0", "arn:aws:bedrock:${var.region}:${data.aws_caller_identity.current.account_id}:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0",
+        ]
+      },
+
+
+
+https://docs.aws.amazon.com/bedrock/latest/userguide/geographic-cross-region-inference.html
+https://docs.aws.amazon.com/bedrock/latest/userguide/models-region-compatibility.html
+https://docs.aws.amazon.com/bedrock/latest/userguide/models-region-compatibility.html

@@ -1,0 +1,99 @@
+{
+  "accountability": {
+    "approval_required": true,
+    "approval_status": "APPROVED",
+    "approved_at": "2026-08-25T02:53:04.054446Z",
+    "approved_by": "security-lead",
+    "decision_reason": "Critical token exposure reviewed and containment authorized.",
+    "generated_at": "2026-08-25T02:53:04.054812Z",
+    "generated_by": "Gen2X Security Engineering Platform",
+    "investigation_owner": null,
+    "recommendation_created_by": "Gen2X",
+    "rejected_at": null,
+    "rejected_by": null
+  },
+  "analyst_notes": [],
+  "archived_at": "2026-08-25T02:53:04.054901Z",
+  "audience": {
+    "audience": "SECURITY_ENGINEER",
+    "distribution": [],
+    "intended_for": [
+      "Security Engineering"
+    ],
+    "technical_level": "TECHNICAL"
+  },
+  "derived": {
+    "approval_required": true,
+    "decision_required": false,
+    "evidence_count": 1,
+    "finding_count": 1,
+    "has_findings": true,
+    "has_response": true,
+    "is_mutable": false,
+    "provider_count": 1
+  },
+  "evidence_summary": {
+    "conflicts_detected": false,
+    "corroborated": false,
+    "evidence_ids": [
+      "ev-serialize-001"
+    ],
+    "notes": [],
+    "providers": [
+      "GitHub"
+    ]
+  },
+  "executive_summary": {
+    "business_impact": "An exposed credential may permit unauthorized access.",
+    "decision_request": "",
+    "decision_required": false,
+    "headline": "Critical GitHub Token Exposure",
+    "recommended_action": "Contain and rotate the exposed credential.",
+    "severity": "CRITICAL",
+    "summary": "Gen2X verified an exposed authentication token requiring containment."
+  },
+  "finalized_at": "2026-08-25T02:53:04.054873Z",
+  "findings": [
+    {
+      "affected_resource": "example/security-repository",
+      "condition": "TOKEN_EXPOSURE",
+      "confidence": "VERIFIED",
+      "created_at": "2026-08-25T02:53:04.054822Z",
+      "description": "A GitHub authentication token was identified as exposed.",
+      "finding_id": "89d2b25e-09b6-4d1d-b2d7-27ff189854cc",
+      "recommendation": "Contain access and rotate the exposed credential.",
+      "severity": "CRITICAL",
+      "title": "Exposed GitHub Authentication Token"
+    }
+  ],
+  "identity": {
+    "assessment_id": null,
+    "created_at": "2026-08-25T02:53:04.054789Z",
+    "report_id": "7ad31b47-e901-46ce-91ba-ef77515900c1",
+    "report_type": "INCIDENT_SUMMARY",
+    "response_id": "65eadbf2-ab4f-4e87-aa11-c9dfc5deaa8e",
+    "threat_id": "threat-token-exposure-001",
+    "updated_at": "2026-08-25T02:53:04.054873Z"
+  },
+  "response_summary": {
+    "action": "CONTAIN",
+    "approval_status": "APPROVED",
+    "approved_at": "2026-08-25T02:53:04.054446Z",
+    "approved_by": "security-lead",
+    "expected_outcome": "Prevent further use of the exposed credential.",
+    "investigation_status": "NEW",
+    "priority": "CRITICAL",
+    "rationale": "Contain the affected repository until exposed credentials are reviewed."
+  },
+  "status": "ARCHIVED",
+  "threat_summary": {
+    "affected_resource": "example/security-repository",
+    "condition": "TOKEN_EXPOSURE",
+    "confidence": "VERIFIED",
+    "evidence_count": 1,
+    "provider_count": 1,
+    "severity": "CRITICAL",
+    "summary": "A GitHub authentication token exposure was verified through Gen2X security evidence.",
+    "title": "Verified GitHub Token Exposure"
+  }
+}

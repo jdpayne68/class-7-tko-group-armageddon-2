@@ -1,0 +1,18 @@
+{
+  "source": "seir.soar",
+  "detail-type": "Security Incident Created",
+  "detail": {
+    "incident_id": "INC-72284090-2e23-4618-b896-ce0e249c7957",
+    "finding_id": "72284090-2e23-4618-b896-ce0e249c7957",
+    "severity": "MEDIUM",
+    "playbook": "NOTIFY_ANALYST",
+    "incident_created": true,
+    "primary_source_ip": "73.166.82.125",
+    "source_ip": "73.166.82.125",
+    "primary_target": "/prod",
+    "event_count": 151,
+    "risk_score": 35,
+    "human_review_required": true,
+    "containment_performed": false
+  }
+}
